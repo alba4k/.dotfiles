@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo x86_energy_perf_policy performance
+sudo x86_energy_perf_policy --turbo-enable 1
+
+echo "You are now in performance mode."

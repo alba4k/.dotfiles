@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/alba4k/Immagini/wallpapers/win11-sun.jpg' 
