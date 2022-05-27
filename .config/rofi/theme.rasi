@@ -6,27 +6,27 @@
     red: #dc322f;
     selected-active-foreground: #222233;
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    separatorcolor: #7777aa;
+    separatorcolor:              #7777aa;
     urgent-foreground:           var(red);
     alternate-urgent-background: var(lightbg);
-    lightbg: #44444455;
-    background-color:            transparent;
-    border-color: #7777ff99;
+    lightbg:                     transparent;
+    background-color:            #22222211;
+    border-color:                #7777aa;
     normal-background:           var(background);
     selected-urgent-background:  var(red);
     alternate-active-background: var(lightbg);
     spacing:                     2;
-    blue: #7777ff;
+    blue:                        #7777df;
     alternate-normal-foreground: var(foreground);
     urgent-background:           var(background);
-    selected-normal-foreground: #222233;
+    selected-normal-foreground:  #222222;
     active-foreground:           var(blue);
-    background: #22222255;
+    background:                  #22222255;
     selected-active-background:  var(blue);
     active-background:           var(background);
-    selected-normal-background: var(blue);
+    selected-normal-background:  var(blue);
     alternate-normal-background: var(lightbg);
-    foreground: #dddddd;
+    foreground:                  #dddddd;
     selected-urgent-foreground:  var(background);
     normal-foreground:           var(foreground);
     alternate-urgent-foreground: var(red);
@@ -90,7 +90,8 @@ element-icon {
 window {
     padding:          5;
     background-color: var(background);
-    border:           1;
+    border:           5;
+    border-radius:    5;
 }
 mainbox {
     padding: 0;
@@ -135,40 +136,48 @@ button selected {
 num-filtered-rows {
     expand:     false;
     text-color: Gray;
+    background-color:  transparent;
 }
 num-rows {
     expand:     false;
     text-color: Gray;
+    background-color:  transparent;
 }
 textbox-num-sep {
     expand:     false;
     str:        "/";
     text-color: Gray;
+    background-color:  transparent;
 }
 inputbar {
     padding:    1px ;
     spacing:    0px ;
     text-color: var(normal-foreground);
     children:   [ "prompt","entry","num-filtered-rows","textbox-num-sep","num-rows"];
+    background-color:  transparent;
 }
 case-indicator {
     spacing:    0;
     text-color: var(normal-foreground);
+    background-color:  transparent;
 }
 entry {
     text-color:        var(normal-foreground);
     cursor:            text;
     spacing:           0;
-    placeholder-color: Gray;
-    placeholder:       "Cosa stai cercando?";
+    placeholder-color: #777777;
+    placeholder:       "Search...";
+    background-color:  transparent;
 }
 prompt {
     spacing:    0;
     text-color: var(normal-foreground);
+    background-color:  transparent;
 }
 textbox-prompt-colon {
     margin:     0px 0.3000em 0.0000em 0.0000em ;
     expand:     false;
     str:        ":";
     text-color: inherit;
+    background-color:  transparent;
 }
