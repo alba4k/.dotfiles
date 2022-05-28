@@ -143,6 +143,7 @@ set $ws9 "9"
 # Back to previous when selecting current
 workspace_auto_back_and_forth yes
 
+bindsym $mod+Shift+x move workspace to output next
 
 ##############################################
 ###                 MODES                  ###

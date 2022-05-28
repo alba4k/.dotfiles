@@ -51,7 +51,7 @@ module-margin-right = 2
 
 font-0 = "fixed:pixelsize=11;1"
 font-1 = "Hack:fontformat=truetype:size=8:antialias=true;0"
-font-2 = "Nerd Font Complete"
+font-2 = "MesloLGS Nerd Font:style=Regular"
 
 modules-left = i3 xwindow
 modules-center = 
@@ -139,19 +139,6 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ;label-separator = |
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
 [module/backlight]
 type = internal/backlight
 
@@ -159,7 +146,7 @@ card = intel_backlight
 enable-scroll = true
 
 format = <label> <bar>
-label = BL %percentage%%
+label =  %percentage%%
 
 bar-width = 10
 bar-indicator = |
@@ -182,7 +169,7 @@ bar-empty-foreground = ${colors.foreground-alt}
 #[module/cpu]
 #type = internal/cpu
 #interval = 2
-#format-prefix = "CPU "
+#format-prefix =  
 #format-prefix-foreground = ${colors.foreground-alt}
 #format-underline = #f90000
 #label = %percentage:2%%
@@ -197,39 +184,29 @@ bar-empty-foreground = ${colors.foreground-alt}
 
 [network-base]
 type = internal/network
-interval = 5
-format-connected = <label-connected>
-format-disconnected = <label-disconnected>
-label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
+interval = 3
 
 [module/wlan]
 inherit = network-base
 interface-type = wireless
 interval = 1
 
-format-connected = <label-connected>
+format-connected =  <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
-format-disconnected = 
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = 睊WiFi
+;format-disconnected-underline = #aa5577
 
 [module/eth]
 inherit = network-base
 interface-type = wired
 
 format-connected-underline = #55aa55
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = ETH
+label-connected =  ETH
 
-format-disconnected = 
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected =  ETH
+format-disconnected-underline = #aa5577
 
 [module/date]
 type = internal/date
@@ -241,8 +218,7 @@ date-alt = " %d-%m-%Y"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix =  
 format-underline = #0a6cf5
 
 label = %date% %time%
@@ -251,7 +227,7 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = muted
@@ -280,14 +256,15 @@ battery = BAT0
 adapter = AC
 full-at = 100
 
+format-charging-prefix = " "
 format-charging = <label-charging>
 format-charging-underline = #8fde0a
 
+format-discharging-prefix = " "
 format-discharging = <label-discharging>
 format-discharging-underline = #c0bf2a
 
-format-full-prefix = 
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix = " "
 format-full-underline = #5bff1f
 
 [module/temperature]
@@ -295,8 +272,10 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
+format-prefix = " "
 format = <label>
 format-underline = #ffae22
+format-warn-prefix = " "
 format-warn = <label-warn>
 format-warn-underline = #ff6a4d
 
