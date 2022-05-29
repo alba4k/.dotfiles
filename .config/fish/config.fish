@@ -11,6 +11,8 @@ set fish_greeting
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR=/usr/bin/nvim
 
+set tide_git_icon 
+
 albafetch -l arch
 #uptime-record -s
 
