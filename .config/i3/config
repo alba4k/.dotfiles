@@ -7,7 +7,7 @@
 # Dependencies:
 #
 #  System Tray:
-#   - (blueman-applet (bluetooth manager))§
+#   - (blueman (bluetooth manager))§
 #   - nm applet (network manager)
 #   - clipit (clipboard manager, doesn't work for some reason)
 #   - kdeconnect (phone - computer interface)
@@ -62,6 +62,7 @@ exec --no-startup-id "dunst -conf '~/.config/dunstrc'"
 # System Tray stuff
 # using it in polybar
 #exec --no-startup-id "blueman-applet"
+exec --no-startup-id "emote"
 exec --no-startup-id "nm-applet"
 exec --no-startup-id "clipit &"
 exec --no-startup-id "kdeconnect-indicator"
@@ -172,8 +173,8 @@ bindsym $mod+r mode "resize"
 # Logout, Poweroff, ... promt
 set $mode_system "System [L] lock, [E] logout, [S] suspend, [CTRL+R] reboot, [CTRL+S] shutdown"
 mode $mode_system {
-    bindsym l exec --no-startup-id $i3lockwall, mode "default"
-    bindsym e exec --no-startup-id "i3-msg exit"
+    bindsym l exec --no-startup-id ~/.config/i3/lock.sh, mode "default"
+    bindsym e exit"
     bindsym s exec --no-startup-id "systemctl suspend", mode "default"
     bindsym Ctrl+r exec --no-startup-id "systemctl reboot"
     bindsym Ctrl+s exec --no-startup-id "systemctl poweroff"
@@ -191,11 +192,11 @@ mode $mode_display {
 	bindsym 0 exec "~/.screenlayout/Laptop.sh", mode "default"
 	bindsym 2 exec "~/.screenlayout/2MCasa.sh", mode "default"
 	bindsym 3 exec "~/.screenlayout/3MCasa.sh", mode "default"
-	
+
 	# back to normal
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+x mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+x mode "default"
 }
 bindsym $mod+x mode $mode_display
 
@@ -266,12 +267,12 @@ floating_maximum_size 1368 x 768
 # Reload this config
 bindsym $mod+Shift+c reload
 # Restart i3 (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r exec "i3-msg restart"
+bindsym $mod+Shift+r restart
 # Logout
-bindsym $mod+Shift+q exec "i3-msg exit"
+bindsym $mod+Shift+q exit
 
 # lockscreen using i3lock
-bindsym $mod+ctrl+l exec ~/.config/i3/lock.sh
+bindsym $mod+ctrl+l exec --no-startup-id ~/.config/i3/lock.sh
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay ~/.config/i3/click.ogg"
@@ -280,21 +281,21 @@ bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ t
 bindsym XF86AudioMicMute exec --no-startup-id "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
 
 # Use light to adjust display brightness.
-bindsym XF86MonBrightnessUp exec "light -A 5"
-bindsym XF86MonBrightnessDown exec "light -U 5"
+bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
+bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
 
 # Media controls using playerctl
-bindsym XF86AudioPlay exec "playerctl play-pause"
-bindsym XF86AudioPause exec "playerctl play-pause"
-bindsym XF86AudioNext exec "playerctl next"
-bindsym XF86AudioPrev exec "playerctl previous"
+bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
+bindsym XF86AudioPause exec --no-startup-id "playerctl play-pause"
+bindsym XF86AudioNext exec --no-startup-id "playerctl next"
+bindsym XF86AudioPrev exec --no-startup-id "playerctl previous"
 
 # Taking screenshots using flameshot
-bindsym Print exec "flameshot full -c"
-bindsym $mod+Shift+s exec "flameshot gui"
+bindsym Print exec --no-startup-id "flameshot full -c"
+bindsym $mod+Shift+s exec --no-startup-id "flameshot gui"
 
 # Open a terminal
-bindsym $mod+Return exec "kitty"
+bindsym $mod+Return exec --no-startup-id "kitty"
 
 # Application launcher (different config, ~/.config/rofi/config.rasi)
 bindsym $mod+d exec --no-startup-id "rofi -show drun"
@@ -302,7 +303,7 @@ bindsym $mod+Shift+d exec --no-startup-id "rofi -show run"
 bindsym $mod+Tab exec --no-startup-id "rofi -show window"
 
 # Open emoji selector
-bindsym $mod+period exec emote
+bindsym $mod+period exec --no-startup-id emote
 
 # Connecting bluetooth earphones (custom script)
 bindsym $mod+b exec --no-startup-id "/usr/bin/buds"

@@ -1,7 +1,8 @@
 alias p=paru
 alias Syu="sudo pacman -Syu"
 
-alias c="clear;fish;exit"
+alias c="clear && fish && exit"
+alias C="reset && fish && exit"
 
 alias ls="exa"
 alias la="exa -a"
