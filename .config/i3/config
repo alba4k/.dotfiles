@@ -92,10 +92,13 @@ for_window [class="flameshot" instance="flameshot"] floating enable
 for_window [class=" shutdown" instance=" Shutdown"] floating enable
 for_window [class="Tk" instance="tk"] floating enable
 for_window [class="gnome-calculator" instance="gnome-calculator"] floating enable
+for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
+for_window [class="Nm-connection-editor" instance="nm-connection-editor"] floating enable
 for_window [class="org.gnome.Weather" instance="org.gnome.Weather"] floating enable
 for_window [class="Onedriver-launcher" instance="onedriver-launcher"] floating enable
 for_window [class="MultiMC" instance="MultiMC"] floating enable
 for_window [class="Steam" instance="Steam"] floating enable
+for_window [instance="GalaxyBudsClient"] floating enable
 
 # Tiling by default (google chrome apps)
 for_window [class="Chromium"] floating disable
@@ -112,10 +115,6 @@ gaps inner 10
 gaps outer 0
 default_floating_border pixel 5
 default_border pixel 5
-
-# Rounded corners (i3-gaps-rounded)
-border_radius 10
-
 
 ##############################################
 ###              WORKSPACES                ###

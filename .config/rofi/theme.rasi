@@ -91,7 +91,7 @@ window {
     padding:          5;
     background-color: var(background);
     border:           5;
-    border-radius:    5;
+    border-radius:    12;
 }
 mainbox {
     padding: 0;
