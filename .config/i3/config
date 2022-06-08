@@ -7,7 +7,7 @@
 # Dependencies:
 #
 #  System Tray:
-#   - (blueman (bluetooth manager))§
+#   - (blueman (bluetooth manager))
 #   - nm applet (network manager)
 #   - clipit (clipboard manager, doesn't work for some reason)
 #   - kdeconnect (phone - computer interface)
@@ -19,7 +19,8 @@
 #   - polybar (bar)
 #   - dunst (notifications)
 #   - libinput-gestures (trackpad gestures)
-#   - feh (background)
+#   - (feh (background))
+#   - nitrogen (background)
 #   - picom (compositor)
 #
 #  Keybinds:
@@ -53,11 +54,15 @@ exec --no-startup-id dex --autostart --environment i3
 # Starting the compositor (different config, ~/.config/picom/picom.conf)
 exec_always --no-startup-id "picom --experimental-backends -bc"
 
-# Screen background (custom script)
-exec_always --no-startup-id "~/.fehbg"
+# Screen background
+#exec_always --no-startup-id "~/.fehbg"
+exec_always --no-startup-id "nitrogen --restore"
 
 # Starting dunst (different config, ~/.config/dunstrc)
 exec --no-startup-id "dunst -conf '~/.config/dunstrc'"
+
+# Policy Kit Agent
+exec --no-startup-id "lxpolkit"
 
 # System Tray stuff
 # using it in polybar
@@ -72,7 +77,7 @@ exec --no-startup-id "xinput set-prop 'SYNA3082:00 06CB:8265 Touchpad' 'libinput
 exec --no-startup-id "libinput-gestures -c ~/.config/libinput-gestures.conf"
 
 # Low battery warning
-exec --no-startup-id "i3-battery-popup -n -D -L 20 -l 10 -N && echo -e '\a'"
+exec --no-startup-id "i3-battery-popup -n -D -L 20 -m 'Battery is getting low!' -t 5m -s ~/.config/i3/click.ogg -v 50"
 
 # Setting the correct keyboard layout (swiss german)
 exec --no-startup-id "setxkbmap -layout ch,de"
@@ -94,14 +99,17 @@ for_window [class="Tk" instance="tk"] floating enable
 for_window [class="gnome-calculator" instance="gnome-calculator"] floating enable
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 for_window [class="Nm-connection-editor" instance="nm-connection-editor"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="org.gnome.Weather" instance="org.gnome.Weather"] floating enable
 for_window [class="Onedriver-launcher" instance="onedriver-launcher"] floating enable
+for_window [class="Onedriver" instance="onedriver"] floating enable
 for_window [class="MultiMC" instance="MultiMC"] floating enable
 for_window [class="Steam" instance="Steam"] floating enable
 for_window [instance="GalaxyBudsClient"] floating enable
 
-# Tiling by default (google chrome apps)
+# Tiling by default
 for_window [class="Chromium"] floating disable
+for_window [class="steam_app_1690940" instance="steam_app_1690940"] floating disable
 
 # Colors
 # <colorclass> <border> <background> <text> <indicator> <child_border>
@@ -269,9 +277,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # Logout
 bindsym $mod+Shift+q exit
-
-# lockscreen using i3lock
-bindsym $mod+ctrl+l exec --no-startup-id ~/.config/i3/lock.sh
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay ~/.config/i3/click.ogg"

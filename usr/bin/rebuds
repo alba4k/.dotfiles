@@ -5,3 +5,4 @@ bluetoothctl remove E8:7F:6B:18:5D:3C
 bluetoothctl scan on
 bluetoothctl pair E8:7F:6B:18:5D:3C
 bluetoothctl connect E8:7F:6B:18:5D:3C
+bluetoothctl set-alias Buds
