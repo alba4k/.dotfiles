@@ -19,8 +19,7 @@
 #   - polybar (bar)
 #   - dunst (notifications)
 #   - libinput-gestures (trackpad gestures)
-#   - (feh (background))
-#   - nitrogen (background)
+#   - swaybg (background)
 #   - picom (compositor)
 #
 #  Keybinds:
@@ -46,17 +45,29 @@ font pango:monospace
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# Screen background
+output * bg /home/alba4k/Immagini/wallpapers/win11-sun.jpg fill
+
+# Trackpad configuration
+input type:touchpad {
+    dwt disabled
+    tap enabled
+    natural_scroll enabled
+    # click_method clickfinger
+}
+
+# Keyboard configuration
+input type:keyboard {
+    xkb_numlock enable
+    xkb_layout "ch"
+    xkb_variant "de"
+}
 
 ##############################################
 ###               AUTOSTART                ###
 ##############################################
 
 # Starting the compositor (different config, ~/.config/picom/picom.conf)
-exec_always --no-startup-id "picom --experimental-backends -bc"
-
-# Screen background
-#exec_always --no-startup-id "~/.fehbg"
-exec_always --no-startup-id "nitrogen --restore"
 
 # Starting dunst (different config, ~/.config/dunstrc)
 exec --no-startup-id "dunst -conf '~/.config/dunstrc'"
@@ -64,24 +75,22 @@ exec --no-startup-id "dunst -conf '~/.config/dunstrc'"
 # Policy Kit Agent
 exec --no-startup-id "lxpolkit"
 
-# System Tray stuff
-# using it in polybar
-#exec --no-startup-id "blueman-applet"
+# Emojis are OK, I guess
 exec --no-startup-id "emote"
+
+# System Tray stuff
+#exec --no-startup-id "blueman-applet"
 exec --no-startup-id "nm-applet"
-exec --no-startup-id "clipit &"
 exec --no-startup-id "kdeconnect-indicator"
 
-# Enable trackpad while using the keyboard and guestures (different config, ~/.config/libinput-gestures.conf)
-exec --no-startup-id "xinput set-prop 'SYNA3082:00 06CB:8265 Touchpad' 'libinput Disable While Typing Enabled' 0"
+# Enable trackpad guestures (different config, ~/.config/libinput-gestures.conf)
 exec --no-startup-id "libinput-gestures -c ~/.config/libinput-gestures.conf"
 
 # Low battery warning
 exec --no-startup-id "i3-battery-popup -n -D -L 20 -m 'Battery is getting low!' -t 5m -s ~/.config/i3/click.ogg -v 50"
 
 # Setting the correct keyboard layout (swiss german)
-exec_always --no-startup-id "setxkbmap -layout ch,de"
-
+    input keyboard xkb_layout ch
 
 ##############################################
 ###                 SETUP                  ###

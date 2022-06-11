@@ -4,6 +4,7 @@
 mkdir -p ~/.dotfiles/.config
 
 cp -r ~/.config/i3/ ~/.dotfiles/.config/
+cp -r ~/.config/sway/ ~/.dotfiles/.config/
 cp -r ~/.config/fish/ ~/.dotfiles/.config/
 cp -r ~/.config/kitty/ ~/.dotfiles/.config/
 cp -r ~/.config/neofetch/ ~/.dotfiles/.config/

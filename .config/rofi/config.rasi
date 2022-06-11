@@ -1,8 +1,10 @@
 configuration {
 	modi: "drun,run,window";
-/*	font: "mono 12";*/
+    combi-modi: "drun,run,window";
+	font: "noto sans 20";
+    fixed-num-lines: false;
 /*	location: 0;*/
-/*	yoffset: 0;*/
+	yoffset: -220;
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
 	show-icons: true;
@@ -20,7 +22,7 @@ configuration {
 /*	drun-show-actions: false;*/
 /*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
 /*	drun-url-launcher: "xdg-open";*/
-/*	disable-history: false;*/
+	disable-history: false;
 /*	ignored-prefixes: "";*/
 /*	sort: false;*/
 /*	sorting-method: "normal";*/

@@ -88,6 +88,8 @@ element-icon {
     text-color:       inherit;
 }
 window {
+    width:            40%;
+    //height:           30%;
     padding:          5;
     background-color: var(background);
     border:           5;
@@ -110,7 +112,7 @@ listview {
     scrollbar:    true;
     border-color: var(separatorcolor);
     spacing:      2px ;
-    fixed-height: 0;
+    lines:        8;
     border:       2px dash 0px 0px ;
 }
 scrollbar {
