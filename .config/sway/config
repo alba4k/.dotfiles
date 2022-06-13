@@ -20,7 +20,6 @@
 #   - dunst (notifications)
 #   - libinput-gestures (trackpad gestures)
 #   - swaybg (background)
-#   - picom (compositor)
 #
 #  Keybinds:
 #   - pactl (volume control)
@@ -48,6 +47,10 @@ exec --no-startup-id dex --autostart --environment i3
 # Screen background
 output * bg /home/alba4k/Immagini/wallpapers/win11-sun.jpg fill
 
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 # Trackpad configuration
 input type:touchpad {
     dwt disabled
@@ -58,7 +61,7 @@ input type:touchpad {
 
 # Keyboard configuration
 input type:keyboard {
-    xkb_numlock enable
+    xkb_numlock disable
     xkb_layout "ch"
     xkb_variant "de"
 }
@@ -89,8 +92,7 @@ exec --no-startup-id "libinput-gestures -c ~/.config/libinput-gestures.conf"
 # Low battery warning
 exec --no-startup-id "i3-battery-popup -n -D -L 20 -m 'Battery is getting low!' -t 5m -s ~/.config/i3/click.ogg -v 50"
 
-# Setting the correct keyboard layout (swiss german)
-    input keyboard xkb_layout ch
+exec --no-startup-id "/usr/share/sway/scripts/inactive-windows-transparency.py --opacity 0.90"
 
 ##############################################
 ###                 SETUP                  ###
@@ -374,6 +376,5 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 #	}
 #}
 
-# Starting Polybar (different config, ~/.config/polybar/config)
-exec_always --no-startup-id "~/.config/polybar/launch.sh"
+exec_always --no-startup-id ~/.config/waybar/launch.sh
 

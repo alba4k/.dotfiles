@@ -25,14 +25,15 @@ rm ~/.dotfiles/.config/fish/fishd.tmp.*
 cp -r ~/.screenlayout/ ~/.dotfiles/
 cp ~/.fehbg ~/.dotfiles/.fehbg
 
-# FILES IN /usr/bin (custom scripts)
+# FILES IN /usr (custom scripts)
 mkdir -p ~/.dotfiles/usr/bin
+mkdir -p ~/.dotfiles/usr/share/fish/functions
 cp /usr/bin/autostart.sh ~/.dotfiles/usr/bin/autostart.sh
 cp /usr/bin/buds ~/.dotfiles/usr/bin/buds
 cp /usr/bin/rebuds ~/.dotfiles/usr/bin/rebuds
 cp /usr/bin/performance ~/.dotfiles/usr/bin/performance
 cp /usr/bin/powersave ~/.dotfiles/usr/bin/powersave
-
+cp /usr/share/fish/functions/cd.fish ~/.dotfiles/usr/share/fish/functions/
 
 git add .
 git commit -m "committed automatically from update.sh" -q
