@@ -53,6 +53,7 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 
 # Trackpad configuration
 input type:touchpad {
+
     dwt disabled
     tap enabled
     natural_scroll enabled
@@ -60,11 +61,37 @@ input type:touchpad {
 }
 
 # Keyboard configuration
-input type:keyboard {
+input * {
     xkb_numlock disable
     xkb_layout "ch"
     xkb_variant "de"
 }
+
+##############################################
+###                  BAR                   ###
+##############################################
+
+# Random and useless bar, Polybar >>>
+
+#bar {
+#        status_command i3status -c ~/.config/i3/i3status.conf
+#	height 20
+#	position top
+#	color
+#		background #222222
+#		statusline #ffffff
+#		separator #999999
+#
+#		#                  border background text
+#        	focused_workspace  #66bbbb #444499 #ff4444
+#        	active_workspace   #66bbbb #444499 #ff4444
+#        	inactive_workspace #555555 #222222 #888888
+#        	urgent_workspace   #993333 #661111 #FF9999
+#		#binding_mode
+#	}
+#}
+
+exec_always --no-startup-id ~/.config/waybar/launch.sh
 
 ##############################################
 ###               AUTOSTART                ###
@@ -350,31 +377,4 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-
-
-##############################################
-###                  BAR                   ###
-##############################################
-
-# Random and useless bar, Polybar >>>
-
-#bar {
-#        status_command i3status -c ~/.config/i3/i3status.conf
-#	height 20
-#	position top
-#	color
-#		background #222222
-#		statusline #ffffff
-#		separator #999999
-#
-#		#                  border background text
-#        	focused_workspace  #66bbbb #444499 #ff4444
-#        	active_workspace   #66bbbb #444499 #ff4444
-#        	inactive_workspace #555555 #222222 #888888
-#        	urgent_workspace   #993333 #661111 #FF9999
-#		#binding_mode
-#	}
-#}
-
-exec_always --no-startup-id ~/.config/waybar/launch.sh
 

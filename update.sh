@@ -17,6 +17,8 @@ cp ~/.config/dunstrc ~/.dotfiles/.config/
 cp ~/.config/flameshotrc ~/.dotfiles/.config/
 cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config
 
+cp -r ~/.config/hypr ~/.dotfiles/.config
+
 cp ~/.config/uptime-record ~/.dotfiles/.config/
 
 rm ~/.dotfiles/.config/fish/fishd.tmp.*
@@ -24,6 +26,9 @@ rm ~/.dotfiles/.config/fish/fishd.tmp.*
 #   FILES IN ~
 cp -r ~/.screenlayout/ ~/.dotfiles/
 cp ~/.fehbg ~/.dotfiles/.fehbg
+
+mkdir -p ~/.dotfiles/wallpapers
+cp -r ~/Immagini/wallpapers ~/.dotfiles//wallpapers
 
 # FILES IN /usr (custom scripts)
 mkdir -p ~/.dotfiles/usr/bin
