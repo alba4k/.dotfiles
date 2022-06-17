@@ -82,6 +82,7 @@ exec --no-startup-id "i3-battery-popup -n -D -L 20 -m 'Battery is getting low!' 
 # Setting the correct keyboard layout (swiss german)
 exec_always --no-startup-id "setxkbmap -layout ch,de"
 
+exec --no-startup-id "~/.screenlayout/3MCasa.sh"
 
 ##############################################
 ###                 SETUP                  ###
@@ -113,7 +114,7 @@ for_window [class="steam_app_1690940" instance="steam_app_1690940"] floating dis
 
 # Colors
 # <colorclass> <border> <background> <text> <indicator> <child_border>
-client.focused #7777aa #7777aa #7777aa #7777aa
+client.focused #8957b0 #8957b0 #8957b0 #8957b0
 client.focused_inactive #555555 #555555 #555555 #555555
 client.unfocused #555555 #555555 #555555 #555555
 client.urgent #dc322f #dc322f #dc322f #dc322f
@@ -301,7 +302,7 @@ bindsym $mod+Shift+s exec --no-startup-id "flameshot gui"
 # Open a terminal
 bindsym $mod+Return exec --no-startup-id "kitty"
 
-# Application launcher (different config, ~/.config/rofi/config.rasi)
+# Application launcher (different config, ~/.config/rofi)
 bindsym $mod+d exec --no-startup-id "rofi -show drun"
 bindsym $mod+Shift+d exec --no-startup-id "rofi -show run"
 bindsym $mod+Tab exec --no-startup-id "rofi -show window"
@@ -344,26 +345,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 ##############################################
 ###                  BAR                   ###
 ##############################################
-
-# Random and useless bar, Polybar >>>
-
-#bar {
-#        status_command i3status -c ~/.config/i3/i3status.conf
-#	height 20
-#	position top
-#	color
-#		background #222222
-#		statusline #ffffff
-#		separator #999999
-#
-#		#                  border background text
-#        	focused_workspace  #66bbbb #444499 #ff4444
-#        	active_workspace   #66bbbb #444499 #ff4444
-#        	inactive_workspace #555555 #222222 #888888
-#        	urgent_workspace   #993333 #661111 #FF9999
-#		#binding_mode
-#	}
-#}
 
 # Starting Polybar (different config, ~/.config/polybar/config)
 exec_always --no-startup-id "~/.config/polybar/launch.sh"

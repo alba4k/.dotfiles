@@ -25,7 +25,6 @@ rm ~/.dotfiles/.config/fish/fishd.tmp.*
 
 #   FILES IN ~
 cp -r ~/.screenlayout/ ~/.dotfiles/
-cp ~/.fehbg ~/.dotfiles/.fehbg
 
 mkdir -p ~/.dotfiles/wallpapers
 cp -r ~/Immagini/wallpapers ~/.dotfiles//wallpapers

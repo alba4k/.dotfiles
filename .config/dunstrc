@@ -231,7 +231,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 10
+    corner_radius = 12
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -247,7 +247,7 @@
     # layer = top
 
     # Set this to true to use X11 output on Wayland.
-    force_xwayland = false
+    force_xwayland = true
 
     ### Legacy
 
@@ -312,7 +312,7 @@
     background = "#895555"
     foreground = "#ffffff"
     frame_color = "#df0000"
-    timeout = 100
+    timeout = 60
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
 
