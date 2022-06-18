@@ -39,6 +39,9 @@ cp /usr/bin/performance ~/.dotfiles/usr/bin/performance
 cp /usr/bin/powersave ~/.dotfiles/usr/bin/powersave
 cp /usr/share/fish/functions/cd.fish ~/.dotfiles/usr/share/fish/functions/
 
+# OTHER FILES
+cp -r ~/.local/share/fonts ~/.dotfiles/fonts
+
 git add .
 git commit -m "committed automatically from update.sh" -q
 git push -q
