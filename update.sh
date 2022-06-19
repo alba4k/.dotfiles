@@ -4,6 +4,7 @@
 mkdir -p ~/.dotfiles/.config
 
 cp -r ~/.config/i3/ ~/.dotfiles/.config/
+cp -r ~/.config/nitrogen/ ~/.dotfiles/.config/
 cp -r ~/.config/sway/ ~/.dotfiles/.config/
 cp -r ~/.config/fish/ ~/.dotfiles/.config/
 cp -r ~/.config/kitty/ ~/.dotfiles/.config/
@@ -16,6 +17,7 @@ cp -r ~/.config/picom.conf ~/.dotfiles/.config/
 cp ~/.config/dunstrc ~/.dotfiles/.config/
 cp ~/.config/flameshotrc ~/.dotfiles/.config/
 cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config
+cp ~/.config/albafetch.conf ~/.dotfiles/.config/
 
 cp -r ~/.config/hypr ~/.dotfiles/.config
 
@@ -32,11 +34,11 @@ cp -r ~/Immagini/wallpapers ~/.dotfiles//wallpapers
 # FILES IN /usr (custom scripts)
 mkdir -p ~/.dotfiles/usr/bin
 mkdir -p ~/.dotfiles/usr/share/fish/functions
-cp /usr/bin/autostart.sh ~/.dotfiles/usr/bin/autostart.sh
-cp /usr/bin/buds ~/.dotfiles/usr/bin/buds
-cp /usr/bin/rebuds ~/.dotfiles/usr/bin/rebuds
-cp /usr/bin/performance ~/.dotfiles/usr/bin/performance
-cp /usr/bin/powersave ~/.dotfiles/usr/bin/powersave
+cp ~/.local/bin/autostart.sh ~/.dotfiles/.local/bin/autostart.sh
+cp ~/.local/bin/buds ~/.dotfiles/.local/bin/buds
+cp ~/.local/bin/rebuds ~/.dotfiles/.local/bin/rebuds
+cp ~/.local/bin/performance ~/.dotfiles/.local/bin/performance
+cp ~/.local/bin/powersave ~/.dotfiles/usr/bin/powersave
 cp /usr/share/fish/functions/cd.fish ~/.dotfiles/usr/share/fish/functions/
 
 # OTHER FILES
