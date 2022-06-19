@@ -14,7 +14,7 @@ cp -r ~/.config/rofi/ ~/.dotfiles/.config/
 cp -r ~/.config/polybar/ ~/.dotfiles/.config/
 cp -r ~/.config/cava ~/.dotfiles/.config
 cp -r ~/.config/picom.conf ~/.dotfiles/.config/
-cp -r ~/.config/spicetify ~/.dotfiles/config/
+cp -r ~/.config/spicetify ~/.dotfiles/.config/
 cp ~/.config/dunstrc ~/.dotfiles/.config/
 cp ~/.config/flameshotrc ~/.dotfiles/.config/
 cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config
