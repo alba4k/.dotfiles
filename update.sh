@@ -38,8 +38,9 @@ cp ~/.local/bin/autostart.sh ~/.dotfiles/.local/bin/autostart.sh
 cp ~/.local/bin/buds ~/.dotfiles/.local/bin/buds
 cp ~/.local/bin/rebuds ~/.dotfiles/.local/bin/rebuds
 cp ~/.local/bin/performance ~/.dotfiles/.local/bin/performance
-cp ~/.local/bin/powersave ~/.dotfiles/usr/bin/powersave
-cp /usr/share/fish/functions/cd.fish ~/.dotfiles/usr/share/fish/functions/
+cp ~/.local/bin/powersave ~/.dotfiles/.local/bin/powersave
+cp ~/.local/share/fish/functions/cd.fish ~/.dotfiles/.local/share/fish/functions/
+cp -r ~/.local/fonts ~/.dotfiles/.local/
 
 # OTHER FILES
 cp -r ~/.local/share/fonts ~/.dotfiles/fonts
