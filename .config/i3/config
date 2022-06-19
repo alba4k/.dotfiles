@@ -158,7 +158,7 @@ bindsym $mod+Shift+x move workspace to output next
 # These bindings trigger as soon as you enter the mode
 
 # Resize window via keybindings
-mode "resize" {
+mode "Resize" {
         # Resizing using HJKL keys
         bindsym h resize shrink width 40 px or 5 ppt
         bindsym j resize grow height 40 px or 5 ppt
@@ -175,7 +175,7 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "Resize"
 
 
 # Logout, Poweroff, ... promt
