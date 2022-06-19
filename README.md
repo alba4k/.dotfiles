@@ -21,10 +21,8 @@
 * polybar
 * rofi
 * sway (wouldn't use those)
-* uptime-record
+* uptime-record (not really a config, just a backup)
 * albafetch
 
-->
->=
-<=
+## This repo also includes some of the fonts needed (everything else is in the noto-fonts package)
 

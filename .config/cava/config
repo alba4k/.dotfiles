@@ -131,12 +131,11 @@ gradient_color_6 = '#E8A2AF'
 gradient_color_7 = '#F2CDCD'
 gradient_color_8 = '#F5E0DC'
 
-
 [smoothing]
 
 # Percentage value for integral smoothing. Takes values from 0 - 100.
 # Higher values means smoother, but less precise. 0 to disable.
-; integral = 77
+; integral = 50
 
 # Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
 ; monstercat = 0
@@ -144,7 +143,7 @@ gradient_color_8 = '#F5E0DC'
 
 # Set gravity percentage for "drop off". Higher values means bars will drop faster.
 # Accepts only non-negative values. 50 means half gravity, 200 means double. Set to 0 to disable "drop off".
-; gravity = 100
+; gravity = 150
 
 
 # In bar height, bars that would have been lower that this will not be drawn.
