@@ -30,7 +30,7 @@ rm ~/.dotfiles/.config/fish/fishd.tmp.*
 cp -r ~/.screenlayout/ ~/.dotfiles/
 
 mkdir -p ~/.dotfiles/wallpapers
-cp -r ~/Immagini/wallpapers ~/.dotfiles//wallpapers
+cp -r ~/Immagini/wallpapers ~/.dotfiles/
 
 # FILES IN /usr (custom scripts)
 mkdir -p ~/.dotfiles/usr/bin

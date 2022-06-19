@@ -86,7 +86,7 @@ element-icon {
 }
 
 element selected {
-    background-color: @bg-col-full;
+    background-color: @bg-col-semi;
     text-color: @primary;
 }
 
@@ -106,4 +106,14 @@ button {
 button selected {
   background-color: @bg-col-full;
   text-color: @primary;
+}
+
+error-message {
+    background-color: @bg-col-semi;
+    text-color: @grey;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @grey;
 }
