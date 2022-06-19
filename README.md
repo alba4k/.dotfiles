@@ -21,8 +21,18 @@
 * polybar
 * rofi
 * sway (wouldn't use those)
-* uptime-record (not really a config, just a backup)
-* albafetch
 
-## This repo also includes some of the fonts needed (everything else is in the noto-fonts package)
+Programs I wrote myself
 
+* [uptime-record](https://github.com/alba4k/uptime-record) (not really a config, just a backup)
+* [albafetch](https://github.com/alba4k/albafetch)
+
+---
+
+## This repo also includes some of the fonts needed (everything else is in the noto-fonts package) and a couple of scripts
+
+---
+
+# I would really like you to **not** just steal my dotflies, take inspiration from them! they're already pretty much just a copy of [those](https://github.com/config/catppuccin)
+
+### alba4k - 2022
