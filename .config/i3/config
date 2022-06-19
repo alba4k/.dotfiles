@@ -301,6 +301,7 @@ bindsym XF86AudioPrev exec --no-startup-id "playerctl previous"
 # Taking screenshots using flameshot
 bindsym Print exec --no-startup-id "flameshot full -c"
 bindsym $mod+Shift+s exec --no-startup-id "flameshot gui"
+bindsym $mod+Print exec --no-startup-id "flameshot launcher"
 
 # Open a terminal
 bindsym $mod+Return exec --no-startup-id "kitty"
