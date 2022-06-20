@@ -3,13 +3,13 @@
 out=$(playerctl status 2> /dev/stdout)
 
 if [ "$out" = "No players found" ]; then
-    echo ""
+    echo "    "
     exit
 elif [ "$out" = "Playing" ]; then
-    echo ""
+    echo "    "
     exit
 elif [ "$out" = "Paused" ] || [ "$out" = "Stopped" ]; then
-    echo ""
+    echo "    "
     exit
 else
     echo "$out"
