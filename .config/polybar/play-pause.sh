@@ -8,7 +8,7 @@ if [ "$out" = "No players found" ]; then
 elif [ "$out" = "Playing" ]; then
     echo ""
     exit
-elif [ "$out" = "Paused" ]; then
+elif [ "$out" = "Paused" ] || [ "$out" = "Stopped" ]; then
     echo ""
     exit
 else
