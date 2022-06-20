@@ -14,6 +14,6 @@ export EDITOR=/usr/bin/nvim
 
 set tide_git_icon 
 
-albafetch -l arch
+albafetch
 #uptime-record -s
 
