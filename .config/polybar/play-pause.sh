@@ -11,5 +11,8 @@ elif [ "$out" = "Playing" ]; then
 elif [ "$out" = "Paused" ]; then
     echo ""
     exit
+else
+    echo "$out"
+    exit
 fi
 
