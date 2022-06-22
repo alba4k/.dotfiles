@@ -82,7 +82,7 @@ exec --no-startup-id "i3-battery-popup -n -D -L 20 -m 'Battery is getting low!' 
 # Setting the correct keyboard layout (swiss german)
 exec_always --no-startup-id "setxkbmap -layout ch,de"
 
-exec --no-startup-id "~/.screenlayout/3MCasa.sh"
+exec --no-startup-id "~/.screenlayout/auto.sh"
 
 ##############################################
 ###                 SETUP                  ###
@@ -200,9 +200,9 @@ bindsym $mod+BackSpace mode $mode_system
 # Custom scripts for changing monitor layout - xrandr
 set $mode_display "Display mode    [0] Laptop Screen    [2] Casa, 2 Monitor    [3] Casa, 3 Monitor"
 mode $mode_display {
-	bindsym 0 exec "~/.screenlayout/Laptop.sh", mode "default"
-	bindsym 2 exec "~/.screenlayout/2MCasa.sh", mode "default"
-	bindsym 3 exec "~/.screenlayout/3MCasa.sh", mode "default"
+	bindsym 0 exec --no-startup-id "~/.screenlayout/Laptop.sh", mode "default"
+	bindsym 2 exec --no-startup-id "~/.screenlayout/2MCasa.sh", mode "default"
+	bindsym 3 exec --no-startup-id "~/.screenlayout/3MCasa.sh", mode "default"
 
 	# back to normal
     bindsym Return mode "default"
@@ -351,5 +351,5 @@ bindsym $mod+Shift+0 move container to workspace number $ws10, workspace number 
 ##############################################
 
 # Starting Polybar (different config, ~/.config/polybar/config)
-exec_always --no-startup-id "~/.config/polybar/launch.sh"
+exec_always --no-startup-id "killall polybar; polybar &"
 

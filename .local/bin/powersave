@@ -1,8 +1,8 @@
 #!/bin/python
 import subprocess
 
-subprocess.run(["sudo", "sudo", "x86_energy_perf_policy", "power"])
-subprocess.run(["sudo", "sudo", "x86_energy_perf_policy", "--turbo-enable", "0"])
+subprocess.run(["sudo", "x86_energy_perf_policy", "power"])
+subprocess.run(["sudo", "x86_energy_perf_policy", "--turbo-enable", "0"])
 
 current = subprocess.run(["light"], stdout=subprocess.PIPE).stdout.decode("utf-8")
 subprocess.run(["light", "-S", str(float(current)*0.75)])
