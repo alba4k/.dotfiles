@@ -8,7 +8,7 @@
 #
 #  System Tray:
 #   - (blueman (bluetooth manager))
-#   - nm applet (network manager)
+#   - network manager applet (network manager)
 #   - clipit (clipboard manager, doesn't work for some reason)
 #   - kdeconnect (phone - computer interface)
 #
@@ -22,6 +22,7 @@
 #   - (feh (background))
 #   - nitrogen (background)
 #   - picom (compositor)
+#   - lxsession (policy kit)
 #
 #  Keybinds:
 #   - pactl (volume control)
@@ -50,6 +51,9 @@ exec --no-startup-id dex --autostart --environment i3
 ##############################################
 ###               AUTOSTART                ###
 ##############################################
+
+# Just in case I might get them to autoconnect
+exec --no-startup-id "~/.local/bin/buds"
 
 # Starting the compositor (different config, ~/.config/picom/picom.conf)
 exec_always --no-startup-id "picom --experimental-backends -bc"
@@ -82,6 +86,7 @@ exec --no-startup-id "i3-battery-popup -n -D -L 20 -m 'Battery is getting low!' 
 # Setting the correct keyboard layout (swiss german)
 exec_always --no-startup-id "setxkbmap -layout ch,de"
 
+# Setting the screen layout
 exec --no-startup-id "~/.screenlayout/auto.sh"
 
 ##############################################
@@ -114,6 +119,8 @@ for_window [class="Nitrogen" instance="nitrogen"] floating enable
 # Tiling by default
 for_window [class="Chromium"] floating disable
 for_window [class="steam_app_1690940" instance="steam_app_1690940"] floating disable
+
+assign [class="Spotify"] → number 5
 
 # Colors
 # <colorclass> <border> <background> <text> <indicator> <child_border>
@@ -353,3 +360,21 @@ bindsym $mod+Shift+0 move container to workspace number $ws10, workspace number 
 # Starting Polybar (different config, ~/.config/polybar/config)
 exec_always --no-startup-id "killall polybar; polybar &"
 
+##############################################
+###                LAYOUTS                 ###
+##############################################
+
+# https://github.com/eliep/i3-layouts
+
+exec_always --no-startup-id "i3-layouts &"
+
+set $i3l autosplit to workspace $ws1
+set $i3l autosplit to workspace $ws2
+set $i3l autosplit to workspace $ws3
+set $i3l autosplit to workspace $ws4
+set $i3l autosplit to workspace $ws5
+set $i3l autosplit to workspace $ws6
+set $i3l autosplit to workspace $ws7
+set $i3l autosplit to workspace $ws8
+set $i3l autosplit to workspace $ws9
+set $i3l autosplit to workspace $ws10
