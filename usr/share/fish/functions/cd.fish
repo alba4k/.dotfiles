@@ -20,11 +20,9 @@ function cd --description "Change directory"
 
     if test "$argv" = -
         if test "$__fish_cd_direction" = next
-            nextd
-            exa -l --group-directories-first
+            nextd && exa -l --group-directories-first
         else
-            prevd
-            exa -l --group-directories-first
+            prevd && exa -l --group-directories-first
         end
         return $status
     end

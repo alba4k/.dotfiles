@@ -53,7 +53,7 @@ exec --no-startup-id dex --autostart --environment i3
 ##############################################
 
 # Just in case I might get them to autoconnect
-exec --no-startup-id "~/.local/bin/buds"
+exec --no-startup-id "~/.local/bin/buds &"
 
 # Starting the compositor (different config, ~/.config/picom/picom.conf)
 exec_always --no-startup-id "picom --experimental-backends -bc"
@@ -189,7 +189,7 @@ bindsym $mod+r mode "Resize"
 
 
 # Logout, Poweroff, ... promt
-set $mode_system "System [L] lock, [E] logout, [S] suspend, [CTRL+R] reboot, [CTRL+S] shutdown"
+set $mode_system "System"
 mode $mode_system {
     bindsym l exec --no-startup-id ~/.config/i3/lock.sh, mode "default"
     bindsym e exit"
@@ -205,7 +205,7 @@ mode $mode_system {
 bindsym $mod+BackSpace mode $mode_system
 
 # Custom scripts for changing monitor layout - xrandr
-set $mode_display "Display mode    [0] Laptop Screen    [2] Casa, 2 Monitor    [3] Casa, 3 Monitor"
+set $mode_display "Display"
 mode $mode_display {
 	bindsym 0 exec --no-startup-id "~/.screenlayout/Laptop.sh", mode "default"
 	bindsym 2 exec --no-startup-id "~/.screenlayout/2MCasa.sh", mode "default"
