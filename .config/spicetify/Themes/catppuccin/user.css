@@ -85,7 +85,7 @@
 }
 
 #spicetify-sticky-list li:hover > div {
-    border-radius: 4px;
+    border-radius: 9px;
 }
 
 /* Scrollbar */

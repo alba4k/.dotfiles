@@ -106,7 +106,7 @@ for_window [class="gnome-calculator" instance="gnome-calculator"] floating enabl
 for_window [class="org.gnome.Weather" instance="org.gnome.Weather"] floating enable
 for_window [class="Onedriver-launcher" instance="onedriver-launcher"] floating enable
 for_window [class="Onedriver" instance="onedriver"] floating enable
-for_window [class="MultiMC" instance="MultiMC"] floating enable
+#for_window [class="MultiMC" instance="MultiMC"] floating enable
 for_window [class="Steam" instance="Steam"] floating enable
 for_window [instance="GalaxyBudsClient"] floating enable
 
@@ -119,8 +119,7 @@ for_window [class="Nitrogen" instance="nitrogen"] floating enable
 # Tiling by default
 for_window [class="Chromium"] floating disable
 for_window [class="steam_app_1690940" instance="steam_app_1690940"] floating disable
-
-assign [class="Spotify"] → number 5
+for_window [class="among us.exe" instance="among us.exe"] floating disable
 
 # Colors
 # <colorclass> <border> <background> <text> <indicator> <child_border>
@@ -189,8 +188,7 @@ bindsym $mod+r mode "Resize"
 
 
 # Logout, Poweroff, ... promt
-set $mode_system "System"
-mode $mode_system {
+mode "System" {
     bindsym l exec --no-startup-id ~/.config/i3/lock.sh, mode "default"
     bindsym e exit"
     bindsym s exec --no-startup-id "systemctl suspend", mode "default"
@@ -202,11 +200,10 @@ mode $mode_system {
     bindsym Escape mode "default"
     bindsym $mod+BackSpace mode "default"
 }
-bindsym $mod+BackSpace mode $mode_system
+bindsym $mod+BackSpace mode "System"
 
 # Custom scripts for changing monitor layout - xrandr
-set $mode_display "Display"
-mode $mode_display {
+mode "Display" {
 	bindsym 0 exec --no-startup-id "~/.screenlayout/Laptop.sh", mode "default"
 	bindsym 2 exec --no-startup-id "~/.screenlayout/2MCasa.sh", mode "default"
 	bindsym 3 exec --no-startup-id "~/.screenlayout/3MCasa.sh", mode "default"
@@ -216,7 +213,8 @@ mode $mode_display {
     bindsym Escape mode "default"
     bindsym $mod+x mode "default"
 }
-bindsym $mod+x mode $mode_display
+bindsym $mod+x mode "Display"
+bindsym $mod+ctrl+x exec --no-startup-id "~/.screenlayout/auto.py"
 
 
 ##############################################
@@ -300,10 +298,10 @@ bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
 
 # Media controls using playerctl
-bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
-bindsym XF86AudioPause exec --no-startup-id "playerctl play-pause"
-bindsym XF86AudioNext exec --no-startup-id "playerctl next"
-bindsym XF86AudioPrev exec --no-startup-id "playerctl previous"
+bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause &"
+bindsym XF86AudioPause exec --no-startup-id "playerctl play-pause &"
+bindsym XF86AudioNext exec --no-startup-id "playerctl next &"
+bindsym XF86AudioPrev exec --no-startup-id "playerctl previous &"
 
 # Taking screenshots using flameshot
 bindsym Print exec --no-startup-id "flameshot full -c"
@@ -319,7 +317,7 @@ bindsym $mod+Shift+d exec --no-startup-id "rofi -show run"
 bindsym $mod+Tab exec --no-startup-id "rofi -show window"
 
 # Open emoji selector
-bindsym $mod+period exec --no-startup-id emote
+bindsym $mod+period exec --no-startup-id "emote"
 
 # Connecting bluetooth earphones (custom script)
 bindsym $mod+b exec --no-startup-id "/usr/bin/buds"

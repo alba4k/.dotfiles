@@ -34,13 +34,11 @@ cp -r ~/Immagini/wallpapers ~/.dotfiles/
 
 # FILES IN /usr (custom scripts)
 mkdir -p ~/.dotfiles/usr/bin
-mkdir -p ~/.dotfiles/usr/share/fish/functions
 cp ~/.local/bin/autostart.sh ~/.dotfiles/.local/bin/autostart.sh
 cp ~/.local/bin/buds ~/.dotfiles/.local/bin/buds
 cp ~/.local/bin/rebuds ~/.dotfiles/.local/bin/rebuds
 cp ~/.local/bin/performance ~/.dotfiles/.local/bin/performance
 cp ~/.local/bin/powersave ~/.dotfiles/.local/bin/powersave
-cp /usr/share/fish/functions/cd.fish ~/.dotfiles/usr/share/fish/functions/
 cp -r ~/.local/share/fonts ~/.dotfiles/.local/share/
 
 git add .
