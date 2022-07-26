@@ -191,9 +191,10 @@ bindsym $mod+r mode "Resize"
 mode "System" {
     bindsym l exec --no-startup-id ~/.config/i3/lock.sh, mode "default"
     bindsym e exit"
-    bindsym s exec --no-startup-id "systemctl suspend", mode "default"
+    bindsym s exec --no-startup-id "systemctl suspend-then-hibernate", mode "default"
     bindsym Ctrl+r exec --no-startup-id "systemctl reboot"
     bindsym Ctrl+s exec --no-startup-id "systemctl poweroff"
+    bindsym Ctrl+h exec --no-startup-id "systemctl hibernate", mode "default"
 
     # Back to normal
     bindsym Return mode "default"

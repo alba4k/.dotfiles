@@ -16,8 +16,9 @@ cp -r ~/.config/cava ~/.dotfiles/.config
 cp -r ~/.config/picom.conf ~/.dotfiles/.config/
 cp -r ~/.config/spicetify ~/.dotfiles/.config/
 cp -r ~/.config/flameshot ~/.dotfiles/.config/
+cp ~/.config/flameshotrc ~/.dotfiles/.config/
 cp ~/.config/dunstrc ~/.dotfiles/.config/
-cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config
+cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config/
 cp ~/.config/albafetch.conf ~/.dotfiles/.config/
 
 cp -r ~/.config/hypr ~/.dotfiles/.config
