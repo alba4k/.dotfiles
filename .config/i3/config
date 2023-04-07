@@ -81,7 +81,7 @@ $exec "lxpolkit"
 #$exec "blueman-applet"
 $exec "nm-applet"
 $exec_always "killall kdeconnect-indicator; sleep 2; kdeconnect-indicator"
-$exec "clipit"
+$exec "clipit &"
 #$exec "greenclip daemon"
 
 # Thunar daemon
@@ -146,6 +146,7 @@ for_window [class="Steam" instance="Steam"] floating enable
 for_window [instance="GalaxyBudsClient"] floating enable
 for_window [instance="smile"] floating enable
 for_window [instance="qalculate-gtk"] floating enable
+for_window [instance="otpclient"] floating enable
 
 for_window [instance="kdeconnectd"] fullscreen disable, floating enable, resize set 1920px 1200px, move position 0px 0px
 
