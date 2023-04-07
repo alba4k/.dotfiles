@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pkexec sh -c "x86_energy_perf_policy balance-performance && x86_energy_perf_policy --turbo-enable 1 && cpupower frequency-set -g powersave -d 400MHz -u 3.4GHz"
+
+echo "You are now in performance mode."

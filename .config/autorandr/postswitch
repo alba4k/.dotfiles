@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DISPLAY=:0 setxkbmap -layout ch,de
+sudo g413-led -a 770000
+DISPLAY=:0 nitrogen --restore
+
+killall polybar && DISPLAY=:0 polybar &
+killall picom && DISPLAY=:0 picom --experimental-backends &
+
+i3-msg restart

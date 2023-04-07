@@ -1,0 +1,22 @@
+alias p=paru
+alias Syu="sudo pacman -Syu"
+
+alias c="clear && fish && exit"
+alias C="reset && fish && exit"
+
+alias ls="exa --group-directories-first --icons"
+alias la="exa -a --group-directories-first --icons"
+alias ll="exa -la --group-directories-first --icons"
+
+alias hibernate="systemctl hibernate"
+[ "$TERM" = "xterm-kitty" ] && alias icat="kitty +kitten icat"
+
+set fish_greeting
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export EDITOR=/usr/bin/nvim
+
+set tide_git_icon 
+
+albafetch
+#uptime-record -s
+

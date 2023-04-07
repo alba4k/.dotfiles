@@ -1,0 +1,60 @@
+#!/bin/bash
+
+#   FILES IN ~/.config
+mkdir -p ~/.dotfiles/.config
+
+cp -r ~/.config/i3/ ~/.dotfiles/.config/
+cp -r ~/.config/nitrogen/ ~/.dotfiles/.config/
+cp -r ~/.config/sway/ ~/.dotfiles/.config/
+cp -r ~/.config/fish/ ~/.dotfiles/.config/
+cp -r ~/.config/kitty/ ~/.dotfiles/.config/
+cp -r ~/.config/neofetch/ ~/.dotfiles/.config/
+cp -r ~/.config/nvim/ ~/.dotfiles/.config/
+cp -r ~/.config/rofi/ ~/.dotfiles/.config/
+cp -r ~/.config/polybar/ ~/.dotfiles/.config/
+cp -r ~/.config/cava ~/.dotfiles/.config
+cp -r ~/.config/picom.conf ~/.dotfiles/.config/
+cp -r ~/.config/spicetify ~/.dotfiles/.config/
+cp -r ~/.config/flameshot ~/.dotfiles/.config/
+cp -r ~/.config/autorandr ~/.dotfiles/.config/
+cp ~/.config/flameshotrc ~/.dotfiles/.config/
+cp ~/.config/dunstrc ~/.dotfiles/.config/
+cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config/
+cp ~/.config/albafetch.conf ~/.dotfiles/.config/
+cp ~/.config/chromium-flags.conf ~/.dotfiles/.config/
+
+cp -r ~/.config/hypr ~/.dotfiles/.config
+
+rm ~/.dotfiles/.config/fish/fishd.tmp.*
+
+#   FILES IN ~
+cp -r ~/.screenlayout/ ~/.dotfiles/
+cp ~/.profile ~/.dotfiles/.profile
+
+mkdir -p ~/.dotfiles/wallpapers
+cp -r ~/Immagini/wallpapers ~/.dotfiles/
+
+# FILES IN .local (custom scripts)
+mkdir -p ~/.dotfiles/usr/bin
+#cp ~/.local/bin/autostart.sh ~/.dotfiles/.local/bin/autostart.sh
+cp ~/.local/bin/buds ~/.dotfiles/.local/bin/buds
+cp ~/.local/bin/rebuds ~/.dotfiles/.local/bin/rebuds
+cp ~/.local/bin/performance ~/.dotfiles/.local/bin/performance
+cp ~/.local/bin/balanced ~/.dotfiles/.local/bin/balanced
+cp ~/.local/bin/powersave ~/.dotfiles/.local/bin/powersave
+cp ~/.local/bin/blackscreen.py ~/.dotfiles/.local/bin/blackscreen.py
+cp ~/.local/bin/g502profile.sh ~/.dotfiles/.local/bin/g502profile.sh
+cp ~/.local/bin/i3-layouts ~/.dotfiles/.local/bin/i3-layouts
+cp ~/.local/bin/i3l ~/.dotfiles/.local/bin/i3l
+cp ~/.local/bin/scrcpy.sh ~/.dotfiles/.local/bin/scrcpy.sh
+cp ~/.local/bin/toggle_scratchpad.sh ~/.dotfiles/.local/bin/toggle_scratchpad.sh
+cp ~/.local/bin/teamviewer_autostart.sh ~/.dotfiles/.local/bin/teamviewer_autostart.sh
+cp -r ~/.local/share/fonts ~/.dotfiles/.local/share/
+
+cp ~/.local/share/uptime-record ~/.dotfiles/.local/share/
+
+git add .
+git commit -m "committed automatically from update.sh" -q
+git push -q
+
+echo "Everything is now up to date! :D"
