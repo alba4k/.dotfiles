@@ -442,7 +442,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10, workspace number 
 ##############################################
 
 # Starting Polybar (different config, ~/.config/polybar/config)
-$exec_always "killall polybar; polybar &"
+$exec_always "killall -9 polybar; polybar"
 
 ##############################################
 ###                LAYOUTS                 ###
