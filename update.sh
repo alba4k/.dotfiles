@@ -47,7 +47,6 @@ cp ~/.local/bin/g502profile.sh ~/.dotfiles/.local/bin/g502profile.sh
 cp ~/.local/bin/i3-layouts ~/.dotfiles/.local/bin/i3-layouts
 cp ~/.local/bin/i3l ~/.dotfiles/.local/bin/i3l
 cp ~/.local/bin/scrcpy.sh ~/.dotfiles/.local/bin/scrcpy.sh
-cp ~/.local/bin/toggle_scratchpad.sh ~/.dotfiles/.local/bin/toggle_scratchpad.sh
 cp ~/.local/bin/teamviewer_autostart.sh ~/.dotfiles/.local/bin/teamviewer_autostart.sh
 cp -r ~/.local/share/fonts ~/.dotfiles/.local/share/
 
