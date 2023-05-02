@@ -72,9 +72,6 @@
     # Set to 0 to disable.
     separator_height = 3
 
-    # Padding between text and separator.
-a   padding = 8
-
     # Horizontal padding.
     horizontal_padding = 8
 
@@ -409,3 +406,4 @@ a   padding = 8
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+

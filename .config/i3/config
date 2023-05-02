@@ -51,6 +51,7 @@ font pango:monospace
 #$exec dex --autostart --environment i3
 
 # I'm now using autorandr
+$exec "autorandr --change"
 #$exec "~/.screenlayout/3MCasa.sh"
 
 ##############################################
@@ -109,6 +110,11 @@ $exec_always "setxkbmap -layout ch,de"
 
 # xdg-desktop-portal breaks stuff (gtk apps won't launch until it starts, hibernation and suspension break, ...)
 #$exec_always "systemctl --user stop xdg-desktop-portal"
+
+# https://github.com/REALERvolker1/volbright
+$exec "~/.config/i3/volbright.sh --brightness --keyboard --volume"
+# https://github.com/REALERvolker1/pmgmt-sh
+$exec "~/.config/i3/ac_detect.sh"
 
 ##############################################
 ###                 SETUP                  ###
@@ -172,7 +178,10 @@ client.focused_inactive #555555cc #555555cc #555555cc #555555cc
 client.unfocused #555555cc #555555cc #555555cc #555555cc
 client.urgent #dc322fcc #dc322fcc #dc322fcc #dc322fcc
 
-# better rounded borders ()
+# rounded corners
+border_radius 12
+
+# better rounded borders
 #$exec_always "killall xborders; ~/.config/i3/xborder/xborders -c ~/.config/i3/xborder/config.json"
 
 # Window decorations (i3-gaps or i3wm >=4.22)
