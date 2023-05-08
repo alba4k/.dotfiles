@@ -148,7 +148,7 @@ for_window [class="Onedriver" instance="onedriver"] floating enable
 for_window [class="PolyMC" instance="polymc"] floating enable
 for_window [class="PrismLauncher" instance="prismlauncher"] floating enable
 for_window [class="MultiMC" instance="MultiMC"] floating enable
-for_window [class="Steam" instance="Steam"] floating enable
+for_window [class="steam" instance="steam"] floating enable
 for_window [instance="GalaxyBudsClient"] floating enable
 for_window [instance="smile"] floating enable
 for_window [instance="qalculate-gtk"] floating enable
