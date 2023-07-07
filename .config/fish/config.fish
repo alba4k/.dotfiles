@@ -23,6 +23,8 @@ alias reboot="systemctl reboot" # so I can uise --firmware-setup
 alias hibernate="systemctl hibernate"
 [ "$TERM" = "xterm-kitty" ] && alias icat="kitten icat"
 
+alias smallfetch="albafetch --config /home/alba4k/.config/albafetch/albafetch_small.conf"
+
 set fish_greeting
 
 set tide_git_icon 
@@ -40,6 +42,6 @@ alias 8="math 8"
 alias 9="math 9"
 alias 0="math 0"
 
-albafetch
-#uptime-record -s
+uptime-record -s &
+albafetch 
 

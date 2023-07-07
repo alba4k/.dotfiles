@@ -1,4 +1,4 @@
-# alba4k's i3 config file
+
 
 # i3 config file (v4)
 
@@ -72,7 +72,7 @@ $exec_always "picom --experimental-backends -bc"
 $exec_always "nitrogen --restore"
 
 # Starting dunst (different config, ~/.config/dunstrc)
-$exec "dunst -conf '~/.config/dunstrc'"
+$exec_always "killall -9 dunst && dunst -conf '~/.config/dunstrc'"
 
 # Policy Kit Agent
 $exec "lxpolkit"
@@ -107,9 +107,6 @@ $exec_always "killall i3-battery-popup; i3-battery-popup -n -D -L 20 -m 'Battery
 
 # Setting the correct keyboard layout (swiss german)
 $exec_always "setxkbmap -layout ch,de"
-
-# xdg-desktop-portal breaks stuff (gtk apps won't launch until it starts, hibernation and suspension break, ...)
-#$exec_always "systemctl --user stop xdg-desktop-portal"
 
 # https://github.com/REALERvolker1/volbright
 $exec "~/.config/i3/volbright.sh --brightness --keyboard --volume"
@@ -149,7 +146,7 @@ for_window [class="PolyMC" instance="polymc"] floating enable
 for_window [class="PrismLauncher" instance="prismlauncher"] floating enable
 for_window [class="MultiMC" instance="MultiMC"] floating enable
 for_window [class="steam" instance="steam"] floating enable
-for_window [instance="GalaxyBudsClient"] floating enable
+for_window [instance="galaxybudsclient"] floating enable
 for_window [instance="smile"] floating enable
 for_window [instance="qalculate-gtk"] floating enable
 for_window [instance="otpclient"] floating enable
@@ -170,6 +167,9 @@ for_window [class="Chromium"] floating disable
 for_window [class="steam_app_1690940" instance="steam_app_1690940"] floating disable
 for_window [class="among us.exe" instance="among us.exe"] floating disable
 for_window [class="csgo_linux64" instance="csgo_linux64"] floating disable
+
+# Fullscreen by default
+for_window [class="TelegramDesktop" title="Visualizzatore multimediale"] fullscreen enable
 
 # Colors
 # <colorclass> <border> <background> <text> <indicator> <child_border>

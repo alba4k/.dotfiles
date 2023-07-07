@@ -233,7 +233,7 @@
     # layer = top
 
     # Set this to true to use X11 output on Wayland.
-    force_xwayland = true
+    force_xwayland = false
 
     ### mouse
 
