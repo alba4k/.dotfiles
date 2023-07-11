@@ -21,6 +21,7 @@ cp -r ~/.config/albafetch ~/.dotfiles/.config/
 cp ~/.config/flameshotrc ~/.dotfiles/.config/
 cp ~/.config/dunstrc ~/.dotfiles/.config/
 cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config/
+cp ~/.config/libinput-gestures-wayland.conf ~/.dotfiles/.config/
 cp ~/.config/chromium-flags.conf ~/.dotfiles/.config/
 
 cp -r ~/.config/hypr ~/.dotfiles/.config
@@ -48,6 +49,7 @@ cp ~/.local/bin/i3-layouts ~/.dotfiles/.local/bin/i3-layouts
 cp ~/.local/bin/i3l ~/.dotfiles/.local/bin/i3l
 cp ~/.local/bin/scrcpy.sh ~/.dotfiles/.local/bin/scrcpy.sh
 cp ~/.local/bin/teamviewer_autostart.sh ~/.dotfiles/.local/bin/teamviewer_autostart.sh
+cp ~/.local/bin/toggle_bluetooth.sh ~/.dotfiles/.local/bin/toggle_bluetooth.sh
 cp -r ~/.local/share/fonts ~/.dotfiles/.local/share/
 
 cp ~/.local/share/uptime-record ~/.dotfiles/.local/share/

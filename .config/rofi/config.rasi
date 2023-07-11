@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,drun,window";
+    modi: "run,drun,calc";
 
     fixed-num-lines: false;
 

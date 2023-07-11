@@ -1,8 +1,8 @@
 
 * {
-bg: #1E222A;
-bgAlt: #252931;
-fg: #61AFEF;
+bg: #1E1D2F60;
+bgAlt: #1E1D2F;
+fg: #8957b0;
 button: #252931;
 background-color: @bg;
 text-color: @fg;

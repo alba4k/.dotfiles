@@ -54,11 +54,11 @@ element-text {
   margin:		5px 18px 5px 18px;
   padding:		0px 0px 0px 0px;
   font:			"FiraCode Nerd Font 40";
-  background-color:	inherit;
+  background-color:	transparent;
   text-color:		inherit; 
 }
 element selected {
   background-color:	@fg;
-  text-color:		@bg;
+  text-color:		@bgAlt;
 }
 
