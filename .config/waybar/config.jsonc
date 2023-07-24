@@ -1,0 +1,236 @@
+/* WAYBAR - alba4k
+ *
+ * https://github.com/Alexays/Waybar/wiki
+ */
+
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "height": 33,
+    "exclusive": true,
+    "passthrough": false,
+
+    "modules-left": ["custom/launcher", "cpu", "custom/greentored", "temperature", "custom/redtoyellow", "memory", "network", "custom/greentoblue", "bluetooth"],
+    "modules-center": ["wlr/workspaces", "hyprland/window"],
+    "modules-right": ["battery", "custom/media-bw", "custom/media-pp", "custom/media-fw", "custom/bluetogreen", "pulseaudio", "custom/greentoyellow", "backlight", "clock", "tray"],
+
+    "custom/launcher": {
+        "format": " ",
+
+        "on-click": "rofi -show drun",
+        "on-click-right": "rofi -show run",
+        "on-click-middle": "rofi -show calc",
+
+        "tooltip": false
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": "󰍛 {usage}%",
+        "format-alt": "{min_frequency} GHz - {max_frequency} GHz"
+    },
+
+    "temperature": {
+        "thermal-zone": 6,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": " {percentage}%",
+        "format-alt": " {used}GB",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
+    },
+    
+    "network": {
+        "interval": 5,
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󱘖 Wired",
+        "tooltip-format": "󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-linked": "󱘖 {ifname} (No IP)",
+        "format-disconnected": "睊 Offline",
+        "format-alt": "  {signalStrength}%",
+
+        "on-click": "nm-connection-editor"
+    },
+
+    "bluetooth": {
+	    "format": "",
+        "interval": "2",
+	    "format-disabled": "",
+	    "format-connected": " {num_connections}",
+	    "tooltip-format-connected": "{device_enumerate}",
+	    "tooltip-format-enumerate-connected": " {device_alias}",
+	    "tooltip-format-enumerate-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+
+        "on-click": "blueman-manager",
+        "on-click-right": "~/.local/bin/buds"
+        // "on-click-right": "bluetoothctl show | grep 'Powered: yes' && bluetoothctl power off || bluetoothctl power on"
+    },
+
+    "wlr/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": " ",
+            "2": " ",
+            "3": " ",
+            "4": " ",
+            "5": " ",
+            "6": " ",
+            "7": " ",
+            "default": " "
+        },
+
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": false,
+        "rewrite": {
+            "(.*)Mozilla Firefox": "FireFox",
+            "(.*)Code - OSS": "Visual Studio Code",
+            "(.*)Spotify": "Spotify",
+            "(.*)Steam": "Steam",
+            "": "Desktop"
+        },
+
+        "on-click-right": "hyprctl dispatch fullscreen",
+        "on-click-middle": "hyprctl dispatch killactive"
+    },
+
+    "battery": {
+        "interval": 1,
+
+        "format": "{icon} {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "format-charging": "{icon} {capacity}% ",
+        "format-plugged": "{icon} {capacity}% ",
+        "tooltip-format": "{power}W - {timeTo}",
+
+        "states": {
+            "full": 100,
+            "great": 97,
+            "good": 85,
+            "ok": 50,
+            "warning": 30,
+            "low": 20,
+            "critical": 10
+        },
+
+        "on-click": "~/.local/bin/powersave",
+        "on-click-right": "~/.local/bin/balanced",
+        "on-click-middle": "~/.local/bin/performance"
+    },
+
+    "custom/media-bw": {
+        "interval": 1,
+        "format": "",
+        "exec": "~/.config/waybar/play-pause.sh 2>/dev/null",
+
+        "on-click": "playerctl previous",
+        "on-click-right": "~/.config/rofi/music/music",
+        "on-click-middle": "~/.config/rofi/music/music",
+
+        "return-type": "json"
+    },
+    "custom/media-pp": {
+        "interval": 1,
+        "format": "{}",
+        "exec": "~/.config/waybar/play-pause.sh 2>/dev/null",
+
+        "on-click": "playerctl play-pause",
+        "on-click-right": "~/.config/rofi/music/music",
+        "on-click-middle": "~/.config/rofi/music/music",
+
+    
+        "return-type": "json"
+    },
+    "custom/media-fw": {
+        "interval": 1,
+        "format": "",
+        "exec": "~/.config/waybar/play-pause.sh 2>/dev/null",
+
+        "on-click": "playerctl next",
+        "on-click-right": "~/.config/rofi/music/music",
+        "on-click-middle": "~/.config/rofi/music/music",
+
+        "return-type": "json"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "婢 ({volume}%)",
+        "on-click": "pavucontrol -t 3",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+        "tooltip-format": "{desc}",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "scroll-step": -1,
+        "format-icons": ["", "", "", ""],
+
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{: %H:%M}",
+        "format-alt": "{: %a %d %b}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>"
+    },
+
+    "tray": {
+        "icon-size": 15,
+        "spacing": 5
+    },
+
+    // decoration //
+
+    "custom/greentored": {
+        "format": ""
+    },
+
+    "custom/redtoyellow": {
+        "format": ""
+    },
+
+    "custom/greentoblue": {
+        "format": ""
+    },
+
+    "custom/bluetogreen": {
+        "format": ""
+    },
+
+    // backlight disappears when only using an external monitor
+    "custom/greentoyellow": {
+        "interval": "once",
+        "return-type": "json",
+        
+        "exec": "~/.config/waybar/greentoyellow.sh",
+
+        "format": "{}"
+    }
+}
