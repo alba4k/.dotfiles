@@ -21,5 +21,5 @@ export LIBVA_DRIVER_NAME="iHD"
 
 export MAKEFLAGS="-j14 -s"
 
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="bat -pl man"
 

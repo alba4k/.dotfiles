@@ -1,0 +1,3 @@
+lock "/home/alba4k/.config/hypr/lock.sh"
+timeout 300 "grim -c /tmp/swaylock-idle.png && hyprctl dispatch dpms off"
+timeout 600 "/home/alba4k/.config/hypr/lock.sh from-idle"

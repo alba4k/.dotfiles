@@ -16,8 +16,8 @@ alias rm="rmtrash"
 alias rmf="/usr/bin/rm"
 alias discord="discord --no-sandbox"
 
-alias white="python -c \"import tkinter as tk; tk.Tk().config(bg='#FFFFFF');tk.mainloop()\" & sleep 0.1 && i3-msg fullscreen"
-alias black="python -c \"import tkinter as tk; tk.Tk().config(bg='#000000');tk.mainloop()\" & sleep 0.1 && i3-msg fullscreen"
+alias white="python -c \"import tkinter as tk; tk.Tk().config(bg='#FFFFFF');tk.mainloop()\""
+alias black="python -c \"import tkinter as tk; tk.Tk().config(bg='#000000');tk.mainloop()\""
 
 alias reboot="systemctl reboot" # so I can uise --firmware-setup
 alias hibernate="systemctl hibernate"
