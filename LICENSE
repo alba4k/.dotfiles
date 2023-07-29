@@ -1,0 +1,13 @@
+This is just explaining what you can and can't do with my dotfiles.
+
+You can use them on your setup(s) however you prefer, configure them how you like and whatever, I just think it's fair to expect to get some credit for my work if you share it (unless you made some huuuge changes which basically transformed the whole thing both functionally and aestetically. Use common sense to determine whether you consider your changes "drastic" or not).
+
+Don't claim you made everything by yourself (even my setup was made using some snippets from other ones, but you can usually find links to the original creator). 
+
+Also, I am not offering any kind of warranty that this will work for you. If you want to use some software (e.g. Polybar) I am expecting you to know how to fix some config issues that you might have (e.g. CPU temperature or backlight not showing up)!
+What applies here is just "it works on my machine..".
+Don't DM me or open issues if something isn't working in your specific setup (feel free to do so if you think the issue is just a general one related to something I might have overlooked).
+
+Come on, this is all just, again, common sense...
+
+I am sharing my dotfiles so that anybody who likes something I have can use it or take a look at how it was done.

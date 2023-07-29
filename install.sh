@@ -17,6 +17,7 @@ makepkg -si
 cd ..
 rm -rf paru-bin
 
+# Not even close to being complete, but still better than nothing
 paru -Syu --noconfirm --needed i3wm polybar i3lock telegram-desktop discord \
                                code neovim vim-plug firefox pavucontrol chromium \
                                blueman bluez bluez-utils clipit kdeconnect dunst \
@@ -24,5 +25,6 @@ paru -Syu --noconfirm --needed i3wm polybar i3lock telegram-desktop discord \
                                flameshot emote neofetch albafetch-git \
                                i3-battery-popup firefox qt5ct lxappearance \
                                network-manager-applet galaxybudsclient-bin \
-                               polymc-qt5-bin github-cli
+                               polymc-qt5-bin github-cli hyprland waybar \
+                               swaylock-effects swayidle wl-clip-persist
                       

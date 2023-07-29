@@ -1,6 +1,8 @@
 /* WAYBAR - alba4k
  *
- * https://github.com/Alexays/Waybar/wiki
+ * Documentation: https://github.com/Alexays/Waybar/wiki
+ *
+ * This config is just a clone of my original Polybar configuration, which is itself based on https://github.com/axyl-os/axyl-i3wm/tree/master/etc/skel/.config/i3/polybar
  */
 
 {
