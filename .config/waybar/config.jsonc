@@ -11,9 +11,32 @@
     "exclusive": true,
     "passthrough": false,
 
-    "modules-left": ["custom/launcher", "cpu", "custom/greentored", "temperature", "custom/redtoyellow", "memory", "network", "custom/greentoblue", "bluetooth"],
-    "modules-center": ["wlr/workspaces", "hyprland/window"],
-    "modules-right": ["battery", "custom/media-bw", "custom/media-pp", "custom/media-fw", "custom/bluetogreen", "pulseaudio", "custom/greentoyellow", "backlight", "clock", "tray"],
+    "modules-left": [
+        "custom/launcher",
+        "cpu",
+        "custom/greentored",
+        "temperature",
+        "custom/redtoyellow",
+        "memory",
+        "network",
+        "custom/greentoblue",
+        "bluetooth"
+    ],
+    "modules-center": [
+        "wlr/workspaces",
+        "hyprland/window"
+    ],
+    "modules-right": ["battery",
+        "custom/media-bw",
+        "custom/media-pp",
+        "custom/media-fw",
+        "custom/bluetogreen",
+        "pulseaudio",
+        "custom/greentoyellow",
+        "backlight",
+        "clock",
+        "tray"
+    ],
 
     "custom/launcher": {
         "format": " ",
@@ -96,11 +119,12 @@
     "hyprland/window": {
         "format": "{}",
         "separate-outputs": false,
+        // I now consider myself to be a regex god
         "rewrite": {
-            "(.*)Mozilla Firefox": "FireFox",
-            "(.*)Code - OSS": "Visual Studio Code",
-            "(.*)Spotify": "Spotify",
-            "(.*)Steam": "Steam",
+            "(\\([0-9]*\\) )?(.*) @ .*( \\([0-9]*\\))?": "Telegram Desktop ($2)",
+            ".*Mozilla Firefox": "Firefox",
+            "rofi.*": "Rofi",
+            "Cemu.*FPS: ([0-9]+\\.[0-9]+).*TitleId.*\\] (.*) \\[.*": "Cemu - $2 ($1 FPS)",
             "": "Desktop"
         },
 
@@ -226,7 +250,7 @@
 
     // backlight disappears when only using an external monitor
     "custom/greentoyellow": {
-        "interval": "once",
+        "interval": 2,
         "return-type": "json",
         
         "exec": "~/.config/waybar/greentoyellow.sh",

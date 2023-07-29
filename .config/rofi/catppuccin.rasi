@@ -17,8 +17,8 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    //y-offset: -180px;
-    //height: 360px;
+    // y-offset: -180px;
+    // height: 360px;
     border: 5;
     border-radius: 12;
     border-color: @primary;
