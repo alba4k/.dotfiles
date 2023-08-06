@@ -1,18 +1,18 @@
 // Color map
 let colorPalette = {
-  rosewater: "#f5e0dc",
-  flamingo: "#f2cdcd",
-  pink: "#f5c2e7",
-  maroon: "#eba0ac",
-  red: "#f38ba8",
-  peach: "#fab387",
-  yellow: "#f9e2af",
-  green: "#a6e3a1",
-  teal: "#94e2d5",
-  blue: "#89b4fa",
-  sky: "#89dceb",
-  mauve: "#cba6f7",
-  lavender: "#b4befe",
+  rosewater: "#f4dbd6",
+  flamingo: "#f0c6c6",
+  pink: "#f5bde6",
+  maroon: "#ee99a0",
+  red: "#ed8796",
+  peach: "#f5a97f",
+  yellow: "#eed49f",
+  green: "#a6da95",
+  teal: "#8bd5ca",
+  blue: "#8aadf4",
+  sky: "#91d7e3",
+  mauve: "#c6a0f6",
+  lavender: "#b7bdf8",
   white: "#d9e0ee"
 }
 
