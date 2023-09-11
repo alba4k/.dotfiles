@@ -25,7 +25,7 @@
         "bluetooth"
     ],
     "modules-center": [
-        "wlr/workspaces",
+        "hyprland/workspaces",
         "hyprland/window"
     ],
     "modules-right": ["battery",
@@ -98,7 +98,7 @@
         // "on-click-right": "bluetoothctl show | grep 'Powered: yes' && bluetoothctl power off || bluetoothctl power on"
     },
 
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": false,
         "all-outputs": true,
         "format": "{icon}",

@@ -20,6 +20,7 @@ cp -r ~/.config/autorandr ~/.dotfiles/.config/
 cp -r ~/.config/albafetch ~/.dotfiles/.config/
 cp -r ~/.config/swayidle ~/.dotfiles/.config/
 cp -r ~/.config/waybar ~/.dotfiles/.config/
+cp -r ~/.config/wlogout ~/.dotfiles/.config/
 cp ~/.config/flameshotrc ~/.dotfiles/.config/
 cp ~/.config/dunstrc ~/.dotfiles/.config/
 cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config/

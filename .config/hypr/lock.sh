@@ -24,6 +24,4 @@ swaylock --image $img\
     --indicator\
     --show-failed-attempts\
     --daemonize\
-    --screenshots
-    # --ignore-empty-password\ # not using this because of fprintd
 

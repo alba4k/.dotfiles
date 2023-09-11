@@ -8,9 +8,9 @@ alias :q="exit"
 alias :wq="exit"
 alias :Wq="exit" # 'cause I like misstyping
 
-alias ls="exa --group-directories-first --icons --color=always"
-alias la="exa -a --group-directories-first --icons --color=always"
-alias ll="exa -la --group-directories-first --icons --git --color=always"
+alias ls="eza --group-directories-first --icons --color=always"
+alias la="eza -a --group-directories-first --icons --color=always"
+alias ll="eza -la --group-directories-first --icons --git --color=always"
 
 alias rm="rmtrash"
 alias rmf="/usr/bin/rm"
