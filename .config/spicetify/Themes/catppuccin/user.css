@@ -1,259 +1,246 @@
-/* Color Pallette */
-/* Note: These variables should be used ONLY when needed across ALL of the color palettes. */
-:root {
-  /* Morning */
-  --flamingo: #F2CDCD;
-  --mauve: #DDB6F2;
-  --pink: #F5C2E7;
-  --maroon: #E8A2AF;
-  --red: #F28FAD;
-  --peach: #F8BD96;
-  --yellow: #FAE3B0;
-  --green: #ABE9B3;
-  --teal: #B5E8E0;
-  --blue: #96CDFB;
-  --sky: #89DCEB;
-  /* Night */
-  --black-0: #161320;
-  --black-1: #1A1826;
-  --black-2: #1E1E2E;
-  --black-3: #302D41;
-  --black-4: #575268;
-  --gray-0: #6E6C7E;
-  --gray-1: #988BA2;
-  --gray-2: #C3BAC6;
-  --white: #D9E0EE;
-  --lavender: #C9CBFF;
-  --rosewater: #F5E0DC;
+@charset "UTF-8";
+:root .Root__main-view .main-home-homeHeader {
+  display: none;
+}
+:root .Root__main-view .main-gridContainer-gridContainer > div,
+:root .Root__main-view .main-gridContainer-gridContainer > div > div > div {
+  border-radius: 6px;
+}
+:root .Root__main-view .main-entityHeader-backgroundColor,
+:root .Root__main-view .main-actionBarBackground-background,
+:root .Root__main-view .main-view-container main[aria-label="Spotify – Web Player"] > div:first-child {
+  display: none;
+}
+:root .Root__main-view .main-card-card {
+  border-radius: 6px;
+}
+:root .Root__main-view .main-card-imageContainer {
+  margin: -16px -16px 16px -16px;
+}
+:root .Root__main-view .main-cardImage-imageWrapper,
+:root .Root__main-view .main-cardImage-image {
+  border-radius: 6px 6px 0 0;
+}
+:root .Root__main-view .UyzJidwrGk3awngSGIwv {
+  color: var(--spice-subtext);
+}
+:root .Root__main-view .main-home-content > section:first-child > .main-gridContainer-gridContainer > div span[aria-label],
+:root .Root__main-view span[aria-label="New episode"],
+:root .Root__main-view span[aria-label="New Podcast Episode"] {
+  background: var(--spice-text);
+}
+:root .Root__main-view .Button-sm-buttonSecondary-useBrowserDefaultFocusStyle {
+  background-color: var(--spice-base);
+  color: var(--spice-text);
+  border: 1px solid var(--spice-overlay1);
+}
+:root .Root__main-view .Button-sm-buttonSecondary-useBrowserDefaultFocusStyle:hover {
+  border-color: var(--essential-base, #000000);
 }
 
-/* Buttons */
-.main-playButton-PlayButton.main-playButton-primary {
-    color: var(--spice-player);
+:root .Root__nav-bar .main-rootlist-wrapper div:nth-child(2) > li {
+  border-radius: 6px !important;
+}
+:root .Root__nav-bar .main-rootlist-wrapper div:nth-child(2) > li > div:active::after {
+  background-color: var(--background-tinted-base, rgba(0, 0, 0, 0.08));
+}
+:root .Root__nav-bar .main-rootlist-wrapper div:nth-child(2) > li > div .x-entityImage-imageContainer {
+  box-shadow: none !important;
+}
+:root .Root__nav-bar .main-rootlist-wrapper div:nth-child(2) > li > div p {
+  color: var(--spice-subtext) !important;
+}
+:root .Root__nav-bar .main-rootlist-wrapper div:nth-child(2) > li > div p.TypeElement-ballad-textBrightAccent-type {
+  color: var(--spice-text) !important;
+}
+:root .Root__nav-bar .main-navBar-navBar li:hover > div,
+:root .Root__nav-bar .main-navBar-navBar li:hover > a:not(.main-navBar-navBarLinkActive),
+:root .Root__nav-bar .spicetify-playlist-list li:hover {
+  background-color: var(--spice-main);
+}
+:root .Root__nav-bar #spicetify-sticky-list li:hover > div {
+  border-radius: 4px;
+}
+:root .Root__nav-bar .main-navBar-navBarLink {
+  color: var(--spice-text);
+}
+:root .Root__nav-bar .Svg-img-24-icon.collection-icon {
+  color: var(--spice-text);
+}
+:root .Root__nav-bar .main-createPlaylistButton-button {
+  color: var(--spice-text);
+}
+:root .Root__nav-bar .main-navBar-navBarLinkActive {
+  background-color: var(--spice-tab-active);
+}
+:root .Root__nav-bar .main-rootlist-rootlistItemLink:link,
+:root .Root__nav-bar .main-rootlist-rootlistItemLink:visited {
+  z-index: 1;
 }
 
-.main-button-primary {
-    background-color: var(--spice-main);
+:root .Root__now-playing-bar .main-shuffleButton-button:focus:not(:focus-visible, :hover) {
+  color: var(--spice-spice-surface1);
 }
-.main-button-primary:active,
-.main-button-primary:focus,
-.main-button-primary:hover {
-    background-color: var(--spice-sidebar);
+:root .Root__now-playing-bar .main-shuffleButton-button:hover {
+  color: var(--spice-text);
 }
-
-.main-view-container button:hover > div[class^='ButtonInner-sc-'] {
-    background-color: var(--spice-button);
+:root .Root__now-playing-bar .main-shuffleButton-button.main-shuffleButton-active {
+  color: var(--spice-text);
 }
-
-.control-button-heart[aria-checked="true"],
-.main-addButton-active,
-.main-addButton-active:focus,
-.main-addButton-active:hover {
-    color: var(--red);
+:root .Root__now-playing-bar .main-playButton-PlayButton.main-playButton-primary {
+  color: var(--spice-player);
 }
-
-.main-addButton-active:hover {
-    -webkit-transform: scale(1.06);
-    transform: scale(1.06);
+:root .Root__now-playing-bar .main-button-primary {
+  background-color: var(--spice-main);
 }
-
-/* Progress bar */
-.x-progressBar-progressBarBg > div > div {
-    background-color: var(--spice-text);
+:root .Root__now-playing-bar .main-button-primary:active,
+:root .Root__now-playing-bar .main-button-primary:focus,
+:root .Root__now-playing-bar .main-button-primary:hover {
+  background-color: var(--spice-sidebar);
 }
-
-/* Top bars */
-.main-entityHeader-backgroundColor,
-.main-actionBarBackground-background,
-.main-view-container main[aria-label="Spotify – Web Player"] > div:first-child {
-    display: none;
+:root .Root__now-playing-bar .Button-sm-16-buttonTertiary-iconOnly-isUsingKeyboard-useBrowserDefaultFocusStyle,
+:root .Root__now-playing-bar .control-button,
+:root .Root__now-playing-bar .main-view-container button:hover > div[class^=ButtonInner-sc-],
+:root .Root__now-playing-bar .main-skipForwardButton-button,
+:root .Root__now-playing-bar .main-skipBackButton-button {
+  color: var(--spice-subtext) !important;
 }
-
-.main-topBar-background {
-    background-color: var(--spice-main) !important;
+:root .Root__now-playing-bar .Button-sm-16-buttonTertiary-iconOnly-isUsingKeyboard-useBrowserDefaultFocusStyle:hover,
+:root .Root__now-playing-bar .control-button:hover,
+:root .Root__now-playing-bar .main-view-container button:hover > div[class^=ButtonInner-sc-]:hover,
+:root .Root__now-playing-bar .main-skipForwardButton-button:hover,
+:root .Root__now-playing-bar .main-skipBackButton-button:hover {
+  color: var(--spice-text) !important;
 }
-
-.main-entityHeader-withBackgroundImage {
-    background-color: rgba(var(--spice-rgb-player), 0.2);
+:root .Root__now-playing-bar .control-button-heart[aria-checked=true],
+:root .Root__now-playing-bar .main-addButton-active,
+:root .Root__now-playing-bar .main-addButton-active:focus,
+:root .Root__now-playing-bar .main-addButton-active:hover {
+  color: var(--spice-red);
 }
-
-/* Sidebar */
-.main-navBar-navBar li:hover > div,
-.main-navBar-navBar li:hover > a:not(.main-navBar-navBarLinkActive),
-.spicetify-playlist-list li:hover {
-    background-color: var(--spice-main);
+:root .Root__now-playing-bar .main-addButton-active:hover {
+  -webkit-transform: scale(1.06);
+  transform: scale(1.06);
+}
+:root .Root__now-playing-bar .x-progressBar-progressBarBg > div > div {
+  background-color: var(--spice-text);
 }
 
-#spicetify-sticky-list li:hover > div {
-    border-radius: 9px;
+:root .Root__right-sidebar .Button-textSubdued-sm-16-buttonTertiary-condensed-useBrowserDefaultFocusStyle {
+  color: var(--spice-text) !important;
+}
+:root .Root__right-sidebar .artist-artistOnTour-timeAndVenue.artist-artistOnTour-condensed {
+  color: var(--spice-text);
+}
+:root .Root__right-sidebar .Button-textSubdued-sm-16-buttonTertiary-condensed-isUsingKeyboard-useBrowserDefaultFocusStyle {
+  color: var(--spice-text);
+}
+:root .Root__right-sidebar .main-buddyFeed-activityMetadata .main-buddyFeed-username a,
+:root .Root__right-sidebar .main-buddyFeed-activityMetadata .main-buddyFeed-usernameAndTimestamp {
+  color: rgba(var(--text), 0.2);
+}
+:root .Root__right-sidebar .main-buddyFeed-activityMetadata .main-buddyFeed-artistAndTrackName a,
+:root .Root__right-sidebar .main-buddyFeed-activityMetadata .main-buddyFeed-playbackContextLink,
+:root .Root__right-sidebar .main-buddyFeed-activityMetadata .main-buddyFeed-timestamp {
+  color: rgba(var(--spice-rgb-sidebar-text), 0.8);
 }
 
-/* Scrollbar */
-.os-theme-spotify > .os-scrollbar-horizontal,
-.os-theme-spotify > .os-scrollbar-vertical {
-    padding: 4px;
+:root .Root__top-bar header button:not(.x-searchInput-searchInputClearButton),
+:root .Root__top-bar header .main-topBar-button {
+  color: var(--spice-subtext) !important;
+  background-color: var(--spice-main-elevated) !important;
+}
+:root .Root__top-bar header button:not(.x-searchInput-searchInputClearButton):hover,
+:root .Root__top-bar header .main-topBar-button:hover {
+  color: var(--spice-text) !important;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+:root .Root__top-bar header .main-topBar-background {
+  background-color: var(--spice-mantle) !important;
+}
+:root .Root__top-bar header .Svg-img-24-icon.home-active-icon {
+  color: var(--spice-player);
+}
+:root .Root__top-bar header .x-searchInput-searchInputInput {
+  background-color: var(--spice-overlay0);
+  color: var(--spice-subtext) !important;
+}
+:root .Root__top-bar header .x-searchInput-searchInputInput::placeholder {
+  color: rgba(var(--spice-rgb-subtext), 0.3);
+}
+:root .Root__top-bar header .main-topBar-background {
+  background-color: var(--spice-main) !important;
+}
+:root .Root__top-bar header .main-entityHeader-withBackgroundImage {
+  background-color: rgba(var(--spice-rgb-player), 0.2);
 }
 
-.os-theme-spotify.os-host-transition
-    > .os-scrollbar-horizontal
-    > .os-scrollbar-track
-    > .os-scrollbar-handle,
-.os-theme-spotify.os-host-transition
-    > .os-scrollbar-vertical
-    > .os-scrollbar-track
-    > .os-scrollbar-handle {
-    background-color: var(--decorative-base);
-    border-radius: 6px;
+:root .encore-dark-theme .encore-inverted-light-set {
+  --background-highlight: var(--spice-overlay2) !important;
+  --background-press: var(--spice-subtext) !important;
 }
-
-::-webkit-scrollbar {
-    width: 0.5em;
+:root .x-filterBox-searchIcon {
+  color: var(--spice-subtext);
 }
-::-webkit-scrollbar-thumb {
-    background-color: #575268;
-    border-radius: 4px;
+:root .x-filterBox-filterInput {
+  background-color: var(--spice-surface0);
+  color: var(--spice-subtext);
 }
-
-/* Home */
-.main-home-homeHeader {
-    display: none;
+:root .main-dropDown-dropDown {
+  color: var(--spice-text);
+  background-color: var(--spice-surface0);
 }
-
-.main-home-content
-    > section:first-child
-    > .main-gridContainer-gridContainer
-    > div {
-    background-color: var(--spice-card);
+:root .main-dropDown-dropDown:disabled {
+  color: var(--spice-button-disabled);
 }
-.main-home-content
-    > section:first-child
-    > .main-gridContainer-gridContainer
-    > div:hover {
-    background-color: var(--spice-misc);
+:root .x-toggle-indicatorWrapper {
+  background-color: var(--spice-surface0);
 }
-
-.main-gridContainer-gridContainer > div,
-.main-gridContainer-gridContainer > div > div > div {
-    border-radius: 6px;
+:root .x-toggle-indicatorWrapper .x-toggle-indicator {
+  background-color: var(--spice-text);
 }
-
-/* Cards */
-.main-card-card {
-    border-radius: 6px;
+:root input:checked ~ .x-toggle-indicatorWrapper,
+:root input:hover:not([disabled], :active) ~ .x-toggle-indicatorWrapper {
+  background-color: var(--spice-surface1);
 }
-
-.main-card-imageContainer {
-    margin: -16px -16px 16px -16px;
+:root input:checked:hover:not([disabled], :active) ~ .x-toggle-indicatorWrapper {
+  background-color: var(--spice-overlay0);
 }
-
-.main-cardImage-imageWrapper,
-.main-cardImage-image {
-    border-radius: 6px 6px 0 0;
-}
-
-/* Settings */
-input:checked~.x-toggle-indicatorWrapper {
-  background-color: var(--gray-1);
-}
-
-input:hover:not([disabled]):not(:active)~.x-toggle-indicatorWrapper {
-  background-color: var(--spice-button-active);
-}
-
-select option:checked {
+:root select option:checked {
   color: var(--spice-text);
   font-weight: bold;
 }
-
-/* Animated equalizer */
-/* EQ color classes are specified here in case the js extension is not moved over
- * The default green eq will be used in this case */
-.catppuccin-eq-rosewater .main-trackList-playingIcon,
-.catppuccin-eq-flamingo .main-trackList-playingIcon,
-.catppuccin-eq-mauve .main-trackList-playingIcon,
-.catppuccin-eq-pink .main-trackList-playingIcon,
-.catppuccin-eq-maroon .main-trackList-playingIcon,
-.catppuccin-eq-red .main-trackList-playingIcon,
-.catppuccin-eq-peach .main-trackList-playingIcon,
-.catppuccin-eq-yellow .main-trackList-playingIcon,
-.catppuccin-eq-green .main-trackList-playingIcon,
-.catppuccin-eq-teal .main-trackList-playingIcon,
-.catppuccin-eq-blue .main-trackList-playingIcon,
-.catppuccin-eq-sky .main-trackList-playingIcon,
-.catppuccin-eq-lavender .main-trackList-playingIcon,
-.catppuccin-eq-white .main-trackList-playingIcon {
-    background-size: cover;
-    padding-left: 100%;
+:root .TypeElement-mesto-type {
+  color: var(--spice-subtext) !important;
 }
-
-.catppuccin-eq-rosewater .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-rosewater.gif");
+:root .main-trackList-playingIcon {
+  background-size: cover;
+  padding-left: 100%;
+  background-image: var(--spice-equalizer);
 }
-.catppuccin-eq-flamingo .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-flamingo.gif");
+:root .os-scrollbar-track,
+:root ::-webkit-scrollbar {
+  width: 0.5em;
 }
-.catppuccin-eq-mauve .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-mauve.gif");
+:root .os-scrollbar-handle,
+:root ::-webkit-scrollbar-thumb {
+  background-color: var(--spice-text) !important;
+  border-radius: 6px;
 }
-.catppuccin-eq-pink .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-pink.gif");
+:root .GenericModal .main-duplicateTrackModal-container div {
+  background-color: var(--spice-card);
+  color: var(--spice-subtext);
 }
-.catppuccin-eq-maroon .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-maroon.gif");
+:root .GenericModal .main-duplicateTrackModal-container button:first-child {
+  color: var(--spice-button-active);
 }
-.catppuccin-eq-red .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-red.gif");
+:root .GenericModal .main-duplicateTrackModal-container button:first-child:hover {
+  color: var(--spice-notification-error);
 }
-.catppuccin-eq-peach .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-peach.gif");
+:root .GenericModal .main-duplicateTrackModal-container button:last-child > div {
+  background-color: var(--spice-button);
 }
-.catppuccin-eq-yellow .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-yellow.gif");
-}
-.catppuccin-eq-green .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-green.gif");
-}
-.catppuccin-eq-teal .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-teal.gif");
-}
-.catppuccin-eq-blue .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-blue.gif");
-}
-.catppuccin-eq-sky .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-sky.gif");
-}
-.catppuccin-eq-lavender .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-lavender.gif");
-}
-.catppuccin-eq-lavender .main-trackList-playingIcon {
-    background-image: url("equalizer-animated-white.gif");
-}
-
-/* For that small dot on podcasts that notify us of new episodes */
-.main-home-content
-    > section:first-child
-    > .main-gridContainer-gridContainer
-    > div
-    span[aria-label],
-span[aria-label="New episode"],
-span[aria-label="New Podcast Episode"] {
-    background: var(--spice-accent, var(--spice-text));
-}
-
-/* Modals */
-.GenericModal[aria-label="Already added"] > div {
-    background-color: var(--spice-card);
-    color: var(--spice-subtext);
-}
-
-.GenericModal[aria-label="Already added"] button:first-child {
-    color: var(--spice-button-active);
-}
-
-.GenericModal[aria-label="Already added"] button:first-child:hover {
-    color: var(--spice-notification-error);
-}
-
-.GenericModal[aria-label="Already added"] button:last-child:hover > div {
-    background-color: var(--spice-button);
+:root .main-contextMenu-menuItemButton:hover, :root .main-contextMenu-menuItemButton:not([aria-checked=true]):focus {
+  color: var(--spice-subtext);
 }

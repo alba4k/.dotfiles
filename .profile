@@ -16,7 +16,7 @@ export LIBVA_DRIVER_NAME="iHD"
 
 # export XCURSOR_SIZE=16
 
-export MAKEFLAGS="-j14 -s"
+export MAKEFLAGS="-j14 -s -march x86-64-v3 -O3"
 
 export MANPAGER="bat -pl man"
 

@@ -1,2 +1,2 @@
-"use strict";(("undefined"!=typeof self?self:global).webpackChunkopen=("undefined"!=typeof self?self:global).webpackChunkopen||[]).push([[985],{44415:(e,l,n)=>{n.r(l),n.d(l,{default:()=>c});var t=n(67294),f=n.n(t),s=n(63282);const u=f().memo((()=>{const{createPlaylist:e}=(0,s.K)();return(0,t.useEffect)((()=>{e()}),[e]),null})),c=u}}]);
+"use strict";(("undefined"!=typeof self?self:global).webpackChunkopen=("undefined"!=typeof self?self:global).webpackChunkopen||[]).push([[7985],{89297:(e,l,n)=>{n.r(l),n.d(l,{default:()=>s});var t=n(59496),f=n(49323);const s=t.memo((function(){const{createPlaylist:e}=(0,f.K)();return(0,t.useEffect)((()=>{e()}),[e]),null}))}}]);
 //# sourceMappingURL=xpui-routes-create-playlist.js.map
