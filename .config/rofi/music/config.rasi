@@ -24,6 +24,7 @@ window {
 }
 
 prompt {
+  background-color: #1B1E2ED0;
   padding:		15px;
   border-radius:	10px;
   expand: false;

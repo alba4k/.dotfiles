@@ -51,6 +51,8 @@ player=""
 albumart="$(playerctl --player=$Control metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')"
 [ $(playerctl --player=$Control metadata mpris:artUrl) ] && curl -s "$albumart" --output $Cover || cp $bkpCover $Cover 
 
+convert $Cover -resize 500x $Cover
+
 title=$(playerctl --player=$Control metadata --format {{title}} | cut -c1-35)
 title=${title:-Play Something}
 
@@ -134,7 +136,7 @@ next="怜"
 lyrics=""
 options="$player\n$previous\n$icon\n$next\n$lyrics"
 
-rofi=$(printf $options | rofi -config $roficonfig -dmenu -i -selected-row 2 -hover-select -p "$status: ($playlist)
+rofi=$(printf $options | rofi -location 3 -yoffset 60 -xoffset -69 -config $roficonfig -dmenu -i -selected-row 2 -hover-select -p "$status: ($playlist)
 $title 
 $album
 $artist")
