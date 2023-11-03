@@ -227,6 +227,7 @@ tooltip {
 
 #tray {
     background: #2e2e3e;
+    opacity: 0.9;
     border-radius: 12px;
     padding-left: 12px;
     padding-right: 12px;

@@ -42,6 +42,7 @@ alias 8="math 8"
 alias 9="math 9"
 alias 0="math 0"
 
-uptime-record -s &
-albafetch 
-
+if status --is-interactive
+    uptime-record -s &
+    albafetch 
+end

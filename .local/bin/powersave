@@ -1,7 +1,7 @@
 #!/bin/python
 import subprocess
 
-subprocess.run(["pkexec", "sh", "-c", "x86_energy_perf_policy power && x86_energy_perf_policy --turbo-enable 0 && cpupower frequency-set -g powersave -d 400MHz -u 1.2GHz && sudo intel_gpu_frequency -m 800"])
+subprocess.run(["pkexec", "sh", "-c", "x86_energy_perf_policy power && x86_energy_perf_policy --turbo-enable 0 && cpupower frequency-set -g powersave -d 400MHz -u 1.2GHz"])
 
 current = subprocess.run(["light"], stdout=subprocess.PIPE).stdout.decode("utf-8")
 subprocess.run(["light", "-S", str(float(current)*0.75)])

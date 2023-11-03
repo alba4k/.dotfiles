@@ -1,5 +1,5 @@
 #!/bin/bash
 
-pkexec sh -c "x86_energy_perf_policy performance && x86_energy_perf_policy --turbo-enable 1 && cpupower frequency-set -g performance -d 400MHz -u 4.7GHz && intel_gpu_frequency -d"
+pkexec sh -c "x86_energy_perf_policy performance && x86_energy_perf_policy --turbo-enable 1 && cpupower frequency-set -g performance -d 400MHz -u 4.7GHz &&"
 
 notify-send -r 1234 -t 2000 -a Prestazioni -u low -i battery "Modalità prestazioni attivata!"
