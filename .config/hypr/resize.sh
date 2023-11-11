@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Initially inspired by https://github.com/exoess
+
 # Getting some information about the current window
 # windowinfo=$(hyprctl activewindow) removes the newlines and won't work with grep
 hyprctl activewindow > /tmp/windowinfo

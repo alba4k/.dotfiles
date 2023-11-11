@@ -1,0 +1,8 @@
+#%PAM-1.0
+
+auth	   sufficient  	pam_fprintd_grosshack.so
+auth	   sufficient  	pam_unix.so try_first_pass nullok
+auth       include      system-auth
+account    include      system-auth
+password   include      system-auth
+session    include      system-auth
