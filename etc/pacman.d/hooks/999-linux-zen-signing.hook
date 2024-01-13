@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = linux-zen
+
+[Action]
+Description = Signing linux with Machine Owner Key for Secure Boot...
+When = PostTransaction
+Exec = /usr/bin/sbsign --key /boot/MOK.key --cert /boot/MOK.crt --output /boot/vmlinuz-linux-zen /boot/vmlinuz-linux-zen
+Depends = sbsigntools

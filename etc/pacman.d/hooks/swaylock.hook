@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Upgrade
+Operation = Install
+Type = Package
+Target = swaylock-effects-git
+
+[Action]
+Description = Restoring Swaylock's PAM fprintd configuration...
+When = PostTransaction
+Exec = /bin/cp /home/alba4k/.dotfiles/etc/pam.d/swaylock /etc/pam.d/swaylock
+

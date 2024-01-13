@@ -1,0 +1,11 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = systemd
+
+[Action]
+Description = Signing systemd-boot with Machine Owner Key for Secure Boot...
+When = PostTransaction
+Exec = /usr/bin/sbsign --key /boot/MOK.key --cert /boot/MOK.crt --output /boot/EFI/BOOT/grubx64.efi /boot/EFI/BOOT/grubx64.efi
+Depends = sbsigntools
