@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Hypixel
+Comment=Launch Minecraft 1.8.9 into the hypixel.net server
+Exec=prismlauncher -l "1.8.9 Forge" -s "hypixel.net"
+Icon=/home/alba4k/.local/share/icons/custom/hypixel.png
+Terminal=false
+Type=Application
+Keywords=game;minecraft;
+Categories=Game;

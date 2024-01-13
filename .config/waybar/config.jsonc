@@ -208,6 +208,9 @@
             "headphone": "",
             "hands-free": "",
             "headset": "",
+            //"speaker": "󰓃",
+            "hifi": "󰓃",
+            "hdmi": "󰽟",
             "phone": "",
             "portable": "",
             "car": "",
@@ -218,8 +221,10 @@
     "backlight": {
         "interval": 10,
         "format": "{icon} {percent}%",
-        "scroll-step": -1,
+        "scroll-step": -0.3,
         "format-icons": ["", "", "", ""],
+
+        "on-click": "killall -9 wlsunset || wlsunset -S 3:59 -s 4:00 -t 4500 -T 6500",
 
         "tooltip": false
     },

@@ -28,8 +28,9 @@ configuration{
     display-drun: "  Apps ";
     display-run: "  Run ";
     display-window: " 﩯 Open ";
-    display-calc: " Calc ";
+    display-calc: " Calculator ";
     display-clipboard: " Copied";
+    display-dmenu: "hi";
 
     sidebar-mode: true;
 }

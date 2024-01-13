@@ -61,7 +61,7 @@ tooltip {
 }
 
 #workspaces button.urgent {
-    color: #792e1f;
+    color: #ae3e0d;
 }
 
 #custom-launcher,
@@ -91,7 +91,7 @@ tooltip {
     font-size: 21px;
     background: #81a1c1;
     border-radius: 12px;
-    margin-left: 15px;
+    margin-left: 10px;
     padding-left: 15px;
     padding-right: 10px;
 }
@@ -231,7 +231,7 @@ tooltip {
     border-radius: 12px;
     padding-left: 12px;
     padding-right: 12px;
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
 #custom-greentored {

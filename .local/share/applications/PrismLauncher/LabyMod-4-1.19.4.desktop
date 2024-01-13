@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=LabyMod 1.19.4
+Comment=Launch LabyMod 1.19.4
+Exec="/usr/bin/prismlauncher" '--launch' 'LabyMod 1.19.4'
+Icon=/home/alba4k/.local/share/PrismLauncher/instances/LabyMod 1.19.4/icon.png
+Terminal=false
+Type=Application
+Keywords=game;minecraft;
+Categories=Game;

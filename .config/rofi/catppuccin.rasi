@@ -117,5 +117,8 @@ message {
 
 textbox {
     background-color: transparent;
+    border-radius: 8;
     text-color: @grey;
+    size-vertical: 100px;
 }
+

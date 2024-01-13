@@ -21,6 +21,7 @@ cp -r ~/.config/albafetch ~/.dotfiles/.config/
 cp -r ~/.config/swayidle ~/.dotfiles/.config/
 cp -r ~/.config/waybar ~/.dotfiles/.config/
 cp -r ~/.config/wlogout ~/.dotfiles/.config/
+cp -r ~/.config/MandoHud ~/.dotfiles/.config/
 cp ~/.config/flameshotrc ~/.dotfiles/.config/
 cp ~/.config/dunstrc ~/.dotfiles/.config/
 cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config/
@@ -53,7 +54,9 @@ cp ~/.local/bin/i3l ~/.dotfiles/.local/bin/
 cp ~/.local/bin/scrcpy.sh ~/.dotfiles/.local/bin/
 cp ~/.local/bin/teamviewer_autostart.sh ~/.dotfiles/.local/bin/
 cp ~/.local/bin/toggle_bluetooth.sh ~/.dotfiles/.local/bin/
+
 cp -r ~/.local/share/fonts ~/.dotfiles/.local/share/
+cp -r ~/.local/share/applications ~/.dotfiles/.local/share/
 
 cp ~/.local/share/uptime-record ~/.dotfiles/.local/share/
 

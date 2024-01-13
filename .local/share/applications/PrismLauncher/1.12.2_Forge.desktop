@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=1.12.2 Forge
+Comment=Launch Minecraft 1.12.2
+Exec=prismlauncher -l "1.12.2 Forge"
+Icon=/home/alba4k/.local/share/PrismLauncher/instances/1.12.2 Forge/icon.png
+Terminal=false
+Type=Application
+Keywords=game;minecraft;
+Categories=Game;

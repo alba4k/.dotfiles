@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Ori and the Blind Forest: Definitive Edition
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/387290
+Icon=steam_icon_387290
+Terminal=false
+Type=Application
+Categories=Game;

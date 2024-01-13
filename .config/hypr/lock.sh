@@ -10,7 +10,7 @@ img=/tmp/swaylock.png
 grimblast save output $img
 
 #convert $img -scale 5% -scale 2000% $img
-convert $img -blur 0x20 $img
+convert $img -blur 0x30 $img
 
 # requires swaylock-effects
 swaylock --image $img\
