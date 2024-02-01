@@ -20,3 +20,9 @@ export MANPAGER="bat -pl man"
 export XDG_CONFIG_HOME="/home/alba4k/.config"
 export XDG_CACHE_HOME="/home/alba4k/.cache"
 export XDG_DATA_HOME="/home/alba4k/.local/share"
+
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/alba4k/.local/share/JetBrains/Toolbox/scripts"
+

@@ -170,7 +170,7 @@ client.unfocused #555555cc #555555cc #555555cc #555555cc
 client.urgent #dc322fcc #dc322fcc #dc322fcc #dc322fcc
 
 # rounded corners
-border_radius 12
+# border_radius 12
 
 # better rounded borders
 #$exec_always "killall xborders; ~/.config/i3/xborder/xborders -c ~/.config/i3/xborder/config.json"

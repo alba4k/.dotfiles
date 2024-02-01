@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "~/.config/hypr/lock.sh from-rofi",
+    "action" : "~/.config/hypr/lock.sh delay",
     "text" : "Lock",
     "keybind" : "l"
 }
