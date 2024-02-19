@@ -1,3 +1,7 @@
+# SWAYIDLE - alba4k
+#
+# Documentation: https://github.com/swaywm/swayidle
+
 lock "/home/alba4k/.config/hypr/lock.sh"
 timeout 300 "loginctl lock-session"
 timeout 600 "hyprctl dispatch dpms off"

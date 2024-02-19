@@ -25,12 +25,11 @@ configuration{
     me-select-entry: "";
     me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
 
-    display-drun: "  Apps ";
-    display-run: "  Run ";
+    display-drun: "  App ";
+    display-run: "  Shell ";
     display-window: " 﩯 Open ";
-    display-calc: " Calculator ";
-    display-clipboard: " Copied";
-    display-dmenu: "hi";
+    display-calc: " Calc ";
+    display-clipboard: " Clip";
 
     sidebar-mode: true;
 }

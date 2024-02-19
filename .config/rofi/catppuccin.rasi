@@ -52,7 +52,7 @@ textbox-prompt-colon {
 entry {
     padding: 6px;
     margin: 20px 0px 0px 10px;
-    placeholder: "Search...";
+    placeholder: "Cerca...";
     placeholder-color: @fg-col-trans;
     text-color: @fg-col;
     background-color: @bg-col-full;

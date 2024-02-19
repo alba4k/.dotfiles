@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "~/.config/hypr/lock.sh delay",
+    "action" : "/home/alba4k/.config/hypr/lock.sh delay",
     "text" : "Lock",
     "keybind" : "l"
 }

@@ -46,3 +46,6 @@ if status --is-interactive
     uptime-record -s &
     albafetch 
 end
+
+zoxide init --cmd cd fish | source
+
