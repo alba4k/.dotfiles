@@ -1,1 +1,1 @@
-swaylock.sh
+hyprlock.sh

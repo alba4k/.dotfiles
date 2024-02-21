@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ "$1" = "delay" ]; then
-    # time for rofi fade-out before taking the screenshot
+    # time for rofi/swaylock fade-out before taking the screenshot
     sleep 0.4
 fi
 

@@ -62,7 +62,13 @@ cp -r ~/.local/share/applications ~/.dotfiles/.local/share/
 cp ~/.local/share/uptime-record ~/.dotfiles/.local/share/
 
 git add .
-git commit -m "committed automatically from update.sh" -q
+
+if [ -z "$1" ]; then
+    git commit -m "committed automatically from update.sh" -q
+else
+    git commit -m $1 -q
+fi
+
 git push -q
 
 echo "Everything is now up to date! :D"
