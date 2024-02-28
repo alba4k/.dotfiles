@@ -47,7 +47,7 @@
 
         "on-click": "rofi -show drun",
         "on-click-right": "rofi -show run",
-        "on-click-middle": "rofi -show calc",
+        "on-click-middle": "wlogout --protocol layer-shell",
 
         "tooltip": false
     },

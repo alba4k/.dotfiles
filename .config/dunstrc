@@ -15,6 +15,7 @@
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
     follow = none
+    monitor = 1
 
     ### Geometry ###
 
@@ -176,7 +177,7 @@
     ### Icons ###
 
     enable_recursive_icon_lookup = true
-    icon_theme = ePapirus-Dark
+    icon_theme = Papirus-Dark
 
     # Align icons left/right/off 
     icon_position = left
