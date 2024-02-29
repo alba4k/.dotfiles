@@ -23,8 +23,8 @@ cp -r ~/.config/waybar ~/.dotfiles/.config/
 cp -r ~/.config/wlogout ~/.dotfiles/.config/
 cp -r ~/.config/MandoHud ~/.dotfiles/.config/
 cp -r ~/.config/kanshi ~/.dotfiles/.config/
+cp -r ~/.config/dunst ~/.dotfiles/.config/
 cp ~/.config/flameshotrc ~/.dotfiles/.config/
-cp ~/.config/dunstrc ~/.dotfiles/.config/
 cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config/
 cp ~/.config/libinput-gestures-wayland.conf ~/.dotfiles/.config/
 cp ~/.config/chromium-flags.conf ~/.dotfiles/.config/
@@ -41,7 +41,7 @@ mkdir -p ~/.dotfiles/wallpapers
 cp -r ~/Immagini/wallpapers ~/.dotfiles/
 
 # FILES IN .local (custom scripts)
-mkdir -p ~/.dotfiles/usr/bin
+mkdir -p ~/.dotfiles/.local/bin
 #cp ~/.local/bin/autostart.sh ~/.dotfiles/.local/bin/
 cp ~/.local/bin/buds ~/.dotfiles/.local/bin/
 cp ~/.local/bin/rebuds ~/.dotfiles/.local/bin/
@@ -66,7 +66,7 @@ git add .
 if [ -z "$1" ]; then
     git commit -m "committed automatically from update.sh" -q
 else
-    git commit -m $1 -q
+    git commit -m "$1" -q
 fi
 
 git push -q

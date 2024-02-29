@@ -92,7 +92,7 @@
 	    "format-connected": " {num_connections}",
 	    "tooltip-format-connected": "{device_enumerate}",
 	    "tooltip-format-enumerate-connected": " {device_alias}",
-	    "tooltip-format-enumerate-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+	    "tooltip-format-enumerate-connected-battery": " {device_alias} (󰥉 {device_battery_percentage}%)",
 
         "on-click": "blueman-manager",
         "on-click-right": "~/.local/bin/toggle_bluetooth.sh",
@@ -132,7 +132,7 @@
         },
 
         // "on-click-right": "hyprctl dispatch fullscreen",
-        "on-click-right": "sleep .3 && ~/.config/hypr/resize.sh",
+        "on-click-right": "sleep .3 && ~/.config/hypr/scripts/resize.sh",
         "on-click-middle": "hyprctl dispatch killactive"
     },
 
@@ -163,7 +163,7 @@
     "custom/media-bw": {
         "interval": 1,
         "format": "",
-        "exec": "~/.config/waybar/audio-back-skip.sh 2>/dev/null",
+        "exec": "~/.config/waybar/scripts/audio-back-skip.sh 2>/dev/null",
 
         "on-click": "playerctl previous",
         "on-click-right": "~/.config/rofi/music/music",
@@ -174,7 +174,7 @@
     "custom/media-pp": {
         "interval": 1,
         "format": "{}",
-        "exec": "~/.config/waybar/audio-play-pause.sh 2>/dev/null",
+        "exec": "~/.config/waybar/scripts/audio-play-pause.sh 2>/dev/null",
 
         "on-click": "playerctl play-pause",
         "on-click-right": "~/.config/rofi/music/music",
@@ -186,7 +186,7 @@
     "custom/media-fw": {
         "interval": 1,
         "format": "",
-        "exec": "~/.config/waybar/audio-back-skip.sh 2>/dev/null",
+        "exec": "~/.config/waybar/scripts/audio-back-skip.sh 2>/dev/null",
 
         "on-click": "playerctl next",
         "on-click-right": "~/.config/rofi/music/music",
@@ -267,7 +267,7 @@
         "interval": "once",
         "return-type": "json",
         
-        "exec": "~/.config/waybar/greentoyellow.sh",
+        "exec": "~/.config/waybar/scripts/greentoyellow.sh",
 
         "format": "{}"
     }
