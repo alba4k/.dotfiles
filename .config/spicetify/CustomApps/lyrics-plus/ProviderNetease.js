@@ -1,33 +1,35 @@
-const ProviderNetease = (function () {
+const ProviderNetease = (() => {
 	const requestHeader = {
 		"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0"
 	};
 
 	async function findLyrics(info) {
-		const searchURL = `https://music.xianqiao.wang/neteaseapiv2/search?limit=10&type=1&keywords=`;
-		const lyricURL = `https://music.xianqiao.wang/neteaseapiv2/lyric?id=`;
+		const searchURL = "https://music.xianqiao.wang/neteaseapiv2/search?limit=10&type=1&keywords=";
+		const lyricURL = "https://music.xianqiao.wang/neteaseapiv2/lyric?id=";
 
 		const cleanTitle = Utils.removeExtraInfo(Utils.removeSongFeat(Utils.normalize(info.title)));
 		const finalURL = searchURL + encodeURIComponent(`${cleanTitle} ${info.artist}`);
 
-		const searchResults = await CosmosAsync.get(finalURL, null, requestHeader);
+		const searchResults = await Spicetify.CosmosAsync.get(finalURL, null, requestHeader);
 		const items = searchResults.result.songs;
 		if (!items?.length) {
 			throw "Cannot find track";
 		}
 
-		const album = Utils.capitalize(info.album);
-		let itemId = items.findIndex(val => Utils.capitalize(val.album.name) === album);
-		if (itemId === -1) itemId = 0;
+		// normalized expected album name
+		const neAlbumName = Utils.normalize(info.album);
+		const expectedAlbumName = Utils.containsHanCharacter(neAlbumName) ? await Utils.toSimplifiedChinese(neAlbumName) : neAlbumName;
+		const itemId = items.findIndex(val => Utils.normalize(val.album.name) === expectedAlbumName || Math.abs(info.duration - val.duration) < 1000);
+		if (itemId === -1) throw "Cannot find track";
 
-		return await CosmosAsync.get(lyricURL + items[itemId].id, null, requestHeader);
+		return await Spicetify.CosmosAsync.get(lyricURL + items[itemId].id, null, requestHeader);
 	}
 
 	const creditInfo = [
 		"\\s?作?\\s*词|\\s?作?\\s*曲|\\s?编\\s*曲?|\\s?监\\s*制?",
 		".*编写|.*和音|.*和声|.*合声|.*提琴|.*录|.*工程|.*工作室|.*设计|.*剪辑|.*制作|.*发行|.*出品|.*后期|.*混音|.*缩混",
 		"原唱|翻唱|题字|文案|海报|古筝|二胡|钢琴|吉他|贝斯|笛子|鼓|弦乐",
-		"lrc|publish|vocal|guitar|program|produce|write"
+		"lrc|publish|vocal|guitar|program|produce|write|mix"
 	];
 	const creditInfoRegExp = new RegExp(`^(${creditInfo.join("|")}).*(:|：)`, "i");
 
@@ -68,8 +70,8 @@ const ProviderNetease = (function () {
 		for (let i = 1; i < components.length; i += 2) {
 			if (components[i + 1] === " ") continue;
 			result.push({
-				word: components[i + 1] + " ",
-				time: parseInt(components[i])
+				word: `${components[i + 1]} `,
+				time: Number.parseInt(components[i])
 			});
 		}
 		return result;
@@ -89,9 +91,9 @@ const ProviderNetease = (function () {
 				if (!time || !text) return null;
 
 				const [key, value] = time.split(",") || [];
-				const [start, durr] = [parseFloat(key), parseFloat(value)];
+				const [start, durr] = [Number.parseFloat(key), Number.parseFloat(value)];
 
-				if (!isNaN(start) && !isNaN(durr) && !containCredits(text)) {
+				if (!Number.isNaN(start) && !Number.isNaN(durr) && !containCredits(text)) {
 					return {
 						startTime: start,
 						// endTime: start + durr,
@@ -100,7 +102,7 @@ const ProviderNetease = (function () {
 				}
 				return null;
 			})
-			.filter(a => a);
+			.filter(Boolean);
 
 		if (!karaoke.length) {
 			return null;
@@ -111,7 +113,7 @@ const ProviderNetease = (function () {
 
 	function getSynced(list) {
 		const lyricStr = list?.lrc?.lyric;
-		let isInstrumental = false;
+		let noLyrics = false;
 
 		if (!lyricStr) {
 			return null;
@@ -121,14 +123,12 @@ const ProviderNetease = (function () {
 		const lyrics = lines
 			.map(line => {
 				const { time, text } = parseTimestamp(line);
-				if (text === "纯音乐, 请欣赏") {
-					isInstrumental = true;
-				}
+				if (text === "纯音乐, 请欣赏") noLyrics = true;
 				if (!time || !text) return null;
 
 				const [key, value] = time.split(":") || [];
-				const [min, sec] = [parseFloat(key), parseFloat(value)];
-				if (!isNaN(min) && !isNaN(sec) && !containCredits(text)) {
+				const [min, sec] = [Number.parseFloat(key), Number.parseFloat(value)];
+				if (!Number.isNaN(min) && !Number.isNaN(sec) && !containCredits(text)) {
 					return {
 						startTime: (min * 60 + sec) * 1000,
 						text: text || ""
@@ -136,20 +136,48 @@ const ProviderNetease = (function () {
 				}
 				return null;
 			})
-			.filter(a => a);
+			.filter(Boolean);
 
-		if (!lyrics.length) {
+		if (!lyrics.length || noLyrics) {
 			return null;
-		}
-		if (isInstrumental) {
-			return [{ startTime: "0000", text: "♪ Instrumental ♪" }];
 		}
 		return lyrics;
 	}
 
+	function getTranslation(list) {
+		const lyricStr = list?.tlyric?.lyric;
+
+		if (!lyricStr) {
+			return null;
+		}
+
+		const lines = lyricStr.split(/\r?\n/).map(line => line.trim());
+		const translation = lines
+			.map(line => {
+				const { time, text } = parseTimestamp(line);
+				if (!time || !text) return null;
+
+				const [key, value] = time.split(":") || [];
+				const [min, sec] = [Number.parseFloat(key), Number.parseFloat(value)];
+				if (!Number.isNaN(min) && !Number.isNaN(sec) && !containCredits(text)) {
+					return {
+						startTime: (min * 60 + sec) * 1000,
+						text: text || ""
+					};
+				}
+				return null;
+			})
+			.filter(Boolean);
+
+		if (!translation.length) {
+			return null;
+		}
+		return translation;
+	}
+
 	function getUnsynced(list) {
 		const lyricStr = list?.lrc?.lyric;
-		let isInstrumental = false;
+		let noLyrics = false;
 
 		if (!lyricStr) {
 			return null;
@@ -159,24 +187,17 @@ const ProviderNetease = (function () {
 		const lyrics = lines
 			.map(line => {
 				const parsed = parseTimestamp(line);
-				if (parsed.text === "纯音乐, 请欣赏") {
-					isInstrumental = true;
-				}
+				if (parsed.text === "纯音乐, 请欣赏") noLyrics = true;
 				if (!parsed.text || containCredits(parsed.text)) return null;
 				return parsed;
 			})
-			.filter(a => a);
+			.filter(Boolean);
 
-		if (!lyrics.length) {
+		if (!lyrics.length || noLyrics) {
 			return null;
 		}
-
-		if (isInstrumental) {
-			return [{ text: "♪ Instrumental ♪" }];
-		}
-
 		return lyrics;
 	}
 
-	return { findLyrics, getKaraoke, getSynced, getUnsynced };
+	return { findLyrics, getKaraoke, getSynced, getUnsynced, getTranslation };
 })();

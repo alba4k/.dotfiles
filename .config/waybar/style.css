@@ -5,8 +5,6 @@
 
 
 * {
-    border: none;
-    border-radius: 0px;
     font-family: "MesloLGS Nerd Font";
     font-weight: bold;
     font-size: 15px;
@@ -93,7 +91,7 @@ tooltip {
     border-radius: 12px;
     margin-left: 10px;
     padding-left: 15px;
-    padding-right: 10px;
+    padding-right: 5px;
 }
 
 #cpu {

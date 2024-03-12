@@ -3,5 +3,7 @@ application/x-nx-nro=org.yuzu_emu.yuzu.desktop;
 application/x-nx-nso=org.yuzu_emu.yuzu.desktop;
 application/x-nx-nsp=org.yuzu_emu.yuzu.desktop;
 application/x-nx-xci=org.yuzu_emu.yuzu.desktop;
+x-scheme-handler/discord-1147361100929708053=discord-1147361100929708053.desktop;
 x-scheme-handler/discord-460807638964371468=discord-460807638964371468.desktop;
 x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop;
+x-scheme-handler/tg=org.telegram.desktop._706a105bdc0c835e170385dc4369c8b2.desktop;

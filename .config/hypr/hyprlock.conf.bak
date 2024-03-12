@@ -8,10 +8,8 @@ source = ~/.config/hypr/include/colors.conf
 
 # General Options
 general {
-    disable_loading_bar = true
-    hide_cursor = true
+    disable_loading_bar = false
     grace = 0
-    no_fade_in = false
 }
 
 # Blurred background
@@ -44,12 +42,12 @@ label {
     monitor =
     text = <span font_weight="ultrabold">$TIME</span>
     color = $C_PRIMARY
-    position = 0, 280
+    position = 0, 300
     font_size = 100
     font_family = Noto Sans
 
-    valign = center
     halign = center
+    valign = center
 
     shadow_passes = 2
 }
@@ -57,44 +55,14 @@ label {
 # Username
 label {
     monitor =
-    text = <span font_weight="bold"> $USER</span>
+    text = <span font_weight="ultrabold">$USER</span>
     color = $C_PRIMARY
-    position = 10, -5
-    font_size = 25
+    position = 0, 50
+    font_size = 30
     font_family = Noto Sans
 
-    valign = top
-    halign = left
-
-    shadow_passes = 1
-}
-
-# Music
-label {
-    monitor =
-    text = cmd[update:500] echo "<span font_weight='bold'>$(/home/alba4k/.config/hypr/scripts/hyprlock/music-uptime.sh)</span>"
-    color = $C_PRIMARY
-    position = 15, -135
-    font_size = 25
-    font_family = Noto Sans
-
-    valign = bottom
-    halign = left
-
-    shadow_passes = 1
-}
-
-# Battery
-label {
-    monitor =
-    text = cmd[update:30000] echo "<span font_weight='bold'>$(/home/alba4k/.config/hypr/scripts/hyprlock/battery.sh)</span>"
-    color = $C_PRIMARY
-    position = -10, 0
-    font_size = 25
-    font_family = Noto Sans
-
-    valign = top
-    halign = right
+    halign = center
+    valign = center
 
     shadow_passes = 1
 }
@@ -108,8 +76,8 @@ label {
     font_size = 50
     font_family = Noto Sans
 
-    valign = center
     halign = center
+    valign = center
 
     shadow_passes = 1
 }
@@ -121,8 +89,23 @@ label {
     font_size = 25
     font_family = Noto Sans
 
-    valign = center
     halign = center
+    valign = center
+
+    shadow_passes = 1
+}
+
+# Battery
+label {
+    monitor =
+    text = cmd[update:30000] echo "<span font_weight='bold'>$(/home/alba4k/.config/hypr/scripts/battery.sh)</span>"
+    color = $C_PRIMARY
+    position = 0, 355
+    font_size = 30
+    font_family = Noto Sans
+
+    halign = center
+    valign = center
 
     shadow_passes = 1
 }
@@ -132,12 +115,12 @@ label {
     monitor =
     text = cmd[update:120000] echo "<span font_weight='bold'>$(date +'%a %d %B')</span>"
     color = $C_PRIMARY
-    position = 0, 160
+    position = 0, 180
     font_size = 30
     font_family = Noto Sans
 
-    valign = center
     halign = center
+    valign = center
 
     shadow_passes = 1
 }
@@ -151,8 +134,8 @@ label {
     font_size = 25
     font_family = Noto Sans
 
-    valign = bottom
     halign = right
+    valign = bottom
 }
 #label {
 #    monitor =
@@ -162,7 +145,6 @@ label {
 #    font_size = 25
 #    font_family = Noto Sans
 #
-#    valign = bottom
 #    halign = left
+#    valign = bottom
 #}
-

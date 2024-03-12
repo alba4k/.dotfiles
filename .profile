@@ -5,6 +5,7 @@
 export PATH="$PATH:/home/alba4k/.local/bin"
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORM="wayland"
 export GTK_THEME="Catppuccin-purple"
 
 # export LIBVA_DRIVER_NAME="iHD"

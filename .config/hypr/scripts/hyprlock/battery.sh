@@ -4,7 +4,7 @@ upower=$(upower -i $(upower -e | grep BAT))
 
 bat=$(grep percentage <<< $upower | awk "{print \$2}" | sed -e "s/%//")
 
-if ! grep "discharging" <<< $upower; then
+if ! grep "discharging" <<< $upower >/dev/null; then
     echo -n "󱐋"
 fi
 
@@ -12,11 +12,11 @@ if ((bat >= 90)); then
     echo -n " "
 elif ((bat >= 70)); then
     echo -n " "
-elif ((bat >= 50)); then
+elif ((bat >= 35)); then
     echo -n " "
-elif ((bat >= 30)); then
+elif ((bat >= 20)); then
     echo -n " "
-elif ((bat >= 10)); then
+else
     echo -n " "
 fi
 

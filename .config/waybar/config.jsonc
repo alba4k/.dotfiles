@@ -42,12 +42,12 @@
     ],
 
     "custom/launcher": {
-        "format": " ",
+        "format": " ",
         "interval": "once",
 
         "on-click": "rofi -show drun",
         "on-click-right": "rofi -show run",
-        "on-click-middle": "wlogout --protocol layer-shell",
+        "on-click-middle": "pidof wlogout || wlogout",
 
         "tooltip": false
     },

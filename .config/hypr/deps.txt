@@ -1,7 +1,0 @@
-hyprland
-xdg-desktop-portal-hyprland
-xdg-desktop-portal-gtk
-waybar
-hyprpaper
-grim
-wl-clipboard

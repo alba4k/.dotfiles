@@ -1,9 +1,9 @@
 #!/bin/sh
 # alba4k - 2022
 
-out=$(playerctl status 2>&1)
+out=$(playerctl -p "spotify,*" status 2>&1)
 status="  "
-tooltip=$(playerctl metadata --format "[{{playerName}}] {{title}} - {{artist}}")
+tooltip=$(playerctl -p "spotify,*" metadata --format "[{{playerName}}] {{title}} - {{artist}}")
 
 if [ "$out" = "Playing" ]; then
     status="  "

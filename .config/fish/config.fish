@@ -3,8 +3,7 @@ alias g="git"
 alias yeet_the_orphans="sudo pacman -Rssn (pacman -Qdtq) 2>/dev/null || echo No orphan packages were found!"
 alias fwupd="fwupdmgr refresh --force && fwupdmgr get-updates && sudo fwupdmgr install"
 
-alias c="clear && fish && exit"
-alias C="reset && fish && exit"
+alias c="tput reset && fish && exit"
 alias :q="exit"
 alias :wq="exit"
 alias :Wq="exit" # 'cause I like misstyping
@@ -50,3 +49,4 @@ end
 
 zoxide init --cmd cd fish | source
 
+#thefuck --alias | source

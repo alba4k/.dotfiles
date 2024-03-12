@@ -1,4 +1,4 @@
-const ProviderGenius = (function () {
+const ProviderGenius = (() => {
 	function getChildDeep(parent, isDeep = false) {
 		let acc = "";
 
@@ -7,7 +7,7 @@ const ProviderGenius = (function () {
 		}
 
 		for (const child of parent.children) {
-			if (typeof child == "string") {
+			if (typeof child === "string") {
 				acc += child;
 			} else if (child.children) {
 				acc += getChildDeep(child, true);
@@ -20,13 +20,13 @@ const ProviderGenius = (function () {
 	}
 
 	async function getNote(id) {
-		const body = await CosmosAsync.get(`https://genius.com/api/annotations/${id}`);
+		const body = await Spicetify.CosmosAsync.get(`https://genius.com/api/annotations/${id}`);
 		const response = body.response;
 		let note = "";
 
 		// Authors annotations
-		if (response.referent && response.referent.classification == "verified") {
-			const referentsBody = await CosmosAsync.get(`https://genius.com/api/referents/${id}`);
+		if (response.referent && response.referent.classification === "verified") {
+			const referentsBody = await Spicetify.CosmosAsync.get(`https://genius.com/api/referents/${id}`);
 			const referents = referentsBody.response;
 			for (const ref of referents.referent.annotations) {
 				note += getChildDeep(ref.body.dom);
@@ -81,7 +81,9 @@ const ProviderGenius = (function () {
 		const htmlDoc = parser.parseFromString(body, "text/html");
 		const lyricsDiv = htmlDoc.querySelectorAll('div[data-lyrics-container="true"]');
 
-		lyricsDiv.forEach(i => (lyrics += i.innerHTML + "<br>"));
+		for (const i of lyricsDiv) {
+			lyrics += `${i.innerHTML}<br>`;
+		}
 
 		if (!lyrics?.length) {
 			console.warn("forceError");
@@ -98,13 +100,14 @@ const ProviderGenius = (function () {
 		titles.add(titleNoExtra);
 		titles.add(Utils.removeSongFeat(info.title));
 		titles.add(Utils.removeSongFeat(titleNoExtra));
-		console.log(titles);
 
-		let lyrics, hits;
+		let lyrics;
+		let hits;
 		for (const title of titles) {
-			const url = `https://genius.com/api/search/song?per_page=20&q=${encodeURIComponent(title)}%20${encodeURIComponent(info.artist)}`;
+			const query = new URLSearchParams({ per_page: 20, q: encodeURIComponent(`${title} ${info.artist}`) });
+			const url = `https://genius.com/api/search/song?${query.toString()}`;
 
-			const geniusSearch = await CosmosAsync.get(url);
+			const geniusSearch = await Spicetify.CosmosAsync.get(url);
 
 			hits = geniusSearch.response.sections[0].hits.map(item => ({
 				title: item.result.full_title,
