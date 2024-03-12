@@ -3,7 +3,7 @@
 
 out=$(playerctl -p "spotify,*" status 2>&1)
 status="  "
-tooltip=$(playerctl -p "spotify,*" metadata --format "[{{playerName}}] {{title}} - {{artist}}")
+tooltip=$(playerctl -p "spotify,*" metadata --format "[{{playerName}}] {{title}} - {{artist}}" || playerctl metadata --format "[{{playerName}}] {{title}} - {{artist}}")
 
 if [ "$out" = "Playing" ]; then
     status="  "
