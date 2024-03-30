@@ -16,12 +16,12 @@ window#waybar {
 }
 
 tooltip {
-    background: #1e1e2e;
+    background: rgba(30, 30, 46, 0.5);
     color: #cdd6f4;
     border-radius: 12px;
     border-width: 2px;
     border-style: solid;
-    border-color: #11111b;
+    border-color: #8957b0;
 }
 
 #workspaces button {

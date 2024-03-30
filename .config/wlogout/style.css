@@ -7,10 +7,10 @@
 	background-image: none;
 }
 window {
-	background-color: rgba(30, 30, 46, 0.3);
+	background-color: rgba(30, 30, 46, 0.01);
 }
 button {
-	background-color: rgba(30, 30, 46, 0.8);
+	background-color: rgba(30, 30, 46, 0.7);
 	border-style: solid;
 	border-color: #8957B0;
 	background-repeat: no-repeat;
@@ -20,7 +20,7 @@ button {
 }
 
 button:focus, button:active, button:hover {
-	background-color: #3E334E;
+	background-color: rgba(62, 51, 78, 0.8);
 	outline-style: none;
 }
 

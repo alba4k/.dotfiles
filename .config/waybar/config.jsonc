@@ -6,7 +6,7 @@
  */
 
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     "mod": "dock",
     "height": 33,
@@ -230,8 +230,8 @@
     },
 
     "clock": {
-        "format": "{: %H:%M}",
-        "format-alt": "{: %a %d %b}",
+        "format": " {:%H:%M}",
+        "format-alt": " {:%a %d %b}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>"
     },
 
@@ -244,27 +244,31 @@
 
     "custom/greentored": {
         "interval": "once",
+        "tooltip": false,
         "format": ""
     },
 
     "custom/redtoyellow": {
         "interval": "once",
+        "tooltip": false,
         "format": ""
     },
 
     "custom/greentoblue": {
         "interval": "once",
+        "tooltip": false,
         "format": ""
     },
 
     "custom/bluetogreen": {
         "interval": "once",
+        "tooltip": false,
         "format": ""
     },
 
     // backlight disappears when only using an external monitor
     "custom/greentoyellow": {
-        "interval": "once",
+        "interval": 5,
         "return-type": "json",
         
         "exec": "~/.config/waybar/scripts/greentoyellow.sh",
@@ -272,3 +276,4 @@
         "format": "{}"
     }
 }
+

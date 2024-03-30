@@ -14,7 +14,7 @@ export GTK_THEME="Catppuccin-purple"
 
 # export XCURSOR_SIZE=16
 
-export MAKEFLAGS="-j14 -s"
+export MAKEFLAGS="-j14"
 
 export MANPAGER="bat -pl man"
 

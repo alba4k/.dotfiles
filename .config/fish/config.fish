@@ -44,7 +44,7 @@ alias 0="math 0"
 
 if status --is-interactive
     uptime-record -s &
-    albafetch 
+    albafetch
 end
 
 zoxide init --cmd cd fish | source
