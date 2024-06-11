@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Game 1221314350216646828
+Exec=/usr/bin/suyu %u
+Type=Application
+NoDisplay=true
+Categories=Discord;Games;
+MimeType=x-scheme-handler/discord-1221314350216646828;

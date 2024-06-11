@@ -8,6 +8,7 @@ alias :q="exit"
 alias :wq="exit"
 alias :Wq="exit" # 'cause I like misstyping
 
+alias l="eza --group-directories-first --icons --color=always"
 alias ls="eza --group-directories-first --icons --color=always"
 alias la="eza -a --group-directories-first --icons --color=always"
 alias ll="eza -la --group-directories-first --icons --git --color=always"
@@ -28,6 +29,9 @@ alias smallfetch="albafetch --config /home/alba4k/.config/albafetch/albafetch_sm
 set fish_greeting
 
 set tide_git_icon 
+
+#alias sudo=doas
+#alias sudoedit="doas nvim"
 
 # Calculator with 1 + 1 like in powershell
 alias m="math"

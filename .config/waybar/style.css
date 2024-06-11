@@ -76,6 +76,7 @@ tooltip {
 #custom-media-fw,
 #pulseaudio,
 #backlight,
+#idle_inhibitor,
 #clock,
 #tray {
     color: #1e1e2e;
@@ -215,10 +216,18 @@ tooltip {
     margin-right: 15px;
 }
 
+#idle_inhibitor {
+    background: #81a1c1;
+    border-radius: 12px 0px 0px 12px;
+    padding-left: 12px;
+    padding-right: 0px;
+
+}
+
 #clock {
     background: #81a1c1;
-    border-radius: 12px;
-    padding-left: 12px;
+    border-radius: 0px 12px 12px 0px;
+    padding-left: 6px;
     padding-right: 12px;
     margin-right: 15px;
 }

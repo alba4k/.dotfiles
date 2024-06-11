@@ -37,6 +37,7 @@
         "pulseaudio",
         "custom/greentoyellow",
         "backlight",
+        "idle_inhibitor",
         "clock",
         "tray"
     ],
@@ -233,6 +234,11 @@
         "format": " {:%H:%M}",
         "format-alt": " {:%a %d %b}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {"activated": " ", "deactivated": " "},
     },
 
     "tray": {
