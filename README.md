@@ -33,6 +33,6 @@ Programs I wrote myself
 
 ---
 
-# I would really like you to **not** just steal my dotflies, take inspiration from them! they're already pretty much just a copy of [those](https://github.com/config/catppuccin)
+# I would really like you to **not** just steal my dotflies, take inspiration from them! they're already pretty much just a copy of [those](https://github.com/catppuccin)
 
 ### alba4k - 2022
