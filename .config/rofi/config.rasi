@@ -5,7 +5,7 @@
  * Some credit goes to https://github.com/catppuccin/rofi
  */
 
-configuration{
+configuration {
     modi: "run,drun,calc";
 
     fixed-num-lines: false;

@@ -1,0 +1,33 @@
+@import "config"
+
+textbox {
+  vertical-align:   0.5;
+  horizontal-align: 0.5;
+}
+
+listview {
+  columns:       6;
+  lines:         5;
+  cycle:         true;
+  dynamic:       true;
+  layout:        vertical;
+  flow:          horizontal;
+  reverse:       false;
+  fixed-height:  true;
+  fixed-columns: true;
+}
+
+element {
+  orientation: vertical;
+}
+
+element-text {
+  vertical-align:   0.5;
+  horizontal-align: 0.5;
+  font:            "FiraCode Nerd Font 24";
+}
+
+configuration {
+  show-icons: false;
+}
+

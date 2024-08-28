@@ -28,6 +28,7 @@ cp ~/.config/flameshotrc ~/.dotfiles/.config/
 cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config/
 cp ~/.config/libinput-gestures-wayland.conf ~/.dotfiles/.config/
 cp ~/.config/chromium-flags.conf ~/.dotfiles/.config/
+cp ~/.config/rofimoji.rc ~/.dotfiles/.config/
 
 cp -r ~/.config/hypr ~/.dotfiles/.config
 

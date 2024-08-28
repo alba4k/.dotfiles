@@ -1,7 +1,7 @@
 alias p="paru"
 alias g="git"
 alias yeet_the_orphans="sudo pacman -Rssn (pacman -Qdtq) 2>/dev/null || echo No orphan packages were found!"
-alias fwupd="fwupdmgr refresh --force && fwupdmgr get-updates && sudo fwupdmgr install"
+alias fwupd="fwupdmgr refresh; fwupdmgr get-updates && sudo fwupdmgr install"
 
 alias c="tput reset && fish && exit"
 alias :q="exit"
