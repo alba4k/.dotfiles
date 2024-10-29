@@ -1,5 +1,5 @@
 prompt = "󰞅 Emoji"
-action = clipboard
+action = print
 max-recent = 0
 
 selector-args = "-theme ~/.config/rofi/grid.rasi"

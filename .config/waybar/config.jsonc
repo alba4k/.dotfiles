@@ -55,7 +55,7 @@
 
     "cpu": {
         "interval": 10,
-        "format": "󰍛 {usage}%",
+        "format": " {usage}%",
         "format-alt": "{min_frequency} GHz - {max_frequency} GHz"
     },
 
@@ -72,7 +72,7 @@
         "format-alt": " {used}GB",
         "max-length": 10,
         "tooltip": true,
-        "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
+        "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB ({percentage}%)"
     },
     
     "network": {
@@ -88,12 +88,12 @@
     },
 
     "bluetooth": {
-	    "format": "",
-	    "format-disabled": "",
-	    "format-connected": " {num_connections}",
+	    "format": "󰂯",
+	    "format-disabled": "󰂲",
+	    "format-connected": "󰂱 {num_connections}",
 	    "tooltip-format-connected": "{device_enumerate}",
-	    "tooltip-format-enumerate-connected": " {device_alias}",
-	    "tooltip-format-enumerate-connected-battery": " {device_alias} (󰥉 {device_battery_percentage}%)",
+	    "tooltip-format-enumerate-connected": "󰂱 {device_alias}",
+	    "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias} (󰁹 {device_battery_percentage}%)",
 
         "on-click": "blueman-manager",
         "on-click-right": "~/.local/bin/toggle_bluetooth.sh",
@@ -105,11 +105,11 @@
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-            "1": " ",
+            "1": " ",
             "2": " ",
             "3": " ",
-            "4": " ",
-            "5": " ",
+            "4": " ",
+            "5": " ",
             "6": " ",
             "7": " ",
             "default": " "
@@ -197,9 +197,10 @@
     },
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "format-muted": "婢 ({volume}%)",
         "on-click": "pavucontrol -t 3",
+        "interval": 1,
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
@@ -223,9 +224,9 @@
         "interval": 10,
         "format": "{icon} {percent}%",
         "scroll-step": -0.3,
-        "format-icons": ["", "", "", ""],
+        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
 
-        "on-click": "killall -9 wlsunset || wlsunset -S 3:59 -s 4:00 -t 4500 -T 6500",
+        "on-click": "killall -9 hyprsunset ||  hyprsunset -t 4500",
 
         "tooltip": false
     },
@@ -233,12 +234,26 @@
     "clock": {
         "format": " {:%H:%M}",
         "format-alt": " {:%a %d %b}",
-        "tooltip-format": "<tt><big>{calendar}</big></tt>"
+        "locale": "it_CH",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "left",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
     },
 
     "idle_inhibitor": {
         "format": "{icon}",
-        "format-icons": {"activated": " ", "deactivated": " "},
+        "format-icons": {"activated": " ", "deactivated": " "},
     },
 
     "tray": {

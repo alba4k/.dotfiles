@@ -46,7 +46,7 @@ roficonfig="$HOME/.config/rofi/music/config.rasi"
 
 musicmetadata() {
 
-player=""
+player="󰓇"
 
 albumart="$(playerctl --player=$Control metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')"
 [ $(playerctl --player=$Control metadata mpris:artUrl) ] && curl -s "$albumart" --output $Cover || cp $bkpCover $Cover 
@@ -66,8 +66,8 @@ status=$(playerctl --player=$Control status)
 status=${status:-Stopped}
 
 icon="ﭥ"
-[ "$status" = "Playing" ] && icon=""
-[ "$status" = "Paused" ] && icon="喇"
+[ "$status" = "Playing" ] && icon=""
+[ "$status" = "Paused" ] && icon=""
 
 playlist=$(playerctl --player=$Control metadata xesam:trackNumber)
 playlist=${playlist:-0}
@@ -106,8 +106,8 @@ album=${album:-Album}
 stat=$(mpc status | head -2 | tail -1 | cut -c2-7 )
 icon="ﭥ"
 status="Stopped"
-[ "$stat" = "playin" ] && status="Playing" && icon=""
-[ "$stat" = "paused" ] && status="Paused" && icon="喇"
+[ "$stat" = "playin" ] && status="Playing" && icon=""
+[ "$stat" = "paused" ] && status="Paused" && icon=""
 
 playlist=$(mpc status %songpos%/%length%)
 playlist=${playlist:-0/0}
@@ -131,8 +131,8 @@ case $Control in
 esac 2>/dev/null
 
 ## Rofi stuff
-previous="玲"
-next="怜"
+previous="󰒮"
+next="󰒭"
 lyrics=""
 options="$player\n$previous\n$icon\n$next\n$lyrics"
 

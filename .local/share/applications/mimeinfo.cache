@@ -6,5 +6,3 @@ application/x-wine-extension-bsp=wine-extension-bsp.desktop;
 application/x-wine-extension-dem=wine-extension-dem.desktop;
 application/x-wine-extension-msp=wine-extension-msp.desktop;
 text/vbscript=wine-extension-vbs.desktop;
-x-scheme-handler/discord-1221314350216646828=discord-1221314350216646828.desktop;
-x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop;

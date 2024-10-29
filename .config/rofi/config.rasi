@@ -25,7 +25,7 @@ configuration {
     me-select-entry: "";
     me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
 
-    display-drun: "  App ";
+    display-drun: "  App ";
     display-run: "  Shell ";
     display-window: " 﩯 Open ";
     display-calc: " Calc ";

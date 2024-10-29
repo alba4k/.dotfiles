@@ -20,5 +20,5 @@ else
     echo -n " "
 fi
 
-echo " $bat%"
+echo "  $bat%"
 
