@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=1.8.9 Forge
+Comment=Launch Minecraft 1.8.9
+Exec=prismlauncher -l "1.8.9 Forge"
+Icon=/home/alba4k/.local/share/PrismLauncher/instances/1.8.9 Forge/icon.png
+Terminal=false
+Type=Application
+Keywords=game;minecraft;
+Categories=Game;

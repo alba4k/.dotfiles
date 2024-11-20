@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Geometry Dash
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/322170
+Icon=steam_icon_322170
+Terminal=false
+Type=Application
+Categories=Game;

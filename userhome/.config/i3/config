@@ -1,0 +1,455 @@
+# i3 config file (v4)
+
+# Documentation: https://i3wm.org/docs/userguide.html
+
+# Dependencies:
+#
+#  System Tray:
+#   - (blueman (bluetooth manager))
+#   - network manager applet (network manager)
+#   - kdeconnect (phone - computer interface)
+#
+#  Stuff I use:
+#   - xinput (trackpad stuff)
+#   - custom scripts and sounds
+#   - i3-battery-popup (battery warning)
+#   - polybar (bar)
+#   - dunst (notifications)
+#   - libinput-gestures (trackpad gestures)
+#   - (feh (background))
+#   - nitrogen (background)
+#   - picom (compositor)
+#   - lxsession (policy kit)
+#   - clipit (clipboard manager)
+#
+#  Keybinds:
+#   - pactl (volume control)
+#   - light (brightness)
+#   - playerctl (media controls)
+#   - flameshot (screenshots)
+#   - smile (emoji selector)
+#   - systemd (poweroff, suspend, ...)
+
+
+##############################################
+###              BASIC SETUP               ###
+##############################################
+
+# Using super as modifier - Alt is Mod1
+set $mod Mod4
+
+set $exec exec --no-startup-id
+set $exec_always exec_always --no-startup-id
+
+# Font for window titles (and, eventually, i3bar)
+font pango:monospace
+
+# Start XDG autostart .desktop files using dex
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+#$exec dex --autostart --environment i3
+
+# I'm now using autorandr
+$exec "autorandr --change"
+#$exec "~/.screenlayout/3MCasa.sh"
+
+##############################################
+###               AUTOSTART                ###
+##############################################
+
+# Just in case I might get them to autoconnect
+$exec "/home/alba4k/.local/bin/buds &"
+
+# Keyboard backlight
+$exec "g413-led -a 770000"
+
+# Starting the compositor (different config, ~/.config/picom/picom.conf)
+$exec_always "picom --experimental-backends -bc"
+
+# Screen background
+#$exec_always "~/.fehbg"
+$exec_always "nitrogen --restore"
+
+# Starting dunst (different config, ~/.config/dunstrc)
+$exec_always "killall -9 dunst && dunst -conf '~/.config/dunstrc'"
+
+# Policy Kit Agent
+$exec "lxpolkit"
+
+# System Tray stuff
+# using it in polybar
+#$exec "blueman-applet"
+$exec "nm-applet"
+$exec_always "killall kdeconnect-indicator; sleep 2; kdeconnect-indicator"
+$exec "clipit &"
+#$exec "greenclip daemon"
+
+# Thunar daemon
+$exec "thunar --daemon"
+
+# Flameshot daemon
+$exec "flameshot"
+
+# for some reason the 1s sleep is needed for 6.1.4
+
+# XPS 13 Plus Trackpad Properties
+# Done using /usr/share/X11/xorg.conf/d/40-libinput.conf
+#$exec_always "sleep 1 && xinput set-prop 'VEN_04F3:00 04F3:31D1 Touchpad' 'libinput Tapping Enabled' 1"
+#$exec_always "sleep 1 && xinput set-prop 'VEN_04F3:00 04F3:31D1 Touchpad' 'libinput Disable While Typing Enabled' 0"
+#$exec_always "sleep 1 && xinput set-prop 'VEN_04F3:00 04F3:31D1 Touchpad' 'libinput Natural Scrolling Enabled' 1"
+#$exec_always "sleep 1 && xinput set-prop 'VEN_04F3:00 04F3:31D1 Touchpad' 'libinput Click Method Enabled' 1 1"
+# Enable guestures (different config, ~/.config/libinput-gestures.conf)
+$exec "sleep 1 && libinput-gestures-setup restart"
+
+# Low battery warning
+$exec_always "killall i3-battery-popup; i3-battery-popup -n -D -L 20 -m 'Battery is getting low!' -t 5m -s ~/.config/i3/click.ogg -v 50"
+
+# Setting the correct keyboard layout (swiss german)
+$exec_always "setxkbmap -layout ch,de"
+
+# https://github.com/REALERvolker1/volbright
+$exec "~/.config/i3/volbright.sh --brightness --keyboard --volume"
+# https://github.com/REALERvolker1/pmgmt-sh
+$exec "~/.config/i3/ac_detect.sh"
+
+##############################################
+###                 SETUP                  ###
+##############################################
+
+# Focus where the mouse is
+focus_follows_mouse yes
+
+# Floating windows settings
+floating_modifier $mod
+floating_minimum_size 48 x 30
+floating_maximum_size 1600 x 900
+
+# Floating by default
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="flameshot" instance="flameshot"] floating enable
+for_window [class=" shutdown" instance=" Shutdown"] floating enable
+for_window [class="Tk" instance="tk"] floating enable
+for_window [class="gnome-calculator" instance="gnome-calculator"] floating enable
+for_window [class="org.gnome.Weather" instance="org.gnome.Weather"] floating enable
+for_window [class="Onedriver-launcher" instance="onedriver-launcher"] floating enable
+for_window [class="Onedriver" instance="onedriver"] floating enable
+for_window [class="PolyMC" instance="polymc"] floating enable
+for_window [class="PrismLauncher" instance="prismlauncher"] floating enable
+for_window [class="MultiMC" instance="MultiMC"] floating enable
+for_window [class="steam" instance="steam"] floating enable
+for_window [instance="galaxybudsclient"] floating enable
+for_window [instance="smile"] floating enable
+for_window [instance="qalculate-gtk"] floating enable
+for_window [instance="otpclient"] floating enable
+
+for_window [instance="kdeconnectd"] fullscreen disable, floating enable, resize set 1920px 1200px, move position 0px 0px
+
+for_window [instance="scrcpy"] floating enable, resize set 410px 900px
+
+# Floating by default - settings apps
+for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
+for_window [class="Nm-connection-editor" instance="nm-connection-editor"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="Nitrogen" instance="nitrogen"] floating enable
+for_window [class="System-config-printer.py"] floating enable
+
+# Tiling by default
+for_window [class="Chromium"] floating disable
+for_window [class="steam_app_1690940" instance="steam_app_1690940"] floating disable
+for_window [class="among us.exe" instance="among us.exe"] floating disable
+for_window [class="csgo_linux64" instance="csgo_linux64"] floating disable
+
+# Fullscreen by default
+for_window [class="TelegramDesktop" title="Visualizzatore multimediale"] fullscreen enable
+
+# Colors
+# <colorclass> <border> <background> <text> <indicator> <child_border>
+client.focused #8957b0ff #8957b0ff #8957b0ff #8957b0ff
+client.focused_inactive #555555cc #555555cc #555555cc #555555cc
+client.unfocused #555555cc #555555cc #555555cc #555555cc
+client.urgent #dc322fcc #dc322fcc #dc322fcc #dc322fcc
+
+# rounded corners
+# border_radius 12
+
+# better rounded borders
+#$exec_always "killall xborders; ~/.config/i3/xborder/xborders -c ~/.config/i3/xborder/config.json"
+
+# Window decorations (i3-gaps or i3wm >=4.22)
+gaps inner 10
+gaps outer 0
+default_border pixel 5
+default_floating_border pixel 5
+
+##############################################
+###              WORKSPACES                ###
+##############################################
+
+# Default workspace settings
+default_orientation horizontal
+workspace_layout default
+
+
+# Defining the name for the workspaces, keybinds are set later
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Back to previous when selecting current
+workspace_auto_back_and_forth yes
+
+bindsym $mod+Shift+x move workspace to output next
+
+##############################################
+###                 MODES                  ###
+##############################################
+
+# These bindings trigger as soon as you enter the mode
+
+# Resize window via keybindings
+mode "Resize" {
+        # Resizing using HJKL keys
+        bindsym h resize shrink width 40 px or 5 ppt
+        bindsym j resize grow height 40 px or 5 ppt
+        bindsym k resize shrink height 40 px or 5 ppt
+        bindsym l resize grow width 40 px or 5 ppt
+        # Using arrow keys
+        bindsym Left resize shrink width 40 px or 5 ppt
+        bindsym Down resize grow height 40 px or 5 ppt
+        bindsym Up resize shrink height 40 px or 5 ppt
+        bindsym Right resize grow width 40 px or 5 ppt
+
+        # Back to normal
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "Resize"
+
+
+# Logout, Poweroff, ... promt
+mode "System" {
+    bindsym e exit
+    bindsym s mode "default", $exec "systemctl suspend-then-hibernate"
+    bindsym l mode "default", $exec "~/.config/i3/lock.sh"
+    bindsym Ctrl+l mode "default", $exec "~/.config/i3/lock.sh && systemctl suspend-then-hibernate"
+    bindsym Ctrl+Shift+l mode "default", $exec "~/.config/i3/lock.sh && systemctl hibernate"
+    bindsym Ctrl+r $exec "systemctl reboot"
+    bindsym Ctrl+s $exec "systemctl poweroff"
+    bindsym Ctrl+h mode"default", $exec "systemctl hibernate"
+    bindsym h mode"default", $exec "systemctl hybrid-sleep"
+
+    # Back to normal
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+BackSpace mode "default"
+}
+bindsym $mod+BackSpace mode "System"
+
+# Custom scripts for changing monitor layout - xrandr
+mode "Display" {
+	bindsym 0 $exec "~/.screenlayout/Laptop.sh", mode "default"
+	bindsym 2 $exec "~/.screenlayout/2MCasa.sh", mode "default"
+	bindsym 3 $exec "~/.screenlayout/3MCasa.sh", mode "default"
+
+	# back to normal
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+x mode "default"
+}
+bindsym $mod+x mode "Display"
+bindsym $mod+ctrl+x $exec "~/.screenlayout/auto.py"
+
+
+##############################################
+###            WINDOW MANAGMENT            ###
+##############################################
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+# Using arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+# Using arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Split in horizontal orientation
+bindsym $mod+ctrl+h split h
+# Split in vertical orientation
+bindsym $mod+ctrl+v split v
+
+# Open in fullscreen
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Ctrl+f fullscreen toggle global
+
+# Change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+f floating toggle
+
+# Change focus (tiling/floating)
+bindsym $mod+space focus mode_toggle
+
+# Focus parent
+#bindsym $mod+a focus parent
+# Focus child
+#bindsym $mod+d focus child
+
+##############################################
+###              KEYBINDINGS               ###
+##############################################
+
+# Reload this config
+bindsym $mod+Shift+c reload
+# Restart i3 (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# Logout
+bindsym $mod+Shift+q exit
+
+# Use pactl to adjust volume in PulseAudio.
+bindsym XF86AudioRaiseVolume $exec "pactl set-sink-volume @DEFAULT_SINK@ +10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay ~/.config/i3/click.ogg"
+bindsym XF86AudioLowerVolume $exec "pactl set-sink-volume @DEFAULT_SINK@ -10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay ~/.config/i3/click.ogg"
+bindsym XF86AudioMute $exec "pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl play-sample bell"
+bindsym XF86AudioMicMute $exec "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+# These are to make them work when you have ctrl or shift pressed
+bindsym Ctrl+XF86AudioRaiseVolume $exec "pactl set-sink-volume @DEFAULT_SINK@ +10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay ~/.config/i3/click.ogg"
+bindsym Ctrl+XF86AudioLowerVolume $exec "pactl set-sink-volume @DEFAULT_SINK@ -10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay ~/.config/i3/click.ogg"
+bindsym Ctrl+XF86AudioMute $exec "pactl set-sink-mute @DEFAULT_SINK@ toggle && paplay ~/.config/i3/click.ogg"
+bindsym Ctrl+XF86AudioMicMute $exec "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+bindsym Shift+XF86AudioRaiseVolume $exec "pactl set-sink-volume @DEFAULT_SINK@ +10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay ~/.config/i3/click.ogg"
+bindsym Shift+XF86AudioLowerVolume $exec "pactl set-sink-volume @DEFAULT_SINK@ -10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay ~/.config/i3/click.ogg"
+bindsym Shift+XF86AudioMute $exec "pactl set-sink-mute @DEFAULT_SINK@ toggle && paplay ~/.config/i3/click.ogg"
+bindsym Shift+XF86AudioMicMute $exec "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+bindsym Ctrl+Shift+XF86AudioRaiseVolume $exec "pactl set-sink-volume @DEFAULT_SINK@ +10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay ~/.config/i3/click.ogg"
+bindsym Ctrl+Shift+XF86AudioLowerVolume $exec "pactl set-sink-volume @DEFAULT_SINK@ -10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay ~/.config/i3/click.ogg"
+bindsym Ctrl+Shift+XF86AudioMute $exec "pactl set-sink-mute @DEFAULT_SINK@ toggle && paplay ~/.config/i3/click.ogg"
+bindsym Ctrl+Shift+XF86AudioMicMute $exec "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+
+# Use light to adjust display brightness.
+bindsym XF86MonBrightnessUp $exec "light -A 5"
+bindsym XF86MonBrightnessDown $exec "light -U 5"
+
+# Media controls using playerctl
+bindsym XF86AudioPlay $exec "playerctl play-pause &"
+bindsym XF86AudioPause $exec "playerctl play-pause &"
+bindsym XF86AudioNext $exec "playerctl next &"
+bindsym XF86AudioPrev $exec "playerctl previous &"
+# These are to make them work when you have ctrl or shift pressed
+bindsym Ctrl+XF86AudioPlay $exec "playerctl play-pause &"
+bindsym Ctrl+XF86AudioPause $exec "playerctl play-pause &"
+bindsym Ctrl+XF86AudioNext $exec "playerctl next &"
+bindsym Ctrl+XF86AudioPrev $exec "playerctl previous &"
+bindsym Shift+XF86AudioPlay $exec "playerctl play-pause &"
+bindsym Shift+XF86AudioPause $exec "playerctl play-pause &"
+bindsym Shift+XF86AudioNext $exec "playerctl next &"
+bindsym Shift+XF86AudioPrev $exec "playerctl previous &"
+bindsym Shift+Ctrl+XF86AudioPlay $exec "playerctl play-pause &"
+bindsym Shift+Ctrl+XF86AudioPause $exec "playerctl play-pause &"
+bindsym Shift+Ctrl+XF86AudioNext $exec "playerctl next &"
+bindsym Shift+Ctrl+XF86AudioPrev $exec "playerctl previous &"
+
+# Taking screenshots using flameshot
+bindsym Print $exec "flameshot screen -c"
+bindsym $mod+Shift+s $exec "flameshot gui && i3-msg focus left && i3-msg focus right"
+bindsym $mod+Print $exec "flameshot launcher"
+
+# Open a terminal
+bindsym $mod+Return $exec "kitty"
+
+# Application launcher (different config, ~/.config/rofi)
+bindsym $mod+d $exec "rofi -show drun"
+bindsym $mod+Shift+d $exec "rofi -show run"
+bindsym $mod+Tab $exec "rofi -show window"
+bindsym $mod+C $exec "rofi -show calc"
+#bindsym $mod+V $exec "rofi -modi 'run,drun,window,clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+
+# I have a custom macro for it on my laptop so why not use it :)
+# https://bit.ly/3NMpzlK (Fn+F9)
+bindsym $mod+P $exec "systemctl suspend-then-hibernate"
+
+# Open emoji selector
+bindsym $mod+period $exec "emote"
+
+# Connecting bluetooth earphones (custom script)
+bindsym $mod+b $exec "~/.local/bin/buds"
+
+#######################
+# WORKSPACE MANAGMENT #
+#######################
+
+# Switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1, workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2, workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3, workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4, workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5, workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6, workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7, workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8, workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9, workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10, workspace number $ws10
+
+##############################################
+###                  BAR                   ###
+##############################################
+
+# Starting Polybar (different config, ~/.config/polybar/config)
+$exec_always "killall -9 polybar; polybar"
+
+##############################################
+###                LAYOUTS                 ###
+##############################################
+
+# https://github.com/eliep/i3-layouts
+
+$exec_always "i3-layouts &"
+
+set $i3l autosplit to workspace $ws1
+set $i3l autosplit to workspace $ws2
+set $i3l autosplit to workspace $ws3
+set $i3l autosplit to workspace $ws4
+set $i3l autosplit to workspace $ws5
+set $i3l autosplit to workspace $ws6
+set $i3l autosplit to workspace $ws7
+set $i3l autosplit to workspace $ws8
+set $i3l autosplit to workspace $ws9
+set $i3l autosplit to workspace $ws10

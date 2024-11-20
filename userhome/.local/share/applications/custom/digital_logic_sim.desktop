@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Digital Logic Sim
+Comment=Digital Logic Simulator - by Sebastian Lague
+Exec=/opt/Digital\ Logic\ Sim/Digital\ Logic\ Sim.x86_64
+#Icon=/opt/Digital\ Logic\ Sim/Digital\ Logic\ Sim_Data/Resources/UnityPlayer.png
+Icon=/home/alba4k/.local/share/icons/custom/digital_logic_sim.png

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Viewfinder
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/1382070
+Icon=steam_icon_1382070
+Terminal=false
+Type=Application
+Categories=Game;

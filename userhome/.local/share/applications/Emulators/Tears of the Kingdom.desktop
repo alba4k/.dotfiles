@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=The Legend of Zelda: Tears of the Kingdom
+Comment=Avvia The Legend of Zelda: Tears of the Kingdom con l'emulatore yuzu
+Icon=/home/alba4k/.local/share/icons/hicolor/256x256/yuzu-0100F2C0115B6000.png
+TryExec=yuzu
+Exec=gamemoderun yuzu -g "/home/alba4k/.local/share/games/yuzu/The Legend of Zelda Tears of the Kingdom [0100F2C0115B6000][v0][US].nsp"
+Categories=Game;Emulator;Qt;
+Keywords=Switch;Nintendo;

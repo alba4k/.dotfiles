@@ -1,0 +1,17 @@
+#!/bin/sh
+
+rofi=$(echo -e "󰌾 Lock\n󰗽 Logout\n󰤄 Suspend\n Hibernate\n Reboot\n Poweroff" | rofi -dmenu -i)
+
+if [ "$rofi" = "󰌾 Lock" ]; then
+    ~/.config/hypr/lock.sh from-rofi
+elif [ "$rofi" = "󰗽 Logout" ]; then
+    hyprctl dispatch exit
+elif [ "$rofi" = "󰤄 Suspend" ]; then
+    systemctl suspend-then-hibernate
+elif [ "$rofi" = " Hibernate" ]; then
+    systemctl hibernate
+elif [ "$rofi" = " Reboot" ]; then
+    systemctl reboot
+elif [ "$rofi" = " Poweroff" ]; then
+    systemctl poweroff
+fi

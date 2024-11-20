@@ -27,3 +27,7 @@ export PATH="$PATH:/home/alba4k/.local/bin"
 # Added by Toolbox App
 #export PATH="$PATH:/home/alba4k/.local/share/JetBrains/Toolbox/scripts"
 
+if [[ "$(tty)" == "/dev/tty1" ]]; then
+    exec Hyprland >/dev/null 2>&1
+fi
+

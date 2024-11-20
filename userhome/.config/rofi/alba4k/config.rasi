@@ -1,0 +1,77 @@
+configuration {
+	modi: "drun,run,window";
+    combi-modi: "drun,run,window";
+	font: "noto sans 20";
+    fixed-num-lines: false;
+/*	location: 0;*/
+	yoffset: -220;
+/*	xoffset: 0;*/
+/*	fixed-num-lines: true;*/
+	show-icons: true;
+/*	terminal: "rofi-sensible-terminal";*/
+/*	ssh-client: "ssh";*/
+/*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
+/*	run-command: "{cmd}";*/
+/*	run-list-command: "";*/
+/*	run-shell-command: "{terminal} -e {cmd}";*/
+/*	window-command: "wmctrl -i -R {window}";*/
+/*	window-match-fields: "all";*/
+/*	icon-theme: ;*/
+/*	drun-match-fields: "name,generic,exec,categories,keywords";*/
+/*	drun-categories: ;*/
+/*	drun-show-actions: false;*/
+/*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
+/*	drun-url-launcher: "xdg-open";*/
+	disable-history: false;
+/*	ignored-prefixes: "";*/
+/*	sort: false;*/
+/*	sorting-method: "normal";*/
+/*	case-sensitive: false;*/
+/*	cycle: true;*/
+/*	sidebar-mode: false;*/
+/*	hover-select: false;*/
+/*	eh: 1;*/
+/*	auto-select: false;*/
+/*	parse-hosts: false;*/
+/*	parse-known-hosts: true;*/
+/*	combi-modi: "window,run";*/
+/*	matching: "normal";*/
+/*	tokenize: true;*/
+/*	m: "-5";*/
+/*	filter: ;*/
+/*	dpi: -1;*/
+/*	threads: 0;*/
+	scroll-method: 1;
+/*	window-format: "{w}    {c}   {t}";*/
+/*	click-to-exit: true;*/
+/*	max-history-size: 25;*/
+/*	combi-hide-mode-prefix: false;*/
+/*	combi-display-format: "{mode} {text}";*/
+/*	matching-negate-char: '-';*/
+/*	cache-dir: ;*/
+/*	window-thumbnail: false;*/
+/*	drun-use-desktop-cache: false;*/
+/*	drun-reload-desktop-cache: false;*/
+/*	normalize-match: false;*/
+/*	steal-focus: false;*/
+/*	application-fallback-icon: ;*/
+/*	pid: "/run/user/1000/rofi.pid";*/
+	display-window: "Finestre: ";
+/*	display-windowcd: ;*/
+	display-run: "$ ";
+/*	display-ssh: ;*/
+	display-drun: "App: ";
+/*	display-combi: ;*/
+/*	display-keys: ;*/
+/*	display-filebrowser: ;*/
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+@theme "~/.config/rofi/alba4k/theme.rasi"

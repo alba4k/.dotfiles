@@ -1,0 +1,124 @@
+* {
+    bg-col: #1E1D2F44;
+    bg-col-semi: #1E1D2F88;
+    bg-col-full: #1E1D2F;
+    primary: #8957b0;
+    fg-col: #D9E0EE;
+    fg-col-trans: #D9E0EE77;
+    fg-col2: #F28FAD;
+    grey: #D9E0EE;
+    width: 600;
+}
+
+
+element-text, element-icon , mode-switcher {
+    background-color: transparent;
+    text-color:       inherit;
+}
+
+window {
+    // y-offset: -180px;
+    // height: 360px;
+    border: 5;
+    border-radius: 12;
+    border-color: @primary;
+    background-color: @bg-col-semi;
+}
+
+mainbox {
+    background-color: transparent;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @primary;
+    padding: 6px;
+    text-color: @bg-col-full;
+    border-radius: 12px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    placeholder: "Cerca...";
+    placeholder-color: @fg-col-trans;
+    text-color: @fg-col;
+    background-color: @bg-col-full;
+    border-radius: 12px;
+}
+
+listview {
+    lines: 6;
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    background-color: transparent;
+}
+
+element {
+    padding: 5px;
+    background-color: transparent;
+    text-color: @fg-col;
+    border-radius: 12px;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color: @bg-col-semi;
+    text-color: @primary;
+}
+
+mode-switcher {
+    spacing: 10;
+  }
+
+button {
+    padding: 20px;
+    background-color: @bg-col-semi;
+    text-color: @grey;
+    vertical-align: 0.5;
+    border-radius: 12;
+    horizontal-align: 0.5;
+    padding: 15px;
+}
+
+button selected {
+  background-color: @bg-col-full;
+  text-color: @primary;
+}
+
+error-message {
+    background-color: @bg-col-semi;
+    text-color: @grey;
+}
+
+message {
+    background-color: @bg-col-semi;
+    border-radius: 8;
+    text-color: @grey;
+    size-vertical: 100px;
+}
+
+textbox {
+    background-color: transparent;
+    border-radius: 8;
+    text-color: @grey;
+    size-vertical: 100px;
+}
+

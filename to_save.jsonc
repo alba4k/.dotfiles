@@ -1,0 +1,53 @@
+{
+    // single files that should be copied
+    "files": [
+        "~/.config/chromium-flags.conf",
+        "~/.config/electron-flags.conf",
+        "~/.config/flameshotrc",
+        "~/.config/kdeglobals",
+        "~/.config/libinput-gestures.conf",
+        "~/.config/picom.conf",
+        "~/.config/rofimoji.rc",
+        "~/.config/spotify-flags.conf",
+        "~/.local/bin/balanced",
+        "~/.local/bin/buds",
+        "~/.local/bin/g502profile.sh",
+        "~/.local/bin/i3-layouts",
+        "~/.local/bin/i3l",
+        "~/.local/bin/performance",
+        "~/.local/bin/powersave",
+        "~/.local/bin/scrcpy.sh",
+        "~/.local/bin/teamviewer_autostart.sh",
+        "~/.local/bin/toggle_bluetooth.sh",
+        "~/.local/share/uptime-record"
+    ],
+    // entire folders that should be copied
+    "directories": [
+        "~/.config/albafetch",
+        "~/.config/autorandr",
+        "~/.config/cava",
+        "~/.config/dunst",
+        "~/.config/fish",
+        "~/.config/flameshot",
+        "~/.config/i3",
+        "~/.config/kanshi",
+        "~/.config/kitty",
+        "~/.config/MangoHud",
+        "~/.config/neofetch",
+        "~/.config/nitrogen",
+        "~/.config/nvim",
+        "~/.config/polybar",
+        "~/.config/qt5ct",
+        "~/.config/qt6ct",
+        "~/.config/rofi",
+        "~/.config/spicetify",
+        "~/.config/sway",
+        "~/.config/swayidle",
+        "~/.config/waybar",
+        "~/.config/wlogout",
+        "~/.local/share/applications",
+        "~/.local/share/fonts",
+        "~/.screenlayout",
+        "~/Immagini/wallpapers"
+    ]
+}

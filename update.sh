@@ -13,7 +13,6 @@ cp -r ~/.config/nvim/ ~/.dotfiles/.config/
 cp -r ~/.config/rofi/ ~/.dotfiles/.config/
 cp -r ~/.config/polybar/ ~/.dotfiles/.config/
 cp -r ~/.config/cava ~/.dotfiles/.config
-cp -r ~/.config/picom.conf ~/.dotfiles/.config/
 cp -r ~/.config/spicetify ~/.dotfiles/.config/
 cp -r ~/.config/flameshot ~/.dotfiles/.config/
 cp -r ~/.config/autorandr ~/.dotfiles/.config/
@@ -26,7 +25,7 @@ cp -r ~/.config/kanshi ~/.dotfiles/.config/
 cp -r ~/.config/dunst ~/.dotfiles/.config/
 cp ~/.config/flameshotrc ~/.dotfiles/.config/
 cp ~/.config/libinput-gestures.conf ~/.dotfiles/.config/
-cp ~/.config/libinput-gestures-wayland.conf ~/.dotfiles/.config/
+cp ~/.config/picom.conf ~/.dotfiles/.config/
 cp ~/.config/chromium-flags.conf ~/.dotfiles/.config/
 cp ~/.config/rofimoji.rc ~/.dotfiles/.config/
 
@@ -45,11 +44,9 @@ cp -r ~/Immagini/wallpapers ~/.dotfiles/
 mkdir -p ~/.dotfiles/.local/bin
 #cp ~/.local/bin/autostart.sh ~/.dotfiles/.local/bin/
 cp ~/.local/bin/buds ~/.dotfiles/.local/bin/
-cp ~/.local/bin/rebuds ~/.dotfiles/.local/bin/
 cp ~/.local/bin/performance ~/.dotfiles/.local/bin/
 cp ~/.local/bin/balanced ~/.dotfiles/.local/bin/
 cp ~/.local/bin/powersave ~/.dotfiles/.local/bin/
-cp ~/.local/bin/blackscreen.py ~/.dotfiles/.local/bin/
 cp ~/.local/bin/g502profile.sh ~/.dotfiles/.local/bin/
 cp ~/.local/bin/i3-layouts ~/.dotfiles/.local/bin/
 cp ~/.local/bin/i3l ~/.dotfiles/.local/bin/
