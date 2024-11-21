@@ -1,8 +1,16 @@
 # alba4k's dotfiles
 
+![Preview](assets/hyprland.png)
+
+<details>
+
+<summary> A really old picture </summary>
+
 ![Preview](assets/pic.png)
 
 ## my dotfiles, shown in [this](https://www.reddit.com/r/unixporn/comments/vf2tej/i3gaps_well_i_like_purple_anybody_here_good_with/) r/unixporn post
+
+</details>
 
 ---
 

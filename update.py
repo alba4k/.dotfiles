@@ -4,6 +4,7 @@ import commentjson
 import git
 import os
 import shutil
+import stat
 import sys
 
 # ANSI escape codes for colors
@@ -25,6 +26,10 @@ for file in to_save["files"]:
         destination = path + file.replace("~", "/userhome")
         os.makedirs(os.path.dirname(destination), exist_ok=True)
         shutil.copy(os.path.expanduser(file), destination)
+        
+        # /etc/doas.conf causes issues sooo
+        permissions = os.stat(destination).st_mode
+        os.chmod(destination, permissions | stat.S_IWUSR)
         
         print(f" > {YELLOW}Successfully copied {file}{RESET}")
     else:
