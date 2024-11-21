@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Hollow Knight
-Comment=Play this game on Steam
-Exec=steam steam://rungameid/367520
-Icon=steam_icon_367520
-Terminal=false
-Type=Application
-Categories=Game;

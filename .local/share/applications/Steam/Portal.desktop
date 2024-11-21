@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Portal
-Comment=Play this game on Steam
-Exec=steam steam://rungameid/400
-Icon=steam_icon_400
-Terminal=false
-Type=Application
-Categories=Game;

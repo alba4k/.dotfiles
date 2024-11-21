@@ -1,6 +1,0 @@
-prompt = "󰞅 Emoji"
-action = print
-max-recent = 0
-
-selector-args = "-theme ~/.config/rofi/grid.rasi"
-hidden-descriptions = True

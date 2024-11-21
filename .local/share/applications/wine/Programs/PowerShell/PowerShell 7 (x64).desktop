@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=PowerShell 7 (x64)
-Exec=env WINEPREFIX="/home/alba4k/.wine" wine C:\\\\users\\\\alba4k\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\PowerShell\\\\PowerShell\\ 7\\ \\(x64\\).lnk
-Type=Application
-StartupNotify=true
-Comment=PowerShell 7 (x64)
-Icon=272E_PowerShellExe.0
-StartupWMClass=pwsh.exe

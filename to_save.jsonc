@@ -1,6 +1,11 @@
 {
     // single files that should be copied
     "files": [
+        "/etc/doas.conf",
+        "/etc/pacman.conf",
+        "/etc/sudoers",
+        "/etc/xdg/weston/weston.ini",
+        "/usr/share/X11/xorg.conf.d/40-libinput.conf",
         "~/.config/chromium-flags.conf",
         "~/.config/electron-flags.conf",
         "~/.config/flameshotrc",
@@ -9,6 +14,7 @@
         "~/.config/picom.conf",
         "~/.config/rofimoji.rc",
         "~/.config/spotify-flags.conf",
+        "~/.gitconfig",
         "~/.local/bin/balanced",
         "~/.local/bin/buds",
         "~/.local/bin/g502profile.sh",
@@ -19,10 +25,14 @@
         "~/.local/bin/scrcpy.sh",
         "~/.local/bin/teamviewer_autostart.sh",
         "~/.local/bin/toggle_bluetooth.sh",
-        "~/.local/share/uptime-record"
+        "~/.local/share/uptime-record",
+        "~/.profile"
     ],
     // entire folders that should be copied
     "directories": [
+        "/etc/pacman.d/hooks",
+        "/etc/pam.d",
+        "/etc/sddm.conf.d",
         "~/.config/albafetch",
         "~/.config/autorandr",
         "~/.config/cava",

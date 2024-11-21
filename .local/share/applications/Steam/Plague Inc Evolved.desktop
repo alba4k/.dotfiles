@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Plague Inc: Evolved
-Comment=Play this game on Steam
-Exec=steam steam://rungameid/246620
-Icon=steam_icon_246620
-Terminal=false
-Type=Application
-Categories=Game;

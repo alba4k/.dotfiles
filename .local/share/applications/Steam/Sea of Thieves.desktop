@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Sea of Thieves
-Comment=Play this game on Steam
-Exec=steam steam://rungameid/1172620
-Icon=steam_icon_1172620
-Terminal=false
-Type=Application
-Categories=Game;

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Type=Application
-NoDisplay=true
-Exec=kitty -e nvim %f
-Name=kitty -e nvim
-Comment=Definizione personalizzata per kitty -e nvim

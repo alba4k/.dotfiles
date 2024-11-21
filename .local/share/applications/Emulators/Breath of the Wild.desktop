@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=The Legend of Zelda: Breath of the Wild
-Comment=Play Breath of the Wild on Cemu
-Exec=env LD_LIBRARY_PATH=/home/alba4k/.cache/cemu cemu --title-id 00050000101c9500
-Icon=/home/alba4k/.local/share/cemu/icons/00050000101c9500.png
-Terminal=false
-Type=Application
-Categories=Game;

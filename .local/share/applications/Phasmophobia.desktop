@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Phasmophobia
-Comment=Play this game on Steam
-Exec=steam steam://rungameid/739630
-Icon=steam_icon_739630
-Terminal=false
-Type=Application
-Categories=Game;

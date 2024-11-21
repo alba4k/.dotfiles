@@ -6,6 +6,6 @@ Type = Package
 Target = *
 
 [Action]
-Description = Cleaning the cache...
+Description = Pulendo la cache...
 When = PostTransaction
 Exec = /usr/bin/paccache -rk2

@@ -1,8 +1,0 @@
-#!/bin/bash
-
-bluetoothctl power on
-bluetoothctl remove 80:9F:F5:BF:C4:80
-bluetoothctl scan on
-bluetoothctl pair 80:9F:F5:BF:C4:80
-bluetoothctl connect 80:9F:F5:BF:C4:80
-bluetoothctl set-alias "Buds Pro"

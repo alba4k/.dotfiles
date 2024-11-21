@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=hl2
-MimeType=application/x-spss-sav;
-Exec=env WINEPREFIX="/home/alba4k/.wine" wine start /ProgIDOpen Valve.Source %f
-NoDisplay=true
-StartupNotify=true
-Icon=11E9_hl2.0
