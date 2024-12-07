@@ -46,8 +46,8 @@ for directory in to_save["directories"]:
     else:
         print(f" > {RED}Couldn't copy {directory}{RESET}")
 
+commit_message = DEFAULT_MESSAGE = "committed automatically from update.py"
 
-commit_message = "committed automatically from update.py"
 if(len(sys.argv) > 1):
     commit_message = sys.argv[1];
 
@@ -56,7 +56,10 @@ if repo.is_dirty(untracked_files=True):
     repo.git.add(all=True)
     repo.index.commit(commit_message)
     
-    print(f"> {BLUE}Committed changes{RESET}")
+    if commit_message != DEFAULT_MESSAGE:
+        print(f"> {BLUE}Committed changes with message \"{commit_message}\"{RESET}")
+    else:
+        print(f"> {BLUE}Committed changes with message{RESET}")
 
 origin = repo.remote(name="origin")
 origin.push()
