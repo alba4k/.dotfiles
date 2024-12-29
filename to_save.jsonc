@@ -58,6 +58,7 @@
         "~/.config/wlogout",
         "~/.local/share/applications",
         "~/.local/share/fonts",
+        "~/.mozilla/firefox/default-release/chrome",
         "~/.screenlayout",
         "~/Immagini/wallpapers"
     ]

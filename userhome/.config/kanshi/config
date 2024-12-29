@@ -1,11 +1,24 @@
 profile laptop {
-	output eDP-1 mode 1920x1200@60Hz scale 1
+	output eDP-1 mode 1920x1200@60Hz position 0,0 scale 1
 	exec hyprctl reload
 }
 
+# My monitors sometimes change name after being disconnected and later reconnected
 profile docked {
-	exec hyprctl reload
 	output eDP-1 disable
-	output DP-7 enable mode --custom 1920x1080@72Hz position 0,0 scale 1
-	output DP-5 enable mode --custom 1920x1080@72Hz position 1920,0 scale 1
+	output DP-5 enable mode --custom 1920x1080@72Hz position 0,0 scale 1
+	output DP-7 enable mode --custom 1920x1080@72Hz position 1920,0 scale 1
+	exec hyprctl reload
+}
+profile docked2 {
+	output eDP-1 disable
+	output DP-6 enable mode --custom 1920x1080@72Hz position 0,0 scale 1
+	output DP-9 enable mode --custom 1920x1080@72Hz position 1920,0 scale 1
+	exec hyprctl reload
+}
+profile docked3 {
+	output eDP-1 disable
+	output DP-5 enable mode --custom 1920x1080@72Hz position 0,0 scale 1
+	output DP-8 enable mode --custom 1920x1080@72Hz position 1920,0 scale 1
+	exec hyprctl reload
 }

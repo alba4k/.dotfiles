@@ -28,7 +28,10 @@ alias black="python -c \"import tkinter as tk; tk.Tk().config(bg='#000000');tk.m
 
 alias reboot="systemctl reboot" & # so I can uise --firmware-setup
 alias hibernate="systemctl hibernate" &
-[ "$TERM" = "xterm-kitty" ] && alias icat="kitten icat" &
+if [ "$TERM" = "xterm-kitty" ]
+    alias icat="kitten icat" &
+    alias ssh="kitten ssh" &
+end
 
 alias smallfetch="albafetch --config /home/alba4k/.config/albafetch/albafetch_small.conf" &
 
