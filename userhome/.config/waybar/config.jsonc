@@ -226,7 +226,7 @@
         "scroll-step": -0.3,
         "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
 
-        "on-click": "killall -9 hyprsunset ||  hyprsunset -t 4500",
+        "on-click": "killall -9 hyprsunset ||  hyprsunset -t 4000",
 
         "tooltip": false
     },

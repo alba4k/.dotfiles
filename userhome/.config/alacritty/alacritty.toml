@@ -1,0 +1,59 @@
+#  ALACRITTY - alba4k
+#
+# Documentation: https://alacritty.org/config-alacritty.html
+
+[general]
+# Theming
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
+
+live_config_reload = true
+ipc_socket = false
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "None"
+opacity = 0.85
+dynamic_title = false
+
+[scrolling]
+history = 10000
+multiplier = 4
+
+[font]
+normal = { family = "MesloLGS Nerd Font", style = "Regular"}
+bold = { style = "Bold"}
+italic = { style = "Italic"}
+bold_italic = { style = "Bold Italic"}
+size = 13
+
+[bell]
+animation = "Ease"
+duration = 100
+color = "#1e1e2e"
+command = "None"
+
+[selection]
+
+[cursor]
+style = { shape = "Beam", blinking = "On" } 
+blink_interval = 500
+blink_timeout = 10
+unfocused_hollow = true
+
+[terminal]
+shell = "/usr/bin/fish"
+
+[mouse]
+hide_when_typing = true
+
+[hints]
+
+[keyboard]
+# de_CH is weird sometimes
+bindings = [ { key = "+", mods = "Control | Shift", mode = "~Vi", action = "IncreaseFontSize" },
+             { key = "-", mods = "Control", mode = "~Vi", action = "DecreaseFontSize" },
+             { key = "=", mods = "Control | Shift", mode = "~Vi", action = "ResetFontSize" } ]
+
+

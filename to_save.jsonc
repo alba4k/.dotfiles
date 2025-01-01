@@ -33,6 +33,7 @@
         "/etc/pacman.d/hooks",
         "/etc/pam.d",
         "/etc/sddm.conf.d",
+        "~/.config/alacritty",
         "~/.config/albafetch",
         "~/.config/autorandr",
         "~/.config/cava",
