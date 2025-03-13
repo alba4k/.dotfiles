@@ -221,12 +221,12 @@
     },
 
     "backlight": {
-        "interval": 10,
+        "interval": 1,
         "format": "{icon} {percent}%",
         "scroll-step": -0.3,
         "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
 
-        "on-click": "killall -9 hyprsunset ||  hyprsunset -t 4000",
+        "on-click": "killall hyprsunset || hyprsunset -t 4000",
 
         "tooltip": false
     },

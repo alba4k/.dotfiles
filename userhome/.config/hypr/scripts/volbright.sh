@@ -32,7 +32,7 @@ _notify () {
         #color="$GOOD_COLOR"
     fi
 
-    notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u 'normal' -h "int:value:$value" -h "string:hlcolor:$color" -- "${icon} ${value}%"
+    notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u low -h "int:value:$value" -h "string:hlcolor:$color" -- "${icon} ${value}%"
 }
 
 _instance_detect () {

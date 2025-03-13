@@ -8,3 +8,4 @@ Icon=vesktop
 Categories=Network;InstantMessaging;
 StartupWMClass=Vesktop;
 Keywords=discord;vencord;vesktop
+MimeType=x-scheme-handler/discord;

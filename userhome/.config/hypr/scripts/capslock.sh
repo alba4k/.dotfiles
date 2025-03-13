@@ -8,8 +8,8 @@ evtest "$KEYBOARD" | \
 while read line
 do
     if [[ "$line" == *"$EVENT" ]]; then
-        notify-send -r 2593 -t 1000 -a Sistema -i input-keyboard -u normal "󰘲 Caps Lock" "Inserito"
+        notify-send -r 2593 -t 1000 -a Sistema -i input-keyboard -u low "󰘲 Caps Lock" "Inserito"
     elif [[ "$line" == *"$EVENT2" ]]; then
-        notify-send -r 2593 -t 1000 -a Sistema -i input-keyboard -u normal "󰘲 Caps Lock" "Disinserito"
+        notify-send -r 2593 -t 1000 -a Sistema -i input-keyboard -u low "󰘲 Caps Lock" "Disinserito"
     fi
 done

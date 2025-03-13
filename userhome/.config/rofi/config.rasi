@@ -32,6 +32,7 @@ configuration {
     display-clipboard: " Clip";
 
     sidebar-mode: true;
+    hover-select: true;
 }
 
 @theme "catppuccin"
