@@ -66,3 +66,4 @@ origin.push()
 print(f"> {BLUE}Pushed changes{RESET}")
 
 print(f"{BOLD}{GREEN}Everything is now up to date! :D{RESET}")
+

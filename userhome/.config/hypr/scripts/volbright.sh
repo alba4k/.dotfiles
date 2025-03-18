@@ -31,8 +31,12 @@ _notify () {
     #elif (($value >= 60)); then
         #color="$GOOD_COLOR"
     fi
-
-    notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u low -h "int:value:$value" -h "string:hlcolor:$color" -- "${icon} ${value}%"
+    
+    if [ "$icon" == "" ]; then
+        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u low -h "int:value:$value" -h "string:hlcolor:$color" -- "${icon} (${value}%)"
+    else
+        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u low -h "int:value:$value" -h "string:hlcolor:$color" -- "${icon} ${value}%"
+    fi
 }
 
 _instance_detect () {
@@ -65,15 +69,15 @@ monitor_brightness () {
         brightness=$((brightness / perc))
 
         if ((brightness > 100)); then
-            icon=' !'
+            icon='!'
         elif ((brightness >= 75)); then
-            icon=' '
+            icon=''
         elif ((brightness >= 50)); then
-            icon=' '
+            icon=''
         elif ((brightness >= 25)); then
-            icon=' '
+            icon=''
         else
-            icon=' '
+            icon=''
         fi
 
         _notify "$icon" "$brightness" "$BRIGHTNESS_COLOR"
@@ -100,11 +104,11 @@ monitor_keyboard () {
         brightness="${brightness%%.*}"
 
         if ((brightness == 100)); then
-            icon=' '
+            icon=''
         elif ((brightness == 50)); then
-            icon=' '
+            icon=''
         else
-            icon=' '
+            icon=''
         fi
 
         _notify "$icon" "$brightness" "$KEYBOARD_COLOR"
@@ -128,14 +132,14 @@ monitor_volume () {
             uniq | tr '\n' ' ')"
 
         if [[ "$mute" == 'yes' ]]; then
-            icon='婢'
+            icon=''
         else
             if ((volume > 66)); then
-                icon='墳'
+                icon='󰕾'
             elif ((volume > 33)); then
-                icon='奔'
+                icon='󰖀'
             else
-                icon='奄'
+                icon='󰕿'
             fi
         fi
 
