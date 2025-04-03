@@ -8,10 +8,10 @@
 	color: rgba(212, 191, 249, 1);
 }
 window {
-	background-color: rgba(30, 30, 46, 0.01);
+	background-color: rgba(30, 30, 46, 0.2);
 }
 button {
-	background-color: rgba(30, 30, 46, 0.7);
+	background-color: rgba(30, 30, 46, 0.8);
 	border-style: solid;
 	border-color: #8957B0;
 	background-repeat: no-repeat;

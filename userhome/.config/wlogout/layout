@@ -1,13 +1,13 @@
 {
     "label" : "lock",
     "action" : "sleep 0.6; loginctl lock-session",
-    "text" : "Lock",
+    "text" : "Blocco",
     "keybind" : "l"
 }
 {
     "label" : "hibernate",
     "action" : "systemctl hibernate",
-    "text" : "Hibernate",
+    "text" : "Ibernazione",
     "keybind" : "h"
 }
 {
@@ -18,19 +18,19 @@
 }
 {
     "label" : "shutdown",
-    "action" : "systemctl poweroff",
-    "text" : "Shutdown",
+    "action" : "systemctl hibernate",
+    "text" : "Spegnimento",
     "keybind" : "p"
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend-then-hibernate",
-    "text" : "Suspend",
+    "text" : "Sospensione",
     "keybind" : "s"
 }
 {
     "label" : "reboot",
-    "action" : "systemctl reboot",
-    "text" : "Reboot",
+    "action" : "systemctl soft-reboot",
+    "text" : "Riavvio",
     "keybind" : "r"
 }

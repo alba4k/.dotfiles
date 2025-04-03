@@ -51,6 +51,11 @@ commit_message = DEFAULT_MESSAGE = "committed automatically from update.py"
 if(len(sys.argv) > 1):
     commit_message = sys.argv[1];
 
+if(commit_message == "--no-commit"):
+    print(f"> {BLUE}Not committing changes, as requested{RESET}")
+    print(f"{BOLD}{GREEN}Everything is now up to date! :D{RESET}")
+    exit()
+
 repo = git.Repo(path)
 if repo.is_dirty(untracked_files=True):
     repo.git.add(all=True)
@@ -59,11 +64,13 @@ if repo.is_dirty(untracked_files=True):
     if commit_message != DEFAULT_MESSAGE:
         print(f"> {BLUE}Committed changes with message \"{commit_message}\"{RESET}")
     else:
-        print(f"> {BLUE}Committed changes with message{RESET}")
+        print(f"> {BLUE}Committed changes{RESET}")
 
 origin = repo.remote(name="origin")
 origin.push()
 print(f"> {BLUE}Pushed changes{RESET}")
 
 print(f"{BOLD}{GREEN}Everything is now up to date! :D{RESET}")
+
+repo.close()
 

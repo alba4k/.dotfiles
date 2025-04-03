@@ -33,9 +33,9 @@ _notify () {
     fi
     
     if [ "$icon" == "" ]; then
-        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u low -h "int:value:$value" -h "string:hlcolor:$color" -- "${icon} (${value}%)"
+        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u normal -h "int:value:$value" -h "string:hlcolor:$color" -- "${icon} (${value}%)"
     else
-        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u low -h "int:value:$value" -h "string:hlcolor:$color" -- "${icon} ${value}%"
+        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u normal -h "int:value:$value" -h "string:hlcolor:$color" -- "${icon} ${value}%"
     fi
 }
 

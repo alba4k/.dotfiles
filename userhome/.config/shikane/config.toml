@@ -1,0 +1,36 @@
+# Shikane - alba4k
+#
+# Documentation: https://github.com/hw0lff/shikane
+
+[[profile]]
+name = "docked"
+exec = ["killall waybar && hyprctl reload",
+        "iwctl station wlan0 disconnect"]
+
+    [[profile.output]]
+    enable = true
+    search = ["n/DP-[5-6]", "m=SMBX2450"]
+    mode = "!1920x1080@72Hz"
+    position = "0,0"
+
+    [[profile.output]]
+    enable = true
+    search = ["n/DP-[7-9]", "m=SMBX2450"]
+    mode = "!1920x1080@72Hz"
+    position = "1920,0"
+
+    [[profile.output]]
+    enable = false
+    search = "n=eDP-1"
+
+
+[[profile]]
+name = "laptop"
+exec = ["killall waybar && hyprctl reload",
+        "iwctl station wlan0 connect Alien"]
+
+    [[profile.output]]
+    enable = true
+    search = "n=eDP-1"
+    mode = "preferred"
+    position = "0,0"

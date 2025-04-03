@@ -1,9 +1,7 @@
-#!/bin/python
-import subprocess
+#!/bin/sh
 
-subprocess.run(["pkexec", "sh", "-c", "x86_energy_perf_policy power && x86_energy_perf_policy --turbo-enable 0 && cpupower frequency-set -g powersave -d 400MHz -u 1.2GHz"])
-
-current = subprocess.run(["light"], stdout=subprocess.PIPE).stdout.decode("utf-8")
-subprocess.run(["light", "-S", str(float(current)*0.75)])
-
-subprocess.run(["notify-send", "-r", "1234", "-t", "2000", "-a", "Prestazioni", "-u", "low", "-i", "battery","Risparmio energetico attivato!"])
+if pkexec sh -c "x86_energy_perf_policy power && \
+                 x86_energy_perf_policy --turbo-enable 0 && \
+                 cpupower frequency-set -g powersave -d 400MHz -u 1.2GHz"; then
+    notify-send -r 1234 -t 2000 -a Prestazioni -u low -i battery "Risparmio energetico attivato!"
+fi
