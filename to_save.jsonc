@@ -32,6 +32,7 @@
         "/etc/pacman.d/hooks",
         "/etc/pam.d",
         "/etc/sysctl.d/",
+        "/etc/systemd/system/getty@tty1.service.d/override.conf",
         "/usr/lib/systemd/system-sleep/i2c_ljca-s2disk.sh",
         "~/.config/alacritty",
         "~/.config/albafetch",
