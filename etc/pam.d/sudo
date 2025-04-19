@@ -1,9 +1,8 @@
 #%PAM-1.0
+
+# auth sufficient pam_parallel.so { "mode": "One", "modules": { "login": "Password", "pamfprintd.so": "Fingerprint" } }
 #auth 		sufficient  	pam_howdy.so
 auth		sufficient  	pam_fprintd_grosshack.so
-
-#auth sufficient libpam_any.so { "mode": "One", "modules": { "login": "Password" } }
-
 auth		include		system-auth
 account		include		system-auth
 password	include		system-auth

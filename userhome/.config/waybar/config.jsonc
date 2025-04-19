@@ -227,7 +227,7 @@
         "scroll-step": -0.3,
         "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
 
-        "on-click": "killall hyprsunset || hyprsunset -t 4000",
+        "on-click": "~/.config/waybar/scripts/hyprsunset.sh",
 
         "tooltip": false
     },

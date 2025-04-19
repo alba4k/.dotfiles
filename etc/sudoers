@@ -97,7 +97,7 @@
 
 Defaults insults
 Defaults pwfeedback
-Defaults passprompt="Password"
+# Defaults passprompt="Password"
 
 ##
 ## Runas alias specification

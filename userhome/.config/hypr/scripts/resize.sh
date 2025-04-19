@@ -7,10 +7,16 @@
 hyprctl activewindow > /tmp/windowinfo
 windowinfo=/tmp/windowinfo
 
+(sleep 0.05 && hyprctl keyword decoration:blur:size 2) &
+(sleep 0.05 && hyprctl keyword decoration:blur:passes 2) &
+
 # Run slurp to get position and size
-if ! slurp=$(slurp); then
+if ! slurp=$(slurp -b "#1e1e2ea0" -c "#8957b0ff"); then
     exit
 fi
+
+hyprctl keyword decoration:blur:size 5
+hyprctl keyword decoration:blur:passes 3
 
 # Parse the output
 pos_x=$(echo $slurp | cut -d " " -f 1 | cut -d , -f 1)

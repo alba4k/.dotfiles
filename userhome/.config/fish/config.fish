@@ -1,6 +1,6 @@
 if status --is-interactive
+    albafetch &
     uptime-record -s &
-    albafetch
 end
 
 alias p="paru" &
