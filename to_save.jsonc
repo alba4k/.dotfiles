@@ -3,6 +3,7 @@
     "files": [
         "/etc/doas.conf",
         "/etc/mkinitcpio.conf",
+        "/etc/makepkg.conf",
         "/etc/pacman.conf",
         "/etc/sudoers",
         "/etc/xdg/weston/weston.ini",
@@ -24,10 +25,11 @@
         "~/.local/bin/sign-arch-iso.sh",
         "~/.local/bin/toggle_bluetooth.sh",
         "~/.local/share/uptime-record",
-        "~/.profile"
+        "~/.bashrc"
     ],
     // entire folders that should be copied
     "directories": [
+        "/etc/kernel",
         "/etc/mkinitcpio.d",
         "/etc/pacman.d/hooks",
         "/etc/pam.d",

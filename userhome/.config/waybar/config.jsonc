@@ -77,7 +77,7 @@
     "network": {
         "interval": 300,
         "format-wifi": "  {essid}",
-        "format-ethernet": "󱘖 Wired",
+        "format-ethernet": "󱘖 Ethernet",
         "format-linked": "󱘖 {ifname} (No IP)",
         "format-disconnected": "󰖪 Offline",
         "tooltip-format-wifi": "󱘖 {signalStrength}% 󰩩 {frequency} GHz",
@@ -96,7 +96,7 @@
 	    "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias} (󰁹 {device_battery_percentage}%)",
 
         "on-click": "blueman-manager",
-        "on-click-right": "~/.local/bin/toggle_bluetooth.sh",
+        "on-click-right": "~/.config/waybar/scripts/toggle_bluetooth.sh",
         "on-click-middle": "~/.local/bin/buds"
     },
 
@@ -157,9 +157,9 @@
             "critical": 10
         },
 
-        "on-click": "~/.local/bin/powersave",
-        "on-click-right": "~/.local/bin/balanced",
-        "on-click-middle": "~/.local/bin/performance"
+        "on-click": "pkexec ~/.local/bin/powersave",
+        "on-click-right": "pkexec ~/.local/bin/balanced",
+        "on-click-middle": "pkexec ~/.local/bin/performance"
     },
 
     "custom/media-bw": {
@@ -235,7 +235,7 @@
     "clock": {
         "format": " {:%H:%M}",
         "format-alt": " {:%a %d %b}",
-        "locale": "it_CH",
+        "locale": "it_CH.UTF-8",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "calendar": {
                     "mode"          : "month",
@@ -248,12 +248,12 @@
                               "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
                               "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
                               }
-                    },
+                    }
     },
 
     "idle_inhibitor": {
         "format": "{icon}",
-        "format-icons": {"activated": " ", "deactivated": " "},
+        "format-icons": {"activated": " ", "deactivated": " "}
     },
 
     "tray": {

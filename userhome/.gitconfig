@@ -7,7 +7,7 @@
 [user]
 	email = blaskoazzolaaaron@gmail.com
 	name = alba4k
-	signingkey = 40F6D8F24DFAB91B
+	signingkey = 911908BCEC4CD47C
 [commit]
 	gpgsign = true
 [rerere]

@@ -2,7 +2,7 @@
 Name=Latest (Fabric)
 Comment=Launch Minecraft (satest version)
 Exec=prismlauncher -l "Latest_Fabric"
-Icon=/home/alba4k/.local/share/PrismLauncher/instances/Latest_Fabric/icon.png
+Icon=/home/alba4k/.local/share/PrismLauncher/instances/Latest (Fabric)/icon.png
 Terminal=false
 Type=Application
 Keywords=game;minecraft;

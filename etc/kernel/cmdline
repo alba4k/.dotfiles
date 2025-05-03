@@ -1,0 +1,1 @@
+rd.luks.name=65122208-30dd-4061-b3d3-be44937ebbf4=luks root=/dev/mapper/luks rootflags=subvol=@ rd.luks.options=65122208-30dd-4061-b3d3-be44937ebbf4=tpm2-device=auto,discard rw loglevel=7 nowatchdog
