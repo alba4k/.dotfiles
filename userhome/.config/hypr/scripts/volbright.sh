@@ -68,16 +68,14 @@ monitor_brightness () {
         brightness="$(cat "$BRIGHT_PATH")"
         brightness=$((brightness / perc))
 
-        if ((brightness > 100)); then
-            icon='!'
-        elif ((brightness >= 75)); then
-            icon=''
+        if ((brightness >= 75)); then
+            icon='󰃠'
         elif ((brightness >= 50)); then
-            icon=''
+            icon='󰃟'
         elif ((brightness >= 25)); then
-            icon=''
+            icon='󰃝'
         else
-            icon=''
+            icon='󰃞'
         fi
 
         _notify "$icon" "$brightness" "$BRIGHTNESS_COLOR"
@@ -104,11 +102,11 @@ monitor_keyboard () {
         brightness="${brightness%%.*}"
 
         if ((brightness == 100)); then
-            icon=''
+            icon='󰃠'
         elif ((brightness == 50)); then
-            icon=''
+            icon='󰃟'
         else
-            icon=''
+            icon='󰃞'
         fi
 
         _notify "$icon" "$brightness" "$KEYBOARD_COLOR"

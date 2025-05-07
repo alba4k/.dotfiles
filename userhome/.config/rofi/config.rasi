@@ -27,9 +27,7 @@ configuration {
 
     display-drun: "  App ";
     display-run: "  Shell ";
-    display-window: " 﩯 Open ";
-    display-calc: " Calc ";
-    display-clipboard: " Clip";
+    display-calc: "󰪚 Calc ";
 
     sidebar-mode: true;
     hover-select: true;

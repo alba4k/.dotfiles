@@ -16,3 +16,5 @@
 	repo = /home/alba4k/Documenti/Cose/aur/albafetch-git
 [init]
 	defaultBranch = master
+[pull]
+	rebase = false

@@ -21,27 +21,27 @@ ac_command_center () {
     local perc=$(($(upower -i $UPOWER_BAT_DEVICE | grep percentage | awk "{print \$2}" | tr -d %)))
 
     if (( $perc == 100 )); then
-        local icon=' '
+        local icon='󰁹 󰁹'
     elif (( perc > 85 )); then
-        local icon=' '
+        local icon='󰂁 󰂁'
     elif (( perc > 75 )); then
-        local icon=' '
+        local icon='󰂀 󰂀'
     elif (( perc > 60 )); then
-        local icon=' '
+        local icon='󰁿 󰁿'
     elif (( perc > 45 )); then
-        local icon=' '
-    elif (( perc < 20 )); then
-        local icon=' '
+        local icon='󰁽 󰁽'
+    elif (( perc > 20 )); then
+        local icon='󰁻 󰁻'
     else
-        local icon=' '
+        local icon='󰂎 󰂎'
     fi
 
     if [ "$ac_state" = 'true' ]; then
         icon=$(echo $icon | awk '{print $1}')
-        notify-send -t 2000 -u low -i battery -r 69420 -a "Sistema" " In carica" " $icon Batteria al $perc%"
+        notify-send -t 2000 -u low -i battery -r 69420 -a "Sistema" " In carica" " $icon Batteria al $perc%"
     elif [ "$ac_state" = 'false' ]; then
         icon=$(echo $icon | awk '{print $2}')
-        notify-send -t 2000 -u low -i battery -r 69420 -a "Sistema" " Carica fermata" " $icon Batteria al $perc%"
+        notify-send -t 2000 -u low -i battery -r 69420 -a "Sistema" "󰚦 Carica fermata" " $icon Batteria al $perc%"
     fi
 }
 
