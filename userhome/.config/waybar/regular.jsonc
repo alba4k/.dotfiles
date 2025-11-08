@@ -1,0 +1,19 @@
+{
+    "name": "regular",
+    "layer": "bottom",
+    "position": "top",
+    "mod": "dock",
+    "height": 33,
+    "exclusive": true,
+    "passthrough": false,
+
+
+    "include": ["~/.config/waybar/modules.jsonc"],
+
+    "hyprland/window": {
+        "rewrite": {
+            "^(.{60}).{3}.*": "$1.."
+        }
+    }
+}
+

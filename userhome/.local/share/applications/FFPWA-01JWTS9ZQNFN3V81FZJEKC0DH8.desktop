@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.4
+Name=Reddit
+Comment=
+Keywords=;
+Categories=GTK;Amusement;Chat;InstantMessaging;Network;
+Icon=FFPWA-01JWTS9ZQNFN3V81FZJEKC0DH8
+Exec=/usr/bin/firefoxpwa site launch 01JWTS9ZQNFN3V81FZJEKC0DH8 --protocol %u
+Actions=
+MimeType=
+Terminal=false
+StartupNotify=true
+StartupWMClass=FFPWA-01JWTS9ZQNFN3V81FZJEKC0DH8

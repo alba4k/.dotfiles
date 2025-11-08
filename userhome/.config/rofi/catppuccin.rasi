@@ -1,8 +1,9 @@
 * {
-    bg-col: #1E1D2F44;
-    bg-col-semi: #1E1D2F88;
-    bg-col-full: #1E1D2F;
+    bg-col: #1E1E2E44;
+    bg-col-semi: #1E1E2E88;
+    bg-col-full: #1E1E2E;
     primary: #8957b0;
+    primary-semi: #8957b0af;
     fg-col: #D9E0EE;
     fg-col-trans: #D9E0EE77;
     fg-col2: #F28FAD;
@@ -80,8 +81,11 @@ element-icon {
 }
 
 element selected {
-    background-color: @bg-col-semi;
-    text-color: @primary;
+    background-color: @primary-semi;
+}
+
+element-text selected {
+    color: @bg-col-full;
 }
 
 mode-switcher {

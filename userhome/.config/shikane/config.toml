@@ -3,9 +3,8 @@
 # Documentation: https://github.com/hw0lff/shikane
 
 [[profile]]
-name = "docked"
-exec = ["killall waybar && hyprctl reload",
-        "iwctl station wlan0 disconnect"]
+name = "casa"
+exec = ["hyprctl reload"]
 
     [[profile.output]]
     enable = true
@@ -25,12 +24,44 @@ exec = ["killall waybar && hyprctl reload",
 
 
 [[profile]]
+name = "zurigo"
+exec = ["hyprctl reload"]
+
+    [[profile.output]]
+    enable = true
+    search = ["n/DP-[1-3]", "m=DELL P3425WE"]
+    mode = "3440x1440@100Hz"
+    position = "1920,0"
+
+    [[profile.output]]
+    enable = false
+    search = "n=eDP-1"
+
+
+[[profile]]
 name = "laptop"
-exec = ["killall waybar && hyprctl reload",
-        "iwctl station wlan0 connect Alien"]
+exec = ["hyprctl reload"]
 
     [[profile.output]]
     enable = true
     search = "n=eDP-1"
     mode = "preferred"
     position = "0,0"
+
+
+[[profile]]
+name = "TV"
+exec = ["hyprctl reload"]
+
+    [[profile.output]]
+    enable = true
+    search = "n=eDP-1"
+    mode = "preferred"
+    position = "0,0"
+
+    [[profile.output]]
+    enable = true
+    search = "n=DP-3"
+    mode = "preferred"
+    position = "1920,0"
+    scale = 2

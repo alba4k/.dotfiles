@@ -1,0 +1,24 @@
+[Desktop Entry]
+Type=Application
+Version=1.4
+Name=YouTube
+Comment=
+Keywords=;
+Categories=GTK;Amusement;AudioVideo;Video;
+Icon=FFPWA-01JWTRTGQ8PT9J3433TBBJNR0K
+Exec=/usr/bin/firefoxpwa site launch 01JWTRTGQ8PT9J3433TBBJNR0K --protocol %u
+Actions=0;1;
+MimeType=
+Terminal=false
+StartupNotify=true
+StartupWMClass=FFPWA-01JWTRTGQ8PT9J3433TBBJNR0K
+
+[Desktop Action 0]
+Name=Abos
+Icon=FFPWA-01JWTRTGQ8PT9J3433TBBJNR0K-0
+Exec=/usr/bin/firefoxpwa site launch 01JWTRTGQ8PT9J3433TBBJNR0K --url "https://www.youtube.com/feed/subscriptions?feature=app_shortcuts"
+
+[Desktop Action 1]
+Name=Entdecken
+Icon=FFPWA-01JWTRTGQ8PT9J3433TBBJNR0K-1
+Exec=/usr/bin/firefoxpwa site launch 01JWTRTGQ8PT9J3433TBBJNR0K --url "https://www.youtube.com/feed/explore?feature=app_shortcuts"

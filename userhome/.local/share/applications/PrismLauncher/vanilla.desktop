@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Vanilla
+Comment=Launch Minecraft (my vanilla world)
+Exec=prismlauncher -l "Vanilla"
+Icon=/home/alba4k/.local/share/PrismLauncher/instances/Vanilla/icon.png
+Terminal=false
+Type=Application
+Keywords=game;minecraft;
+Categories=Game;

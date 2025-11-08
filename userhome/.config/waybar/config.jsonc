@@ -2,299 +2,50 @@
  *
  * Documentation: https://github.com/Alexays/Waybar/wiki
  *
- * This config is just a clone of my original Polybar configuration, which is itself based on https://github.com/axyl-os/axyl-i3wm/tree/master/etc/skel/.config/i3/polybar
+ * This config started as just a clone of my original Polybar configuration, which is itself based on https://github.com/axyl-os/axyl-i3wm/tree/master/etc/skel/.config/i3/polybar
  */
 
-{
-    "layer": "bottom",
-    "position": "top",
-    "mod": "dock",
-    "height": 33,
-    "exclusive": true,
-    "passthrough": false,
-
-    "modules-left": [
-        "custom/launcher",
-        "cpu",
-        "custom/greentored",
-        "temperature",
-        "custom/redtoyellow",
-        "memory",
-        "network",
-        "custom/greentoblue",
-        "bluetooth"
-    ],
-    "modules-center": [
-        "hyprland/workspaces",
-        "hyprland/window"
-    ],
-    "modules-right": [
-        "battery",
-        "custom/media-bw",
-        "custom/media-pp",
-        "custom/media-fw",
-        "custom/bluetogreen",
-        "pulseaudio",
-        "custom/greentoyellow",
-        "backlight",
-        "idle_inhibitor",
-        "clock",
-        "tray"
-    ],
-
-    "custom/launcher": {
-        "format": " ",
-        "interval": "once",
-
-        "on-click": "rofi -show drun",
-        "on-click-right": "rofi -show run",
-        "on-click-middle": "pidof wlogout || wlogout",
-
-        "tooltip": false
+[
+    {
+        "name": "laptop",
+        "output": ["eDP-1"],
+        "include": ["~/.config/waybar/regular.jsonc"]
     },
-
-    "cpu": {
-        "interval": 10,
-        "format": " {usage}%",
-        "format-alt": "{min_frequency} GHz - {max_frequency} GHz"
+    {
+        "name": "regular",
+        "output": ["DP-5", "DP-7", "DP-9", "DP-6", "DP-8"],
+        "include": ["~/.config/waybar/regular.jsonc"]
     },
+    {
+        "name": "ultrawide",
+        "layer": "bottom",
+        "position": "top",
+        "output": ["DP-1", "DP-3"],
+        "mod": "dock",
+        "height": 33,
+        "exclusive": true,
+        "passthrough": false,
 
-    "temperature": {
-        "thermal-zone": 6,
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip": false
-    },
+        "modules-right": [
+            "battery",
+            "custom/media-bw",
+            "custom/media-pp",
+            "custom/media-fw",
+            "mpris",
+            "cava",
+            "pulseaudio",
+            "custom/greentoyellow",
+            "backlight",
+            "idle_inhibitor",
+            "clock",
+            "tray"
+        ],
 
-    "memory": {
-        "interval": 15,
-        "format": " {percentage}%",
-        "max-length": 10,
-        "tooltip": true,
-        "tooltip-format": " {used:0.1f} GB/{total:0.1f} GB ({percentage}%)"
-    },
-    
-    "network": {
-        "interval": 300,
-        "format-wifi": "  {essid}",
-        "format-ethernet": "󱘖 Ethernet",
-        "format-linked": "󱘖 {ifname} (No IP)",
-        "format-disconnected": "󰖪 Offline",
-        "tooltip-format-wifi": "󱘖 {signalStrength}% 󰩩 {frequency} GHz",
-        "tooltip-format-ethernet": "󰑩 {bandwidthTotalBytes} B/s",
-        "tooltip-format-disconnected": "Nessuna rete",
+        "include": ["~/.config/waybar/modules.jsonc"],
 
-        "on-click": "nm-connection-editor"
-    },
-
-    "bluetooth": {
-	    "format": "󰂯",
-	    "format-disabled": "󰂲",
-	    "format-connected": "󰂱 {num_connections}",
-	    "tooltip-format-connected": "{device_enumerate}",
-	    "tooltip-format-enumerate-connected": "󰂱 {device_alias}",
-	    "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias} (󰁹 {device_battery_percentage}%)",
-
-        "on-click": "blueman-manager",
-        "on-click-right": "~/.config/waybar/scripts/toggle_bluetooth.sh",
-        "on-click-middle": "~/.local/bin/buds"
-    },
-
-    "hyprland/workspaces": {
-        "disable-scroll": false,
-        "all-outputs": true,
-        "format": "{icon}",
-        "format-icons": {
-            "1": " ",
-            "2": " ",
-            "3": " ",
-            "4": " ",
-            "5": " ",
-            "6": " ",
-            "7": " ",
-            "default": " "
-        },
-
-        "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1"
-    },
-
-    "hyprland/window": {
-        "format": "{}",
-        "separate-outputs": true,
-        // I now consider myself to be a regex god
-        "rewrite": {
-            "(\\([0-9]*\\) )?(.*) @ .*( \\([0-9]*\\))?": "Telegram Desktop ($2)",
-            ".*Mozilla Firefox": "Firefox",
-            "Prism Launcher.*": "Prism Launcher",
-            "(.*) — Prism Launcher.*": "Prism Launcher ($1)",
-            "Cemu.*FPS: ([0-9]+\\.[0-9]+).*TitleId.*\\] (.*) \\[.*": "Cemu - $2 ($1 FPS)",
-            "": "Desktop"
-        },
-
-        // "on-click-right": "hyprctl dispatch fullscreen",
-        "on-click-right": "sleep .3 && ~/.config/hypr/scripts/resize.sh",
-        "on-click-middle": "hyprctl dispatch killactive"
-    },
-
-    "battery": {
-        "interval": 5,
-
-        "format": "{icon} {capacity}%",
-        "format-icons": [" ", " ", " ", " ", " "],
-        "format-charging": "{icon} {capacity}% ",
-        "format-plugged": "{icon} {capacity}% ",
-        "tooltip-format": "{power}W - {timeTo}",
-
-        "states": {
-            "full": 100,
-            "great": 97,
-            "good": 85,
-            "ok": 50,
-            "warning": 30,
-            "low": 20,
-            "critical": 10
-        },
-
-        "on-click": "pkexec ~/.local/bin/powersave",
-        "on-click-right": "pkexec ~/.local/bin/balanced",
-        "on-click-middle": "pkexec ~/.local/bin/performance"
-    },
-
-    "custom/media-bw": {
-        "interval": 1,
-        "format": "",
-        "exec": "~/.config/waybar/scripts/audio-back-skip.sh 2>/dev/null",
-
-        "on-click": "playerctl previous",
-        "on-click-right": "~/.config/rofi/music/music",
-        "on-click-middle": "~/.config/rofi/music/music",
-
-        "return-type": "json"
-    },
-    "custom/media-pp": {
-        "interval": 1,
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/audio-play-pause.sh 2>/dev/null",
-
-        "on-click": "playerctl play-pause",
-        "on-click-right": "~/.config/rofi/music/music",
-        "on-click-middle": "~/.config/rofi/music/music",
-
-    
-        "return-type": "json"
-    },
-    "custom/media-fw": {
-        "interval": 1,
-        "format": "",
-        "exec": "~/.config/waybar/scripts/audio-back-skip.sh 2>/dev/null",
-
-        "on-click": "playerctl next",
-        "on-click-right": "~/.config/rofi/music/music",
-        "on-click-middle": "~/.config/rofi/music/music",
-
-        "return-type": "json"
-    },
-
-    "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-muted": " ({volume}%)",
-        "on-click": "pavucontrol -t 3",
-        "interval": 1,
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
-        "tooltip-format": "{desc}",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            //"speaker": "󰓃",
-            "hifi": "󰓃",
-            "hdmi": "󰽟",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+        "cava": {
+            "bars": 14,
+            "stereo": true
         }
-    },
-
-    "backlight": {
-        "interval": 1,
-        "format": "{icon} {percent}%",
-        "scroll-step": -0.3,
-        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
-
-        "on-click": "~/.config/waybar/scripts/hyprsunset.sh",
-
-        "tooltip": false
-    },
-
-    "clock": {
-        "format": " {:%H:%M}",
-        "format-alt": " {:%a %d %b}",
-        "locale": "it_CH.UTF-8",
-        "tooltip-format": "<tt><big>{calendar}</big></tt>",
-        "calendar": {
-                    "mode"          : "month",
-                    "weeks-pos"     : "left",
-                    "on-scroll"     : 1,
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                    }
-    },
-
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {"activated": " ", "deactivated": " "}
-    },
-
-    "tray": {
-        "icon-size": 15,
-        "spacing": 5
-    },
-
-    // decoration //
-
-    "custom/greentored": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/redtoyellow": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/greentoblue": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/bluetogreen": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    // backlight disappears when only using an external monitor
-    "custom/greentoyellow": {
-        "interval": 5,
-        "return-type": "json",
-        
-        "exec": "~/.config/waybar/scripts/greentoyellow.sh",
-
-        "format": "{}"
     }
-}
-
+]

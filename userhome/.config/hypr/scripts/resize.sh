@@ -6,23 +6,34 @@
 # windowinfo=$(hyprctl activewindow) removes the newlines and won't work with grep
 hyprctl activewindow > /tmp/windowinfo
 windowinfo=/tmp/windowinfo
+blur_size=$(hyprctl getoption decoration:blur:size | grep int | awk "{print \$2}")
+blur_passes=$(hyprctl getoption decoration:blur:passes | grep int | awk "{print \$2}")
+
+# Freeze the screen
+(hyprpicker -rz; killall slurp) &
+
+sleep 0.03
 
 (sleep 0.05 && hyprctl keyword decoration:blur:size 2) &
 (sleep 0.05 && hyprctl keyword decoration:blur:passes 2) &
 
-# Run slurp to get position and size
-if ! slurp=$(slurp -b "#1e1e2ea0" -c "#8957b0ff"); then
-    exit
-fi
+size=$(slurp -b "#1e1e2ea0" -c "#8957b0ff" &)
 
-hyprctl keyword decoration:blur:size 5
-hyprctl keyword decoration:blur:passes 3
+slurp_pid=$!
+slurp_return=$?
+
+hyprctl keyword decoration:blur:size "$blur_size"
+hyprctl keyword decoration:blur:passes "$blur_passes"
+
+wait $slurp_pid
+
+killall -9 hyprpicker
 
 # Parse the output
-pos_x=$(echo $slurp | cut -d " " -f 1 | cut -d , -f 1)
-pos_y=$(echo $slurp | cut -d " " -f 1 | cut -d , -f 2)
-size_x=$(echo $slurp | cut -d " " -f 2 | cut -d x -f 1)
-size_y=$(echo $slurp | cut -d " " -f 2 | cut -d x -f 2)
+pos_x=$(echo $size | cut -d " " -f 1 | cut -d , -f 1)
+pos_y=$(echo $size | cut -d " " -f 1 | cut -d , -f 2)
+size_x=$(echo $size | cut -d " " -f 2 | cut -d x -f 1)
+size_y=$(echo $size | cut -d " " -f 2 | cut -d x -f 2)
 
 # Keep the aspect ratio intact for PiP
 if grep "title: Picture-in-Picture" $windowinfo; then

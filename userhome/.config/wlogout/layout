@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "loginctl lock-session",
+    "action" : "sleep 0.4 && loginctl lock-session",
     "text" : "Blocco",
     "keybind" : "l"
 }

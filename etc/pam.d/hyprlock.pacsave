@@ -1,0 +1,9 @@
+# PAM configuration file for hyprlock
+# the 'login' configuration file (see /etc/pam.d/login)
+
+auth	required	pam_securetty.so
+auth 	requisite	pam_nologin.so
+auth	include		system-local-login
+auth	include		system-local-login
+auth	include		system-local-login
+auth	include		system-local-login

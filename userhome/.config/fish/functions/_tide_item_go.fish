@@ -1,3 +1,6 @@
 function _tide_item_go
-    test -e go.mod && _tide_print_item go $tide_go_icon' ' (go version | string match -r "[\d.]+")
+    if path is $_tide_parent_dirs/go.mod
+        go version | string match -qr "(?<v>[\d.]+)"
+        _tide_print_item go $tide_go_icon' ' $v
+    end
 end

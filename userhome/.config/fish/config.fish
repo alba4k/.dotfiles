@@ -9,6 +9,7 @@ alias g="git" &
 alias yeet_the_orphans="sudo pacman -Rssn (pacman -Qdtq) 2>/dev/null || echo No orphan packages were found!" &
 alias fwupd="fwupdmgr refresh; fwupdmgr get-updates && sudo fwupdmgr install" &
 alias sudo="sudo -p 'Impronta digitale o password: "\n"'" &
+alias texclean="/bin/rm -rf *.aux *.fdb_latexmk *.fls *.log *.out *.synctex.gz"
 
 alias c="tput reset && fish && exit" &
 alias :q="exit" &

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=rundll32
+MimeType=application/x-wine-extension-appref-ms;
+Exec=env "WINEPREFIX=/home/alba4k/.wine" wine start /ProgIDOpen "Application.Reference" %f
+NoDisplay=true
+StartupNotify=true
+Icon=5742_rundll32.0
