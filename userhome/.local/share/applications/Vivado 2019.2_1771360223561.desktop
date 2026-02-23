@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Vivado 2019.2
+Comment=Vivado 2019.2
+Icon=/home/alba4k/Vivado/Vivado/2019.2/doc/images/vivado_logo.png
+Exec=/home/alba4k/Vivado/Vivado/2019.2/bin/vivado 

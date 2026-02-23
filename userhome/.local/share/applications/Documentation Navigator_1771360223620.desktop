@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Documentation Navigator
+Comment=Documentation Navigator
+Icon=/home/alba4k/Vivado/DocNav/resources/doc_nav_application_48.png
+Exec=/home/alba4k/Vivado/DocNav/docnav 

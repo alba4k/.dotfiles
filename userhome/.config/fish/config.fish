@@ -36,9 +36,9 @@ end
 
 alias smallfetch="albafetch --config /home/alba4k/.config/albafetch/albafetch_small.conf" &
 
-set fish_greeting &
+set fish_greeting
 
-set tide_git_icon  &
+set tide_git_icon 
 
 #alias sudo=doas
 #alias sudoedit="doas nvim"

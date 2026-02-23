@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Uninstall Xilinx Information Center
+Comment=Uninstall Xilinx Information Center
+Icon=/home/alba4k/Vivado/.xinstall/xic/data/images/xlnx_logo-256x256.png
+Exec=/home/alba4k/Vivado/.xinstall/xic/xsetup -Uninstall

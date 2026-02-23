@@ -2,13 +2,14 @@
 # ~/.bashrc
 #
 
-export PATH="$PATH:/home/alba4k/.local/bin"
+export PATH="/home/alba4k/.local/bin:/usr/lib/ccache/bin:$PATH"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 if [[ "$(tty)" == "/dev/tty1" ]]; then
-    exec Hyprland >/dev/null 2>&1
+    # exec start-hyprland >/dev/null 2>&1
+    exec hyprland >/dev/null 2>&1
 fi
 
 fish

@@ -21,3 +21,4 @@ match(\$0, /^([0-9]+)\s(\[\[\s)?binary.*(jpg|jpeg|png|bmp)/, grp) {
 EOF
 #cliphist list | gawk "$prog" | sed "s/binary data image\/png/PNG Image\/Screenshot/g"
 cliphist list | gawk "$prog" | sed "s/\[\[ binary data (.*) png (.*) \]\]/Immagine \(\2)/g" -r
+

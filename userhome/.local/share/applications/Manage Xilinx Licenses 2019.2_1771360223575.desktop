@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Manage Xilinx Licenses 2019.2
+Comment=Manage Xilinx Licenses 2019.2
+Icon=/home/alba4k/Vivado/Vivado/2019.2/data/vlm/images/vlm_logo.png
+Exec=/home/alba4k/Vivado/Vivado/2019.2/bin/vlm 

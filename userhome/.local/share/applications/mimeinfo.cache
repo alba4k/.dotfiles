@@ -7,3 +7,4 @@ application/x-wine-extension-appref-ms=wine-extension-appref-ms.desktop;
 application/x-wine-extension-msp=wine-extension-msp.desktop;
 application/xaml+xml=wine-extension-xaml.desktop;
 text/vbscript=wine-extension-vbs.desktop;
+x-scheme-handler/discord=vesktop.desktop;

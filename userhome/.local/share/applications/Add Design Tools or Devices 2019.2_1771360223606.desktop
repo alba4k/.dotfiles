@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Add Design Tools or Devices 2019.2
+Comment=Add Design Tools or Devices 2019.2
+Icon=/home/alba4k/Vivado/.xinstall/Vivado_2019.2/data/images/upgrade.png
+Exec=/home/alba4k/Vivado/.xinstall/Vivado_2019.2/xsetup 

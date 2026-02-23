@@ -9,5 +9,5 @@ Target = spicetify-cli-git
 [Action]
 Description = Ripristinando la configurazione di spicetify...
 When = PostTransaction
-Exec = /bin/su -l alba4k -c "spicetify restore backup apply"
+Exec = /bin/su -l alba4k -c "spicetify backup apply"
 

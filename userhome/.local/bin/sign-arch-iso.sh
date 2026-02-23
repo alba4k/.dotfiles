@@ -33,9 +33,9 @@ xorriso -indev "$name.iso" \
 	-boot_image any replay \
 	-append_partition 2 0xef eltorito_img2_uefi.img
 
-rm BOOTIA32.EFI BOOTx64.efi eltorito_catalog.img \
+rm BOOTIA32.EFI BOOTx64.EFI eltorito_catalog.img \
     eltorito_img1_bios.img eltorito_img2_uefi.img \
     mbr_code_isohybrid.img mbr_part2_efi.img \
 	shellia32.efi shellx64.efi systemarea.img \
-	vmlinuz-linux "$name.iso"
+	vmlinuz-linux "$name.iso" gpt_part3_efi.img
 

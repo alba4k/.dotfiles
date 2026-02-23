@@ -61,7 +61,7 @@ exec = ["hyprctl reload"]
 
     [[profile.output]]
     enable = true
-    search = "n=DP-3"
-    mode = "preferred"
+    search = "n/DP-[1-3]"
+    mode = "1920x1080@120Hz"
     position = "1920,0"
-    scale = 2
+    scale = 1

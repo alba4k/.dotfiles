@@ -44,7 +44,7 @@
         "include": ["~/.config/waybar/modules.jsonc"],
 
         "cava": {
-            "bars": 14,
+            "bars": 16,
             "stereo": true
         }
     }

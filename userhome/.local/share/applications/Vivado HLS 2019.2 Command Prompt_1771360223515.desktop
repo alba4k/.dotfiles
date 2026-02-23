@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Vivado HLS 2019.2 Command Prompt
+Comment=Vivado HLS 2019.2 Command Prompt
+Icon=/usr/share/icons/gnome/32x32/apps/terminal.png
+Exec=xterm -e /home/alba4k/Vivado/Vivado/2019.2/bin/vivado_hls -i

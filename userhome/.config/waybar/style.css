@@ -11,6 +11,9 @@
     min-height: 0px;
 }
 
+window#waybar {
+    background: transparent;
+}
 
 tooltip {
     background: rgba(30, 30, 46, 0.5);
