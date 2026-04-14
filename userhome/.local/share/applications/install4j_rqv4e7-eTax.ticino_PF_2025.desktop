@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=eTax.ticino PF 2025
+Exec="/home/alba4k/.local/share/eTax.ticino_PF_2025/eTax.ticino PF 2025" %U
+Icon=/home/alba4k/.local/share/eTax.ticino_PF_2025/.install4j/eTax.ticino PF 2025.png
+Categories=Application;
+StartupWMClass=install4j-com-ifactory-launch-IFApplicationLauncher

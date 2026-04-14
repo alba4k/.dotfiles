@@ -1,4 +1,6 @@
 #!/bin/sh
 
+rfkill unblock bluetooth
 bluetoothctl power on
-bluetoothctl connect 80:9F:F5:BF:C4:80
+bluetoothctl connect 78:C1:1D:64:D6:29 # Buds4 Pro
+

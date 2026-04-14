@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Dependencies:
+#   - sbctl
+#   - mtools
+#   - libisoburn
+
 # See https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#ISO_repacking
 # Requires mtools and libisoburn
 
@@ -14,8 +19,7 @@ osirrox -indev "$name.iso" \
 	/shellia32.efi ./
 
 chmod +w BOOTx64.EFI BOOTIA32.EFI shellx64.efi shellia32.efi vmlinuz-linux
-
-sudo sbctl sign BOOTx64.EFI
+sudo bctl sign BOOTx64.EFI
 sudo sbctl sign BOOTIA32.EFI
 sudo sbctl sign shellx64.efi
 sudo sbctl sign shellia32.efi
@@ -37,5 +41,9 @@ rm BOOTIA32.EFI BOOTx64.EFI eltorito_catalog.img \
     eltorito_img1_bios.img eltorito_img2_uefi.img \
     mbr_code_isohybrid.img mbr_part2_efi.img \
 	shellia32.efi shellx64.efi systemarea.img \
-	vmlinuz-linux "$name.iso" gpt_part3_efi.img
+	vmlinuz-linux gpt_part3_efi.img
+
+  echo "# Deleting the original ISO in 5 seconds..."
+  sleep 5
+  rm "$name.iso"
 

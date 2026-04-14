@@ -56,6 +56,8 @@ alias 8="math 8" &
 alias 9="math 9" &
 alias 0="math 0" &
 
+alias v4l2start="gst-launch-1.0 libcamerasrc name="hi556" ! queue ! videoconvert ! video/x-raw,format=YUY2 ! v4l2sink name=v4l2sink-hi556 device=/dev/video60"
+
 zoxide init --cmd cd fish | source
 
 #thefuck --alias | source

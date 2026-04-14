@@ -59,28 +59,34 @@
     },
     
     "network": {
-        "interval": 300,
+        "interval": 200,
         "format-wifi": "  {essid}",
         "format-ethernet": "󱘖 Ethernet",
         "format-linked": "󱘖 {ifname} (No IP)",
+        "format-disabled": "󰖪 Offline",
         "format-disconnected": "󰖪 Offline",
-        "tooltip-format-wifi": "󱘖 {signalStrength}% 󰩩 {frequency} GHz",
-        "tooltip-format-ethernet": "󰑩 {bandwidthTotalBytes} B/s",
+        "tooltip-format-wifi": "󱘖 {signalStrength}% 󰩩 {frequency} GHz - {ipaddr}",
+        "tooltip-format-ethernet": "󰑩 {bandwidthTotalBytes} B/s - {ipaddr}",
         "tooltip-format-disconnected": "Nessuna rete",
+        "tooltip-format-disabled": "Nessuna rete",
 
-        "on-click": "nm-connection-editor"
+        "on-click": "iwdgui || nm-connection-editor",
+        "on-click-right": "networkctl status | grep offline && rfkill unblock wifi || rfkill block wifi"
     },
 
     "bluetooth": {
 	    "format": "󰂯",
-	    "format-disabled": "󰂲",
-	    "format-connected": "󰂱 {num_connections}",
-	    "tooltip-format-connected": "{device_enumerate}",
+	    "format-disabled": "󰂲 Spento",
+	    "format-no-controller": "󰂲 Spento",
+	    "format-off": "󰂲 Spento",
+	    "format-connected": "󰂱 ({num_connections}) {device_alias}",
 	    "tooltip-format-enumerate-connected": "󰂱 {device_alias}",
 	    "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias} (󰁹 {device_battery_percentage}%)",
+        "max-length": 20,
 
         "on-click": "blueman-manager",
         "on-click-right": "~/.config/waybar/scripts/toggle_bluetooth.sh",
+        "on-click-right": "bluetoothctl show | grep 'Powered: yes' && rfkill block bluetooth || rfkill unblock bluetooth",
         "on-click-middle": "~/.local/bin/buds"
     },
 
