@@ -50,6 +50,7 @@
         "~/.config/fish",
         "~/.config/flameshot",
         "~/.config/hypr",
+        "~/.config/hypr-network-manager",
         "~/.config/kitty",
         "~/.config/MangoHud",
         "~/.config/neofetch",

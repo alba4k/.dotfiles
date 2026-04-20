@@ -1,0 +1,32 @@
+/* hypr-network-manager: Catppuccin theme */
+
+@define-color surface #1e1e2e;
+@define-color surface_soft #313244;
+@define-color surface_raised #45475a;
+@define-color on_surface #cdd6f4;
+@define-color on_surface_variant #9399b2;
+@define-color primary #bb99e3;
+@define-color secondary #7b59a3;
+@define-color error #d18791;
+@define-color success #7fbe9a;
+@define-color action #bb99e3;
+@define-color primary_hover #d8bcf8;
+
+@define-color text @on_surface;
+@define-color background-alt alpha(@surface, .4);
+@define-color selected @primary;
+@define-color hover alpha(@secondary, .16);
+@define-color urgent @error;
+
+@define-color line alpha(@on_surface, .13);
+@define-color line_strong alpha(@on_surface, .24);
+@define-color active alpha(@secondary, .22);
+@define-color hover_soft alpha(@secondary, .11);
+@define-color hover_row alpha(@secondary, .06);
+@define-color selected_soft alpha(@secondary, .09);
+
+* {
+  color: @text;
+  font-size: 14px;
+  font-family: "JetBrains Mono Nerd Font 10";
+}

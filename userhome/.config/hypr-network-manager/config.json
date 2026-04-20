@@ -1,0 +1,22 @@
+{
+  "HYPR-NETWORK-MANAGER - alba4k": "",
+  "Documentation: https://github.com/hypr-nm/hypr-network-manager/blob/master/docs/Documentation.md": "",
+  "_comment_theme": "Theme selection is done in themes/base.css via @import",
+
+  "window_width": 480,
+  "window_height": 680,
+  "layer_shell_layer": "overlay",
+  "position": "top-left",
+  "layer_shell_margin_top": 8,
+  "layer_shell_margin_right": 8,
+  "layer_shell_margin_bottom": 8,
+  "layer_shell_margin_left": 150,
+
+  "scan_interval": 20,
+  "close_on_connect": false,
+  "show_bssid": false,
+  "show_frequency": false,
+  "show_band": true,
+
+  "waybar_icon_font": "NotoSansMono Nerd Font"
+}

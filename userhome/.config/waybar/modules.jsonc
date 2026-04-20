@@ -68,10 +68,11 @@
         "tooltip-format-wifi": "󱘖 {signalStrength}% 󰩩 {frequency} GHz - {ipaddr}",
         "tooltip-format-ethernet": "󰑩 {bandwidthTotalBytes} B/s - {ipaddr}",
         "tooltip-format-disconnected": "Nessuna rete",
-        "tooltip-format-disabled": "Nessuna rete",
+        "tooltip-format-disabled": "WiFi Disabilitato",
 
-        "on-click": "iwdgui || nm-connection-editor",
-        "on-click-right": "networkctl status | grep offline && rfkill unblock wifi || rfkill block wifi"
+        "on-click": "rfkill toggle wifi",
+        "on-click-right": "hypr-network-manager",
+        "on-click-middle": "pidof nm-connection-editor || nm-connection-editor && killall nm-connection-editor"
     },
 
     "bluetooth": {
@@ -84,9 +85,8 @@
 	    "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias} (󰁹 {device_battery_percentage}%)",
         "max-length": 20,
 
-        "on-click": "blueman-manager",
-        "on-click-right": "~/.config/waybar/scripts/toggle_bluetooth.sh",
-        "on-click-right": "bluetoothctl show | grep 'Powered: yes' && rfkill block bluetooth || rfkill unblock bluetooth",
+        "on-click": "rfkill toggle bluetooth",
+        "on-click-right": "pidof blueman-manager || blueman-manager && killall blueman-manager",
         "on-click-middle": "~/.local/bin/buds"
     },
 
