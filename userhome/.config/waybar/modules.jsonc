@@ -21,6 +21,7 @@
            "pulseaudio",
            "custom/greentoyellow",
            "backlight",
+           "custom/ext_backlight",
            "idle_inhibitor",
            "clock",
            "tray"
@@ -257,7 +258,8 @@
     },
 
     "backlight": {
-        "interval": 1,
+        "interval": 0.1,
+        "device": "intel_backlight",
         "format": "{icon} {percent}%",
         "scroll-step": -0.3,
         "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
@@ -265,6 +267,20 @@
         "on-click": "~/.config/waybar/scripts/hyprsunset.sh",
 
         "tooltip": false
+    },
+    "custom/ext_backlight": {
+        "interval": 1,
+        "exec": "~/.config/waybar/scripts/ddcutil.sh",
+        "format": "{icon} {percentage}%",
+        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
+
+        "on-scroll-up": "ddcutil setvcp --bus 14 10 + 5 || ddcutil setvcp --bus 12 10 + 5 || ddcutil setvcp --bus 13 10 + 5 || ddcutil setvcp --bus 15 10 + 5",
+        "on-scroll-down": "ddcutil setvcp --bus 14 10 - 5 || ddcutil setvcp --bus 12 10 - 5 || ddcutil setvcp --bus 13 10 - 5 || ddcutil setvcp --bus 15 10 - 5",
+        "on-click": "~/.config/waybar/scripts/hyprsunset.sh",
+        "on-click-right": "ddcui",
+
+        "tooltip": false,
+        "return-type": "json"
     },
 
     "clock": {

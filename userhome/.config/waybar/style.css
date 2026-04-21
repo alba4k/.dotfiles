@@ -78,6 +78,7 @@ tooltip {
 #cava,
 #pulseaudio,
 #backlight,
+#custom-ext_backlight,
 #idle_inhibitor,
 #clock,
 #tray {
@@ -227,6 +228,13 @@ tooltip {
 }
 
 #backlight {
+    background: #fcd27d;
+    border-radius: 0px 12px 12px 0px;
+    padding-left: 4px;
+    padding-right: 12px;
+    margin-right: 15px;
+}
+#custom-ext_backlight {
     background: #fcd27d;
     border-radius: 0px 12px 12px 0px;
     padding-left: 4px;

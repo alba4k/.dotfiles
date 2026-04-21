@@ -15,6 +15,7 @@
         "/etc/systemd/system.conf.d/watchdog.conf",
         "/etc/xdg/weston/weston.ini",
         "/etc/tlp.conf",
+        "/etc/udev/rules.d/99-ddcci.rules",
         "/usr/lib/systemd/system-sleep/i2c_ljca-s2disk.sh",
         "/usr/share/libcamera/ipa/simple/ov01a10.yaml",
         "~/.config/bitwarden.conf",

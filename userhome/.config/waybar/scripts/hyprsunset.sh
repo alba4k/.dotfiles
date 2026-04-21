@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if test -f /tmp/hyprsunset; then
-  hyprctl hyprsunset identity
+  hyprctl hyprsunset reset temperature
   rm /tmp/hyprsunset
 else
     hyprctl hyprsunset temperature 4000

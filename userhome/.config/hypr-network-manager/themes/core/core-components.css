@@ -1,0 +1,913 @@
+/* hypr-network-manager: Shared component style layer for token-based themes */
+
+.nm-icon-button,
+.nm-list row.nm-wifi-row,
+.nm-list row.nm-device-row,
+.nm-wifi-row,
+.nm-device-row,
+button.nm-button,
+.nm-button,
+.row-link-action,
+.row-icon-action,
+.nm-tabs-menu-button,
+menubutton.nm-tabs-menu-button > button,
+.nm-edit-section-toggle,
+popover listview row,
+popover.menu listview row,
+popover.background listview row,
+popover listview row.activatable,
+popover.menu listview row.activatable,
+popover.background listview row.activatable {
+  transition: background-color 120ms, border-color 120ms, color 120ms;
+}
+
+window.nm-window,
+.nm-window {
+  background: @surface;
+  color: @text;
+  border: 1px solid @line_strong;
+}
+
+.nm-root,
+.nm-notebook,
+.nm-notebook > stack,
+.nm-page,
+.nm-content-stack,
+.nm-scroll,
+.nm-scroll > viewport,
+.nm-scroll > viewport > widget,
+.nm-empty-state {
+  background: transparent;
+}
+
+/* Keep subtle depth only on top-level list pages. */
+.nm-page.nm-page-wifi,
+.nm-page.nm-page-ethernet,
+.nm-page.nm-page-vpn {
+  background: alpha(@on_surface, .03);
+}
+
+/* Saved profiles should not render as a second slab over the main surface. */
+.nm-page.nm-page-saved-profiles,
+.nm-page-saved-profiles .nm-scroll,
+.nm-page-saved-profiles scrolledwindow,
+.nm-page-saved-profiles scrolledwindow.frame,
+.nm-page-saved-profiles .nm-scroll.frame,
+.nm-page-saved-profiles .nm-scroll > viewport,
+.nm-page-saved-profiles viewport,
+.nm-page-saved-profiles .nm-scroll > viewport > widget,
+.nm-page-saved-profiles .nm-profiles-page-body,
+.nm-page-saved-profiles .nm-list,
+.nm-page-saved-profiles .nm-list > row {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Prevent secondary slab when details/edit pages are opened. */
+.nm-page-network-details,
+.nm-page-network-edit,
+.nm-page-network-details .nm-scroll,
+.nm-page-network-edit .nm-scroll,
+.nm-page-network-details scrolledwindow,
+.nm-page-network-edit scrolledwindow,
+.nm-page-network-details scrolledwindow.frame,
+.nm-page-network-edit scrolledwindow.frame,
+.nm-page-network-details .nm-scroll.frame,
+.nm-page-network-edit .nm-scroll.frame,
+.nm-page-network-details .nm-scroll > viewport,
+.nm-page-network-edit .nm-scroll > viewport,
+.nm-page-network-details viewport,
+.nm-page-network-edit viewport,
+.nm-page-network-details .nm-scroll > viewport > widget,
+.nm-page-network-edit .nm-scroll > viewport > widget,
+.nm-details-scroll-body-inset,
+.nm-edit-form,
+.nm-edit-network-form,
+.nm-edit-wifi-form,
+.nm-edit-ethernet-form {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.nm-status-bar,
+.nm-notebook > header,
+notebook.nm-notebook > header,
+.nm-toolbar {
+  border: none;
+  border-bottom: none;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
+  margin: 0;
+}
+
+.nm-status-bar {
+  padding: 12px 14px 4px;
+  box-shadow: none;
+  margin-top: 0;
+}
+
+.nm-status-icon {
+  color: @selected;
+}
+
+.nm-status-label,
+.nm-title {
+  letter-spacing: 0.4px;
+  color: @on_surface;
+}
+
+.nm-toggle-label {
+  color: @on_surface_variant;
+  font-size: 11px;
+}
+
+switch.nm-switch,
+.nm-switch {
+  border-radius: 20px;
+  background: transparent;
+  border: 1px solid @line;
+  padding: 0;
+  box-shadow: none;
+  background-image: none;
+}
+
+switch.nm-switch:checked,
+.nm-switch:checked {
+  background: alpha(@secondary, .38);
+  border-color: alpha(@selected, .82);
+}
+
+switch.nm-switch slider,
+.nm-switch slider {
+  background: #f3f5f8;
+  border: none;
+  box-shadow: none;
+  background-image: none;
+}
+
+.nm-notebook > header,
+notebook.nm-notebook > header {
+  padding: 6px 10px;
+}
+
+.nm-notebook tab,
+.nm-notebook > header > tabs > tab,
+notebook.nm-notebook > header > tabs > tab {
+  border-radius: 0;
+  border: none;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  background: transparent;
+  box-shadow: inset 0 -2px transparent;
+  color: @on_surface_variant;
+  transition: box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s ease;
+}
+
+.nm-notebook tab:checked,
+.nm-notebook > header > tabs > tab:checked,
+notebook.nm-notebook > header > tabs > tab:checked {
+  color: @primary;
+  background: transparent;
+  box-shadow: inset 0 -2px @primary;
+  font-weight: bold;
+}
+
+.nm-toolbar {
+  padding: 4px 10px 12px;
+  margin-bottom: 0;
+  border-bottom: 1px solid alpha(@on_surface, .08);
+}
+
+.nm-section-title {
+  color: @on_surface_variant;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+}
+
+.nm-toolbar .nm-icon-button,
+.nm-toolbar .nm-toolbar-action,
+menubutton.nm-tabs-menu-button > button,
+menubutton.nm-tabs-menu-button > button.toggle,
+menubutton.nm-tabs-menu-button > button:checked {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: alpha(@surface, .22);
+  color: @on_surface_variant;
+}
+
+.nm-toolbar .nm-toolbar-action {
+  min-width: 0;
+  min-height: 28px;
+  padding: 4px 10px;
+  background: transparent;
+  border-color: transparent;
+}
+
+.nm-toolbar .nm-icon-button:hover,
+.nm-toolbar .nm-toolbar-action:hover,
+menubutton.nm-tabs-menu-button > button:hover,
+menubutton.nm-tabs-menu-button > button.toggle:hover,
+menubutton.nm-tabs-menu-button > button:checked:hover {
+  color: @primary;
+  border-color: transparent;
+  background: alpha(@primary, .15);
+}
+
+menubutton.nm-tabs-menu-button > button:checked {
+  color: @on_surface_variant;
+  border-color: transparent;
+  background: transparent;
+}
+
+.nm-toolbar .nm-icon-button:active,
+.nm-toolbar .nm-toolbar-action:active,
+menubutton.nm-tabs-menu-button > button:active,
+menubutton.nm-tabs-menu-button > button.toggle:active,
+menubutton.nm-tabs-menu-button > button:checked:active {
+  color: @primary;
+  border-color: transparent;
+  background: alpha(@primary, .18);
+}
+
+.nm-toolbar .nm-icon-button:focus:not(:hover),
+.nm-toolbar .nm-icon-button:focus-visible:not(:hover),
+.nm-toolbar .nm-toolbar-action:focus:not(:hover),
+.nm-toolbar .nm-toolbar-action:focus-visible:not(:hover),
+menubutton.nm-tabs-menu-button > button:focus:not(:hover),
+menubutton.nm-tabs-menu-button > button:focus-visible:not(:hover),
+menubutton.nm-tabs-menu-button > button.toggle:focus:not(:hover),
+menubutton.nm-tabs-menu-button > button.toggle:focus-visible:not(:hover),
+menubutton.nm-tabs-menu-button > button:checked:focus:not(:hover),
+menubutton.nm-tabs-menu-button > button:checked:focus-visible:not(:hover) {
+  color: @on_surface_variant;
+  border-color: transparent;
+  background: transparent;
+}
+
+/* Keep outer GtkMenuButton surface transparent so only one hover bubble is shown. */
+menubutton.nm-tabs-menu-button,
+menubutton.nm-tabs-menu-button:hover,
+menubutton.nm-tabs-menu-button:focus,
+menubutton.nm-tabs-menu-button:focus-within,
+menubutton.nm-tabs-menu-button:active {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.nm-list {
+  background: transparent;
+}
+
+.nm-list row.nm-wifi-row,
+.nm-list row.nm-device-row,
+.nm-wifi-row,
+.nm-device-row {
+  border-radius: 12px;
+  background: alpha(@on_surface, .015);
+  border: 1px solid alpha(@on_surface, .08);
+}
+
+.nm-list row.nm-wifi-row:hover,
+.nm-list row.nm-device-row:hover {
+  background: alpha(@secondary, .03);
+  border-color: alpha(@selected, .22);
+}
+
+.nm-wifi-row.connected,
+.nm-device-row.connected {
+  background: @selected_soft;
+  border-color: alpha(@selected, .56);
+}
+
+.nm-signal-icon {
+  color: @action;
+  opacity: 0.95;
+}
+
+.nm-signal-icon-secured {
+  color: @text;
+  opacity: 0.97;
+}
+
+.nm-sub-label {
+  color: @on_surface_variant;
+  font-size: 11px;
+}
+.nm-connected-indicator {
+  color: alpha(@success, .95);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: transparent;
+}
+
+.nm-error-label {
+  color: @error;
+  font-size: 11px;
+  padding: 4px 0;
+}
+
+.nm-row-error-label {
+  color: @error;
+  font-size: 10px;
+  padding: 2px 0;
+}
+
+button.nm-row-link-action {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  min-height: 24px;
+}
+
+.nm-row-expand-icon {
+  -gtk-icon-size: 14px;
+  color: @on_surface_variant;
+}
+
+button.nm-button,
+.nm-button {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  border: 1px solid @line_strong;
+  border-radius: 999px;
+  background:
+    linear-gradient(to bottom, alpha(#ffffff, .07), alpha(#ffffff, .01)),
+    @surface_soft;
+  color: @text;
+  box-shadow: none;
+  background-image: none;
+}
+
+button.nm-button:hover,
+.nm-button:hover {
+  background: @hover_soft;
+  border-color: alpha(@selected, .6);
+}
+
+.nm-connect-button {
+  color: @success;
+  border-color: alpha(@success, .55);
+}
+
+.nm-connect-button:hover {
+  background: alpha(@success, .16);
+}
+
+.nm-disconnect-button,
+.nm-delete-button,
+.nm-forget-button {
+  color: @urgent;
+  border-color: alpha(@urgent, .55);
+}
+
+.nm-disconnect-button:hover,
+.nm-delete-button:hover,
+.nm-forget-button:hover {
+  background: alpha(@urgent, .16);
+}
+
+.nm-action-button,
+.nm-edit-button,
+.nm-details-button,
+.nm-primary-action-button {
+  color: @action;
+  border-color: alpha(@action, .6);
+}
+
+.nm-action-button:hover,
+.nm-edit-button:hover,
+.nm-details-button:hover,
+.nm-primary-action-button:hover {
+  background: alpha(@action, .16);
+}
+
+.row-link-action {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0 2px;
+  color: @selected;
+}
+
+.row-link-action:hover {
+  color: @primary_hover;
+  background: transparent;
+  border: none;
+}
+
+.row-link-action > label {
+  color: @selected;
+}
+
+.row-link-action:hover > label {
+  color: @primary_hover;
+}
+
+.row-link-action.nm-connect-button,
+.row-link-action.nm-disconnect-button,
+.row-link-action.nm-action-button,
+.row-link-action.nm-delete-button,
+.row-link-action.nm-forget-button,
+.row-link-action.nm-edit-button,
+.row-link-action.nm-details-button,
+.row-link-action.nm-primary-action-button {
+  background: transparent;
+  border: none;
+  color: @selected;
+}
+
+.row-link-action.nm-connect-button:hover,
+.row-link-action.nm-disconnect-button:hover,
+.row-link-action.nm-action-button:hover,
+.row-link-action.nm-delete-button:hover,
+.row-link-action.nm-forget-button:hover,
+.row-link-action.nm-edit-button:hover,
+.row-link-action.nm-details-button:hover,
+.row-link-action.nm-primary-action-button:hover {
+  background: transparent;
+  border: none;
+  color: @primary_hover;
+}
+
+/* Universal list details action: icon only by default, chip on interaction only. */
+.nm-page button.row-icon-action,
+.nm-page .row-icon-action {
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  background-image: none;
+  color: @on_surface_variant;
+  border-radius: 999px;
+}
+
+.nm-page button.row-icon-action:active,
+.nm-page button.row-icon-action:checked,
+.nm-page button.row-icon-action:focus,
+.nm-page button.row-icon-action:focus-visible,
+.nm-page .row-icon-action:active,
+.nm-page .row-icon-action:checked,
+.nm-page .row-icon-action:focus,
+.nm-page .row-icon-action:focus-visible {
+  color: @on_surface_variant;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.nm-page button.row-icon-action:hover,
+.nm-page .row-icon-action:hover {
+  color: @text;
+  background: @hover_soft;
+  border-color: alpha(@on_surface, .2);
+}
+
+.nm-tabs-menu-popover {
+  border: 1px solid @line;
+  border-radius: 10px;
+}
+
+.nm-tabs-menu-list row.nm-tabs-menu-item,
+.nm-tabs-menu-item {
+  min-height: 30px;
+  border-radius: 8px;
+  color: @text;
+  background: alpha(@surface, .34);
+}
+
+.nm-tabs-menu-list row.nm-tabs-menu-item:hover,
+.nm-tabs-menu-item:hover {
+  background: @hover_soft;
+}
+
+.nm-password-entry,
+entry.nm-edit-field-entry,
+.nm-edit-field-entry {
+  border: 1px solid @line;
+  border-radius: 8px;
+  background: alpha(#000000, .16);
+  color: @text;
+  padding: 6px 10px;
+}
+
+entry.nm-inline-password-entry,
+.nm-inline-password-entry,
+entry.nm-inline-ssid-entry,
+.nm-inline-ssid-entry {
+  border: 1px solid @line;
+  border-radius: 8px;
+  background: alpha(#000000, .16);
+  color: @text;
+  padding: 6px 10px;
+}
+
+.nm-password-entry:focus,
+entry.nm-edit-field-entry:focus,
+.nm-edit-field-entry:focus {
+  border-color: @selected;
+}
+
+entry.nm-inline-password-entry:focus,
+.nm-inline-password-entry:focus,
+entry.nm-inline-ssid-entry:focus,
+.nm-inline-ssid-entry:focus {
+  border-color: @selected;
+}
+
+/* Hide natively rendered arrows in GTK4 DropDowns for a sleeker look */
+dropdown > button > arrow,
+.nm-edit-dropdown > button > arrow {
+  display: none;
+  min-width: 0;
+  min-height: 0;
+}
+
+dropdown.nm-edit-dropdown,
+.nm-edit-dropdown {
+  border: 1px solid @line;
+  border-radius: 8px;
+  background: alpha(#000000, .16);
+  color: @text;
+}
+
+dropdown.nm-edit-dropdown > button,
+.nm-edit-dropdown > button {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  color: inherit;
+  min-height: 30px;
+  border-radius: 8px;
+  padding: 0 10px;
+}
+
+dropdown.nm-edit-dropdown:focus-within,
+.nm-edit-dropdown:focus-within {
+  border-color: @selected;
+}
+
+popover,
+popover.menu,
+popover.background,
+popover.background.menu,
+popover.menu.background {
+  background: alpha(@surface_soft, .94);
+  border: 1px solid alpha(@on_surface, .1);
+  border-radius: 10px;
+  color: @text;
+  box-shadow: none;
+}
+
+popover > contents,
+popover.menu > contents,
+popover.background > contents,
+popover.background.menu > contents,
+popover.menu.background > contents {
+  background: transparent;
+  border-radius: 10px;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+popover listview,
+popover.menu listview,
+popover.background listview {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+popover scrolledwindow,
+popover.menu scrolledwindow,
+popover.background scrolledwindow,
+popover viewport,
+popover.menu viewport,
+popover.background viewport {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove GTK default frame/shell styles inside dropdown popovers. */
+popover scrolledwindow.frame,
+popover.menu scrolledwindow.frame,
+popover.background scrolledwindow.frame,
+popover listview.view,
+popover.menu listview.view,
+popover.background listview.view,
+popover listview.view > row,
+popover.menu listview.view > row,
+popover.background listview.view > row,
+popover listview.view > row > box,
+popover.menu listview.view > row > box,
+popover.background listview.view > row > box,
+popover box,
+popover.menu box,
+popover.background box {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+popover listview row,
+popover.menu listview row,
+popover.background listview row,
+popover listview row.activatable,
+popover.menu listview row.activatable,
+popover.background listview row.activatable {
+  min-height: 28px;
+  border-radius: 0;
+  padding: 6px 10px;
+  margin: 0;
+  border: none;
+  color: @text;
+  background: alpha(@surface, .34);
+}
+
+popover listview row:hover,
+popover.menu listview row:hover,
+popover.background listview row:hover,
+popover listview row.activatable:hover,
+popover.menu listview row.activatable:hover,
+popover.background listview row.activatable:hover {
+  background: alpha(@secondary, .1);
+}
+
+popover listview row:selected,
+popover.menu listview row:selected,
+popover.background listview row:selected,
+popover listview row:checked,
+popover.menu listview row:checked,
+popover.background listview row:checked {
+  background: alpha(@secondary, .12);
+  border: none;
+  padding: 6px 10px;
+  font-weight: 400;
+  color: @text;
+}
+
+popover listview row:selected:hover,
+popover.menu listview row:selected:hover,
+popover.background listview row:selected:hover,
+popover listview row:checked:hover,
+popover.menu listview row:checked:hover,
+popover.background listview row:checked:hover {
+  background: alpha(@secondary, .12);
+}
+
+/* Keep back action link-like everywhere, matching connect/disconnect text actions. */
+.nm-page button.nm-nav-back,
+.nm-page .nm-nav-back {
+  color: @selected;
+  background: transparent;
+  background-image: none;
+  border: none;
+  border-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0 2px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.nm-page button.nm-nav-back:hover,
+.nm-page button.nm-nav-back:active,
+.nm-page button.nm-nav-back:checked,
+.nm-page button.nm-nav-back:focus,
+.nm-page button.nm-nav-back:focus-visible,
+.nm-page .nm-nav-back:hover,
+.nm-page .nm-nav-back:active,
+.nm-page .nm-nav-back:checked,
+.nm-page .nm-nav-back:focus,
+.nm-page .nm-nav-back:focus-visible {
+  color: @primary_hover;
+  background: transparent;
+  background-image: none;
+  border: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.nm-page button.nm-nav-back label,
+.nm-page .nm-nav-back label {
+  color: @selected;
+}
+
+.nm-page button.nm-nav-back:hover label,
+.nm-page button.nm-nav-back:active label,
+.nm-page button.nm-nav-back:checked label,
+.nm-page button.nm-nav-back:focus label,
+.nm-page button.nm-nav-back:focus-visible label,
+.nm-page .nm-nav-back:hover label,
+.nm-page .nm-nav-back:active label,
+.nm-page .nm-nav-back:checked label,
+.nm-page .nm-nav-back:focus label,
+.nm-page .nm-nav-back:focus-visible label {
+  color: @primary_hover;
+}
+
+.nm-details-network-icon {
+  color: @action;
+}
+
+.nm-details-group-title,
+.nm-edit-field-label,
+.nm-edit-mode-label {
+  color: @on_surface_variant;
+}
+
+.nm-details-key,
+.nm-details-item-key {
+  color: @on_surface_variant;
+  text-decoration: none;
+}
+
+.nm-details-value,
+.nm-details-item-value {
+  color: @text;
+}
+
+.nm-edit-section-toggle {
+  color: @on_surface_variant;
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+.nm-edit-section-toggle:hover {
+  color: @text;
+  background: @hover_soft;
+  border-color: alpha(@selected, .26);
+}
+
+.nm-edit-section-toggle:active,
+.nm-edit-section-toggle:checked,
+.nm-edit-section-toggle:focus,
+.nm-edit-section-toggle:focus-visible {
+  border: 1px solid transparent;
+  box-shadow: none;
+  background: transparent;
+}
+
+.nm-edit-section-toggle-icon {
+  -gtk-icon-size: 14px;
+}
+
+.nm-edit-collapsible.is-expanded > .nm-edit-section-toggle {
+  color: @action;
+}
+
+.nm-edit-collapsible.is-collapsed > .nm-edit-section-toggle {
+  opacity: 0.92;
+}
+
+.nm-edit-mode-row {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.nm-edit-gateway-mode-row,
+.nm-edit-dns-mode-row,
+.nm-edit-ipv6-dns-mode-row {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.nm-edit-field-entry:disabled,
+.nm-edit-dropdown:disabled,
+entry.nm-edit-field-entry:disabled {
+  opacity: 0.58;
+  color: alpha(@on_surface, .56);
+}
+
+checkbutton.nm-row-autoconnect-check,
+.nm-row-autoconnect-check {
+  color: @on_surface_variant;
+}
+
+checkbutton.nm-row-autoconnect-check:hover,
+.nm-row-autoconnect-check:hover {
+  color: @text;
+}
+
+checkbutton.nm-row-autoconnect-check > check,
+.nm-row-autoconnect-check > check,
+checkbutton > check {
+  background: alpha(#000000, .2);
+  border: 1px solid @line_strong;
+}
+
+checkbutton.nm-row-autoconnect-check:checked > check,
+.nm-row-autoconnect-check:checked > check,
+checkbutton:checked > check {
+  background: @selected;
+  border-color: @selected;
+  color: #22262b;
+}
+
+checkbutton.nm-row-autoconnect-check:checked > label,
+.nm-row-autoconnect-check:checked > label,
+checkbutton:checked > label {
+  color: @text;
+}
+
+.nm-placeholder-label {
+  color: @on_surface_variant;
+}
+
+.nm-placeholder-icon {
+  color: alpha(@action, .38);
+}
+
+separator.nm-separator,
+.nm-separator {
+  color: alpha(@on_surface, .08);
+  border-color: alpha(@on_surface, .08);
+  background-color: alpha(@on_surface, .08);
+  min-height: 1px;
+  min-width: 1px;
+}
+
+.nm-page-network-details > .nm-separator,
+.nm-page-network-details .nm-details-section .nm-separator {
+  color: alpha(@on_surface, .12);
+  border-color: alpha(@on_surface, .12);
+  background-color: alpha(@on_surface, .12);
+  min-height: 1px;
+  min-width: 1px;
+}
+
+.nm-scroll scrollbar {
+  background: transparent;
+}
+
+.nm-scroll scrollbar slider {
+  background: alpha(@on_surface, .24);
+}
+
+.nm-scroll scrollbar slider:hover {
+  background: alpha(@on_surface, .32);
+}
+
+dialog .suggested-action {
+  background: @selected;
+  color: #1f2328;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+dialog .suggested-action:hover {
+  background: @primary_hover;
+}
+
+list.boxed-list.nm-details-rows {
+  background: alpha(@on_surface, .025);
+  border: 1px solid alpha(@on_surface, .08);
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+list.boxed-list.nm-details-rows > row {
+  background: transparent;
+  border-bottom: 1px solid alpha(@on_surface, .08);
+  margin: 0;
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+list.boxed-list.nm-details-rows > row:last-child {
+  border-bottom: none;
+}
+
+list.boxed-list.nm-details-rows > row:hover {
+  background: alpha(@secondary, .04);
+}

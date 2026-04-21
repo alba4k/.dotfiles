@@ -1,0 +1,534 @@
+/* hypr-network-manager: Shared structural layer for all themes */
+
+:root {
+  --component-margin: 6px;
+}
+
+.nm-page-shell-inset {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nm-toolbar-inset {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 12px;
+  margin-right: 8px;
+}
+
+.nm-details-scroll-body-inset {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nm-row-content-inset {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 12px;
+  margin-right: 8px;
+}
+
+.nm-popover-list-inset {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.nm-icon-size {
+  -gtk-icon-size: 16px;
+}
+
+.nm-icon-size-14 {
+  -gtk-icon-size: 14px;
+}
+
+.nm-icon-size-16 {
+  -gtk-icon-size: 16px;
+}
+
+.nm-icon-size-24 {
+  -gtk-icon-size: 24px;
+}
+
+.nm-icon-size-28 {
+  -gtk-icon-size: 28px;
+}
+
+window.nm-window,
+.nm-window {
+  border-radius: 12px;
+  opacity: 1.0;
+}
+
+.nm-root,
+.nm-window,
+.nm-root label,
+.nm-window label,
+.nm-root button,
+.nm-window button,
+.nm-root entry,
+.nm-window entry {
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
+.nm-status-bar {
+  padding: 10px 12px;
+}
+
+.nm-status-bar > * {
+  margin-left: var(--component-margin);
+  margin-right: var(--component-margin);
+}
+
+/* Shared component spacing for non-edit pages */
+.nm-page:not(.nm-page-network-edit) .nm-toolbar,
+.nm-page:not(.nm-page-network-edit) .nm-details-nav-row,
+.nm-page:not(.nm-page-network-edit) .nm-details-header,
+.nm-page:not(.nm-page-network-edit) .nm-details-action-row,
+.nm-page:not(.nm-page-network-edit) .nm-details-section,
+.nm-page:not(.nm-page-network-edit) .nm-details-rows,
+.nm-page:not(.nm-page-network-edit) .nm-details-row,
+.nm-page:not(.nm-page-network-edit) .nm-details-item,
+.nm-page:not(.nm-page-network-edit) .nm-row-content,
+.nm-page:not(.nm-page-network-edit) .nm-row-actions,
+.nm-page:not(.nm-page-network-edit) .nm-placeholder-label,
+.nm-page:not(.nm-page-network-edit) .nm-placeholder-icon,
+.nm-page:not(.nm-page-network-edit) .nm-separator {
+  margin-left: var(--component-margin);
+  margin-right: var(--component-margin);
+}
+
+.nm-page:not(.nm-page-network-edit) .nm-list row.nm-wifi-row,
+.nm-page:not(.nm-page-network-edit) .nm-list row.nm-device-row,
+.nm-page:not(.nm-page-network-edit) .nm-wifi-row,
+.nm-page:not(.nm-page-network-edit) .nm-device-row {
+  margin-left: var(--component-margin);
+  margin-right: var(--component-margin);
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.nm-title,
+.nm-status-label {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+.nm-ssid-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+switch.nm-switch,
+.nm-switch {
+  min-width: 34px;
+  min-height: 18px;
+}
+
+switch.nm-switch slider,
+.nm-switch slider {
+  min-width: 14px;
+  min-height: 14px;
+  border-radius: 50%;
+}
+
+.nm-row-content {
+  padding: 10px 10px 10px 12px;
+}
+
+.nm-row-actions {
+  min-height: 0;
+  padding: 0 10px 10px 12px;
+}
+
+button.nm-button,
+.nm-button {
+  min-height: 28px;
+  min-width: 0;
+  border-radius: 8px;
+}
+
+.nm-connect-button,
+.nm-disconnect-button,
+.nm-action-button,
+.nm-forget-button,
+.nm-delete-button,
+.nm-edit-button,
+.nm-details-button,
+.nm-primary-action-button,
+.row-link-action {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  min-height: 26px;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0 2px;
+}
+
+.row-link-action:hover {
+  background: transparent;
+  border: none;
+}
+
+.row-link-action > label {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: currentColor;
+}
+
+.row-link-action:hover > label {
+  font-weight: 700;
+}
+
+.row-icon-action {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.nm-tabs-menu-button {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+  border-radius: 999px;
+}
+
+menubutton.nm-tabs-menu-button > button,
+menubutton.nm-tabs-menu-button > button.toggle,
+menubutton.nm-tabs-menu-button > button:checked {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+  border-radius: 999px;
+}
+
+.nm-toolbar-icon {
+  -gtk-icon-size: 14px;
+}
+
+.nm-tabs-menu-icon {
+  -gtk-icon-size: 16px;
+}
+
+/* Reserve breathing room around notebook tabs and the right-side tabs menu button. */
+.nm-notebook > header,
+notebook.nm-notebook > header {
+  padding-top: 6px;
+  padding-right: 8px;
+}
+
+.nm-notebook > header > tabs,
+notebook.nm-notebook > header > tabs {
+  margin-top: 2px;
+}
+
+.nm-notebook tab,
+.nm-notebook > header > tabs > tab,
+notebook.nm-notebook > header > tabs > tab {
+  margin-top: 2px;
+}
+
+.nm-tabs-menu-button,
+menubutton.nm-tabs-menu-button,
+menubutton.nm-tabs-menu-button > button,
+menubutton.nm-tabs-menu-button > button.toggle,
+menubutton.nm-tabs-menu-button > button:checked {
+  margin-right: 6px;
+}
+
+.nm-details-open-icon {
+  -gtk-icon-size: 14px;
+}
+
+.nm-details-open-button {
+  font-weight: 700;
+}
+
+.nm-inline-password {
+  padding: 0 10px 10px 12px;
+}
+
+.nm-page-network-details,
+.nm-page-network-edit {
+  padding: 6px 2px 8px;
+  border: none;
+  border-radius: 0;
+}
+
+.nm-page-saved-profiles {
+  padding: 6px 2px 8px;
+  border: none;
+  border-radius: 0;
+}
+
+/* Keep edit/saved-page headers inset while allowing scrollbars to stay edge-aligned. */
+.nm-page-network-details > box:first-child,
+.nm-page-network-edit > box:first-child,
+.nm-page-saved-profiles > box:first-child {
+  margin-top: 6px;
+  margin-left: 12px;
+  margin-right: 8px;
+}
+
+.nm-page-network-details > scrolledwindow:last-child,
+.nm-page-network-edit > scrolledwindow:last-child,
+.nm-page-saved-profiles > scrolledwindow:last-child {
+  margin-bottom: 6px;
+}
+
+.nm-details-nav-row {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.nm-nav-back {
+  border-radius: 8px;
+  padding: 2px 10px;
+  min-height: 26px;
+  min-width: 68px;
+  font-size: 12px;
+}
+
+button.nm-nav-back label,
+.nm-nav-back label {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: currentColor;
+}
+
+button.nm-nav-back:hover label,
+.nm-nav-back:hover label {
+  font-weight: 700;
+}
+
+.nm-details-header {
+  padding: 2px 0 4px;
+}
+
+.nm-details-network-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nm-details-action-row {
+  padding-top: 2px;
+}
+
+.nm-details-action-button {
+  min-height: 30px;
+}
+
+.nm-edit-collapsible {
+  padding: 4px 0;
+}
+
+.nm-edit-section-toggle {
+  padding: 4px 2px;
+  min-height: 26px;
+}
+
+.nm-edit-section-toggle-row {
+  padding: 0;
+}
+
+.nm-edit-section-toggle-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+}
+
+.nm-details-group-title {
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.nm-details-section {
+  padding: 2px 0 8px;
+}
+
+/* Avoid compounding nested left/right margins in details layouts. */
+.nm-page-network-details .nm-details-section,
+.nm-page-network-details .nm-details-rows,
+.nm-page-network-details .nm-details-row,
+.nm-page-network-details .nm-details-item {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nm-page-network-details > .nm-separator {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.nm-page-network-details .nm-details-section .nm-separator {
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+.nm-details-rows {
+  padding: 4px 0;
+}
+
+.nm-details-row,
+.nm-details-item {
+  padding: 10px 14px;
+}
+
+.nm-details-key,
+.nm-details-item-key {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nm-details-value,
+.nm-details-item-value {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.nm-edit-form {
+  padding-top: 8px;
+}
+
+.nm-edit-network-form {
+  padding-bottom: 10px;
+  margin-left: 12px;
+  margin-right: 8px;
+}
+
+.nm-profiles-page-body {
+  padding-top: 6px;
+  padding-bottom: 10px;
+}
+
+/* Scanned Wi-Fi/Ethernet edit pages may resolve to specific form classes. */
+.nm-edit-wifi-form,
+.nm-edit-ethernet-form {
+  margin-left: 12px;
+  margin-right: 8px;
+}
+
+.nm-edit-field-label,
+.nm-edit-mode-label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.nm-edit-note {
+  margin-bottom: 2px;
+  line-height: 1.35;
+}
+
+.nm-edit-field-control,
+.nm-edit-dropdown,
+.nm-edit-field-entry {
+  min-height: 30px;
+}
+
+.nm-tabs-menu-list {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.nm-edit-mode-row {
+  padding: 2px 0;
+  border-radius: 8px;
+}
+
+.nm-edit-mode-switch {
+  min-width: 36px;
+}
+
+.nm-edit-gateway-mode-switch,
+.nm-edit-dns-mode-switch,
+.nm-edit-ipv6-dns-mode-switch {
+  margin-left: 8px;
+}
+
+.nm-edit-gateway-mode-row,
+.nm-edit-dns-mode-row,
+.nm-edit-ipv6-dns-mode-row {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.nm-edit-field-entry:disabled,
+.nm-edit-dropdown:disabled,
+entry.nm-edit-field-entry:disabled {
+  opacity: 0.6;
+}
+
+.nm-edit-ipv4-method-dropdown {
+  margin-bottom: 2px;
+}
+
+.nm-edit-actions {
+  margin-top: 6px;
+}
+
+.nm-edit-network-form .nm-edit-field-entry,
+.nm-edit-network-form .nm-edit-dropdown,
+.nm-edit-network-form .nm-edit-mode-row,
+.nm-edit-network-form .nm-edit-section-toggle,
+.nm-edit-wifi-form .nm-edit-field-entry,
+.nm-edit-wifi-form .nm-edit-dropdown,
+.nm-edit-wifi-form .nm-edit-mode-row,
+.nm-edit-wifi-form .nm-edit-section-toggle,
+.nm-edit-ethernet-form .nm-edit-field-entry,
+.nm-edit-ethernet-form .nm-edit-dropdown,
+.nm-edit-ethernet-form .nm-edit-mode-row,
+.nm-edit-ethernet-form .nm-edit-section-toggle {
+  margin-right: 12px;
+}
+
+/* Checkbutton geometry used in Wi-Fi and profile forms */
+checkbutton.nm-row-autoconnect-check,
+.nm-row-autoconnect-check {
+  min-height: 24px;
+  padding: 2px 0;
+}
+
+checkbutton.nm-row-autoconnect-check > check,
+.nm-row-autoconnect-check > check {
+  min-width: 16px;
+  min-height: 16px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.nm-scroll scrollbar {
+  min-width: 4px;
+  min-height: 4px;
+}
+
+.nm-scroll scrollbar.vertical {
+  min-width: 4px;
+}
+
+.nm-scroll scrollbar.horizontal {
+  min-height: 4px;
+}
+
+.nm-scroll scrollbar slider {
+  border-radius: 4px;
+  min-width: 4px;
+  min-height: 4px;
+}

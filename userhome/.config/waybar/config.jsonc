@@ -35,7 +35,7 @@
             "cava",
             "pulseaudio",
             "custom/greentoyellow",
-            "backlight",
+            "custom/ext_backlight",
             "idle_inhibitor",
             "clock",
             "tray"

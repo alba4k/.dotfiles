@@ -64,7 +64,7 @@ monitor_brightness () {
     perc=$((max_brightness / 100))
 
     while :; do
-        inotifywait -qe 'OPEN' "$BRIGHT_PATH" > /dev/null
+        inotifywait -qe 'MODIFY' "$BRIGHT_PATH" > /dev/null
         brightness="$(cat "$BRIGHT_PATH")"
         brightness=$((brightness / perc))
 
