@@ -38,10 +38,10 @@ ac_command_center () {
 
     if [ "$ac_state" = 'true' ]; then
         icon=$(echo $icon | awk '{print $1}')
-        notify-send -t 2000 -u low -i battery -r 69420 -a "Sistema" " In carica" " $icon Batteria al $perc%"
+        notify-send -t 2000 -u low -i battery -r 69420 -a "Sistema" -h boolean:transient:true -h "string:synchronous:AC" " In carica" " $icon Batteria al $perc%"
     elif [ "$ac_state" = 'false' ]; then
         icon=$(echo $icon | awk '{print $2}')
-        notify-send -t 2000 -u low -i battery -r 69420 -a "Sistema" "󰚦 Carica fermata" " $icon Batteria al $perc%"
+        notify-send -t 2000 -u low -i battery -r 69420 -a "Sistema" -h boolean:transient:true -h "string:synchronous:AC" "󰚦 Carica fermata" " $icon Batteria al $perc%"
     fi
 }
 

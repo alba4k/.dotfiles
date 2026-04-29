@@ -1,15 +1,16 @@
-/* WAYBAR - alba4k
+/* 
+ * WAYBAR - alba4k
  *
  * Documentation: https://github.com/Alexays/Waybar/wiki
  *
- * This config started as just a clone of my original Polybar configuration, which is itself based on https://github.com/axyl-os/axyl-i3wm/tree/master/etc/skel/.config/i3/polybar
+ * This config started as a clone of my original Polybar configuration, which was itself based on https://github.com/axyl-os/axyl-i3wm/tree/master/etc/skel/.config/i3/polybar
  */
 
 [
     {
         "name": "laptop",
         "output": ["eDP-1"],
-        "include": ["~/.config/waybar/regular.jsonc"]
+        "include": ["~/.config/waybar/laptop.jsonc"]
     },
     {
         "name": "regular",
@@ -18,34 +19,7 @@
     },
     {
         "name": "ultrawide",
-        "layer": "bottom",
-        "position": "top",
         "output": ["DP-1", "DP-3"],
-        "mod": "dock",
-        "height": 33,
-        "exclusive": true,
-        "passthrough": false,
-
-        "modules-right": [
-            "battery",
-            "custom/media-bw",
-            "custom/media-pp",
-            "custom/media-fw",
-            "mpris",
-            "cava",
-            "pulseaudio",
-            "custom/greentoyellow",
-            "custom/ext_backlight",
-            "idle_inhibitor",
-            "clock",
-            "tray"
-        ],
-
-        "include": ["~/.config/waybar/modules.jsonc"],
-
-        "cava": {
-            "bars": 16,
-            "stereo": true
-        }
+        "include": ["~/.config/waybar/ultrawide.jsonc"]
     }
 ]

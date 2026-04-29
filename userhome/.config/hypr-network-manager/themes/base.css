@@ -1,2 +1,33 @@
-/* hypr-network-manager active theme entrypoint */
-@import url("catppuccin/base.css");
+:root {
+  --surface: #1e1e2e;
+  --surface_soft: #313244;
+  --surface_raised: #45475a;
+  --on_surface: #cdd6f4;
+  --on_surface_variant: #9399b2;
+  --primary: #bb99e3;
+  --secondary: #7b59a3;
+  --error: #d18791;
+  --success: #7fbe9a;
+  --action: #bb99e3;
+  --primary_hover: #d8bcf8;
+
+  --text: var(--on_surface);
+  --background-alt: alpha(var(--surface), .4);
+  --selected: var(--primary);
+  --hover: alpha(var(--secondary), .16);
+  --urgent: var(--error);
+
+  --line: alpha(var(--on_surface), .13);
+  --line_strong: alpha(var(--on_surface), .24);
+  --active: alpha(var(--secondary), .22);
+  --hover_soft: alpha(var(--secondary), .11);
+  --hover_row: alpha(var(--secondary), .06);
+  --selected_soft: alpha(var(--secondary), .09);
+}
+
+* {
+  color: var(--text);
+  font-size: 14px;
+  font-family: "JetBrains Mono Nerd Font 10";
+}
+

@@ -1,0 +1,44 @@
+{
+    "name": "laptop",
+    "layer": "bottom",
+    "position": "top",
+    "mod": "dock",
+    "height": 33,
+    "exclusive": true,
+    "passthrough": false,
+    "fixed-center": true,
+
+    "modules-left": [
+        "custom/launcher",
+        "cpu",
+        "temperature",
+        "memory",
+        "network",
+        "bluetooth"
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "battery",
+        "custom/media-bw",
+        "custom/media-pp",
+        "custom/media-fw",
+        "cava",
+        "pulseaudio",
+        "custom/greentoyellow",
+        "backlight",
+        "idle_inhibitor",
+        "clock",
+        "tray"
+    ],
+
+    "include": ["~/.config/waybar/modules.jsonc"],
+
+    "hyprland/window": {
+        "rewrite": {
+            "^(.{60}).{3}.*": "$1.."
+        }
+    }
+}

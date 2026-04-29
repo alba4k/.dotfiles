@@ -1,0 +1,129 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "control-center-positionX": "left",
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "layer-shell-cover-screen": true,
+  "cssPriority": "user",
+  "control-center-margin-top": 8,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-right": 0,
+  "control-center-margin-left": 8,
+  "notification-2fa-action": true,
+  "notification-inline-replies": true,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "fit-to-screen": false,
+  "relative-timestamps": true,
+  "control-center-width": 480,
+  "control-center-height": 680,
+  "notification-window-width": 350,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": false,
+  "text-empty": "Nessuna Notifica",
+  "script-fail-notify": true,
+  "scripts": {
+    "example-script": {
+      "app-name": "example.app.id",
+      "exec": "echo 'Do something...'",
+      "urgency": "Normal"
+    },
+    "example-action-script": {
+      "app-name": "example.app.id",
+      "exec": "echo 'Do something actionable!'",
+      "urgency": "Normal",
+      "run-on": "action"
+    }
+  },
+  "notification-visibility": {
+    "system": {
+      "state": "transient",
+      "urgency": "Normal",
+      "app-name": "Sistema"
+    }
+  },
+  "widgets": [
+    "mpris",
+    "dnd",
+    "inhibitors",
+    "title",
+    "notifications"
+  ],
+  "widget-config": {"volume": {
+      "label": "Vol"
+    },
+    "backlight": {
+      "label": "Bri"
+    },
+    "notifications": {
+      "vexpand": true
+    },
+    "inhibitors": {
+      "text": "Inhibitors",
+      "button-text": "Cancella",
+      "clear-all-button": true
+    },
+    "title": {
+      "text": "Notifiche",
+      "clear-all-button": true,
+      "button-text": "Cancella"
+    },
+    "dnd": {
+      "text": "Non Disturbare"
+    },
+    "label": {
+      "max-lines": 5,
+      "text": "Label Text"
+    },
+    "mpris": {
+      "blacklist": [],
+      "autohide": false,
+      "show-album-art": "always",
+      "loop-carousel": false
+    },
+    "buttons-grid": {
+      "buttons-per-row": 4,
+      "actions": [
+        {
+          "label": "",
+          "type": "toggle",
+          "active": true,
+          "command": "rfkill toggle wifi",
+          "update-command": "(rfkill list wifi | grep yes) && echo false || echo true"
+        },
+        {
+          "label": "󰂯",
+          "type": "toggle",
+          "active": true,
+          "command": "rfkill toggle bluetooth",
+          "update-command": "(rfkill list bluetooth | grep yes) && echo false || echo true"
+        },
+        {
+          "label": "",
+          "type": "toggle",
+          "active": true,
+          "command": "swaync-client --toggle-dnd",
+          "update-command": "swaync-client --get-dnd"
+        },
+        {
+          "label": "󰈈",
+          "type": "toggle",
+          "active": true,
+          "command": "pidof systemd-inhibit && pkill systemd-inhibit || systemd-inhibit sleep infinity",
+          "update-command": "pidof systemd-inhibit >/dev/null && echo true || echo false"
+        }
+      ]
+    }
+  }
+}

@@ -21,6 +21,7 @@ _notify () {
     local icon="${1:?Error: Operation not specified}"
     local value="${2// }"
     local color="${3:-#FFFFFF}"
+    local title="${4}"
 
     if ((value >= 90)); then
         color="$CRITICAL_COLOR"
@@ -33,9 +34,9 @@ _notify () {
     fi
     
     if [ "$icon" == "" ]; then
-        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u normal -h "int:value:$value" -h "string:hlcolor:$color" -- "${icon} (${value}%)"
+        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u normal -h boolean:transient:true -h "int:value:$value" -h "string:synchronous:progress" "$title" -h "string:hlcolor:$color" -- "${icon}  (${value}%)"
     else
-        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u normal -h "int:value:$value" -h "string:hlcolor:$color" -- "${icon} ${value}%"
+        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u normal -h boolean:transient:true -h "int:value:$value" -h "string:synchronous:progress" "$title" -h "string:hlcolor:$color" -- "${icon}  ${value}%"
     fi
 }
 
@@ -78,7 +79,7 @@ monitor_brightness () {
             icon='󰃞'
         fi
 
-        _notify "$icon" "$brightness" "$BRIGHTNESS_COLOR"
+        _notify "$icon" "$brightness" "$BRIGHTNESS_COLOR" "Luminosità"
     done
 }
 
@@ -109,7 +110,7 @@ monitor_keyboard () {
             icon='󰃞'
         fi
 
-        _notify "$icon" "$brightness" "$KEYBOARD_COLOR"
+        _notify "$icon" "$brightness" "$KEYBOARD_COLOR" "Retroilluminazione"
     done
 }
 
@@ -148,12 +149,12 @@ monitor_volume () {
             else
                 previous_mute="$mute"
                 [ -z "$previous_mute" ] && continue
-                _notify "$icon" "$volume" "$VOLUME_COLOR"
+                _notify "$icon" "$volume" "$VOLUME_COLOR" "Volume"
             fi
         else
             previous_volume="$volume"
             [ -z "$previous_volume" ] && continue
-            _notify "$icon" "$volume" "$VOLUME_COLOR"
+            _notify "$icon" "$volume" "$VOLUME_COLOR" "Volume"
         fi
 
     done

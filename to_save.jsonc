@@ -2,7 +2,6 @@
     // single files that should be copied
     "files": [
         "/etc/doas.conf",
-        "/etc/fwupd/fwupd.conf",
         "/etc/mkinitcpio.conf",
         "/etc/makepkg.conf",
         "/etc/pacman.conf",
@@ -60,6 +59,7 @@
         "~/.config/qt6ct",
         "~/.config/rofi",
         "~/.config/shikane",
+        "~/.config/swaync",
         "~/.config/spicetify",
         "~/.config/waybar",
         "~/.config/wlogout",

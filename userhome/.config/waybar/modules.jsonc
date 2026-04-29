@@ -1,38 +1,10 @@
 {
-       "modules-left": [
-           "custom/launcher",
-           "cpu",
-           "temperature",
-           "memory",
-           "network",
-           "bluetooth"
-       ],
-       "modules-center": [
-           "hyprland/workspaces",
-           "hyprland/window"
-       ],
-
-       "modules-right": [
-           "battery",
-           "custom/media-bw",
-           "custom/media-pp",
-           "custom/media-fw",
-           "cava",
-           "pulseaudio",
-           "custom/greentoyellow",
-           "backlight",
-           "custom/ext_backlight",
-           "idle_inhibitor",
-           "clock",
-           "tray"
-       ],
-
     "custom/launcher": {
         "format": " ",
         "interval": "once",
 
-        "on-click": "rofi -show drun",
-        "on-click-right": "rofi -show run",
+        "on-click": "swaync-client --toggle-panel",
+        "on-click-right": "rofi -show drun",
         "on-click-middle": "pidof wlogout || wlogout",
 
         "tooltip": false
@@ -71,9 +43,9 @@
         "tooltip-format-disconnected": "Nessuna rete",
         "tooltip-format-disabled": "WiFi Disabilitato",
 
-        "on-click": "rfkill toggle wifi",
-        "on-click-right": "hypr-network-manager",
-        "on-click-middle": "pidof nm-connection-editor || nm-connection-editor && killall nm-connection-editor"
+        "on-click": "hypr-network-manager",
+        "on-click-right": "rfkill toggle wifi",
+        "on-click-middle": "hypr-network-manager"
     },
 
     "bluetooth": {
@@ -84,10 +56,10 @@
 	    "format-connected": "󰂱 ({num_connections}) {device_alias}",
 	    "tooltip-format-enumerate-connected": "󰂱 {device_alias}",
 	    "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias} (󰁹 {device_battery_percentage}%)",
-        "max-length": 20,
+        "max-length": 16,
 
-        "on-click": "rfkill toggle bluetooth",
-        "on-click-right": "pidof blueman-manager || blueman-manager && killall blueman-manager",
+        "on-click": "pidof blueman-manager || blueman-manager && killall blueman-manager",
+        "on-click-right": "rfkill toggle bluetooth",
         "on-click-middle": "~/.local/bin/buds"
     },
 
@@ -155,9 +127,9 @@
             "critical": 10
         },
 
-        "on-click": "pkexec ~/.local/bin/powersave && notify-send -r 1234 -t 2000 -a Prestazioni -u low -i battery 'Risparmio energetico attivato!'",
-        "on-click-right": "pkexec ~/.local/bin/balanced && notify-send -r 1234 -t 2000 -a Prestazioni -u low -i battery 'Modalità bilanciata attivata!'",
-        "on-click-middle": "pkexec ~/.local/bin/performance && notify-send -r 1234 -t 2000 -a Prestazioni -u low -i battery 'Modalità prestazioni attivata!'"
+        "on-click": "pkexec ~/.local/bin/powersave && notify-send -r 1234 -a Sistema -h string:synchronous:power -t 2000 -a Prestazioni -u low -i battery 'Risparmio energetico attivato!'",
+        "on-click-right": "pkexec ~/.local/bin/balanced && notify-send -r 1234 -a Sistema -h string:synchronous:power -t 2000 -a Prestazioni -u low -i battery 'Modalità bilanciata attivata!'",
+        "on-click-middle": "pkexec ~/.local/bin/performance && notify-send -r 1234 -a Sistema -h string:synchronous:power -t 2000 -a Prestazioni -u low -i battery 'Modalità prestazioni attivata!'"
     },
 
     "custom/media-bw": {
@@ -212,7 +184,7 @@
     "cava": {
         "framerate": 20,
         "autosens": 1,
-        "sensitivity":2,
+        "sensitivity":1,
         "bars": 6,
         "lower_cutoff_freq": 50,
         "higher_cutoff_freq": 10000,
@@ -261,7 +233,7 @@
         "interval": 0.1,
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
-        "scroll-step": -0.3,
+        "scroll-step": -0.7,
         "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
 
         "on-click": "~/.config/waybar/scripts/hyprsunset.sh",
@@ -269,13 +241,13 @@
         "tooltip": false
     },
     "custom/ext_backlight": {
-        "interval": 1,
+        "interval": 30,
         "exec": "~/.config/waybar/scripts/ddcutil.sh",
         "format": "{icon} {percentage}%",
         "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
 
-        "on-scroll-up": "ddcutil setvcp --bus 14 10 + 5 || ddcutil setvcp --bus 12 10 + 5 || ddcutil setvcp --bus 13 10 + 5 || ddcutil setvcp --bus 15 10 + 5",
-        "on-scroll-down": "ddcutil setvcp --bus 14 10 - 5 || ddcutil setvcp --bus 12 10 - 5 || ddcutil setvcp --bus 13 10 - 5 || ddcutil setvcp --bus 15 10 - 5",
+        "on-scroll-up": "ddcutil setvcp --bus 14 10 + 5 || ddcutil setvcp --bus 12 10 + 5 || ddcutil setvcp --bus 16 10 + 5 || ddcutil setvcp --bus 17 10 + 5 || ddcutil setvcp --bus 19 10 + 5 || ddcutil setvcp --bus 20 10 + 5",
+        "on-scroll-down": "ddcutil setvcp --bus 14 10 - 5 || ddcutil setvcp --bus 12 10 - 5 || ddcutil setvcp --bus 16 10 - 5 || ddcutil setvcp --bus 17 10 - 5 || ddcutil setvcp --bus 19 10 - 5 || ddcutil setvcp --bus 20 10 - 5",
         "on-click": "~/.config/waybar/scripts/hyprsunset.sh",
         "on-click-right": "ddcui",
 
