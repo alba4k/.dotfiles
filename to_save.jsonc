@@ -18,6 +18,7 @@
         "/usr/lib/systemd/system-sleep/i2c_ljca-s2disk.sh",
         "/usr/share/libcamera/ipa/simple/ov01a10.yaml",
         "~/.config/bitwarden.conf",
+        "~/.config/bitwarden-flags.conf",
         "~/.config/electron-flags.conf",
         "~/.config/electron-flags.conf",
         "~/.config/flameshotrc",

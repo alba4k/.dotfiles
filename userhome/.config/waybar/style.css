@@ -187,10 +187,18 @@ tooltip {
     background: #c3eca0;
 }
 
-#custom-media-bw {
-    background: #81a1c1;
+#pulseaudio {
+    background: #a3be8c;
+    background: linear-gradient(90deg, #a3be8c 80%, #81a1c1 100%);
     border-radius: 12px 0px 0px 12px;
     padding-left: 12px;
+    padding-right: 14px;
+}
+
+#custom-media-bw {
+    background: #81a1c1;
+    border-radius: 0px 0px 0px 0px;
+    padding-left: 4px;
     padding-right: 4px;
 }
 
@@ -201,15 +209,15 @@ tooltip {
 #custom-media-fw {
     background: #81a1c1;
     border-radius: 0px 0px 0px 0px;
-    padding-left: 8px;
+    padding-left: 4px;
     padding-right: 0px;
 }
 
 #mpris {
     background: #81a1c1;
     border-radius: 0px 0px 0px 0px;
-    padding-left: 15px;
-    padding-right: 0px;
+    padding-left: 0px;
+    padding-right: 8px;
 }
 
 #cava {
@@ -219,25 +227,37 @@ tooltip {
     padding-right: 0px;
 }
 
-#pulseaudio {
-    background: #a3be8c;
-    background: linear-gradient(90deg, #81a1c1 3%, #a3be8c 20%);
-    border-radius: 0px 0px 0px 0px;
-    padding-left: 24px;
-    padding-right: 0px;
+#custom-bluetoyellow.connected {
+    margin: 3px 0px 3px 0px;
+    background: linear-gradient(90deg, #81a1c1 20%, #fcd27d 100%);
+    padding-left: 10px
+}
+#custom-bluetoyellow.disconnected {
+    margin: 3px 0px 3px 0px;
+    background: #81a1c1;
+    border-radius: 0px 12px 12px 0px;
+    padding-right: 4px;
+    margin-right: 15px;
 }
 
 #backlight {
-    background: #fcd27d;
+    background: linear-gradient(90deg, #81a1c1 0%, #fcd27d 20%);
     border-radius: 0px 12px 12px 0px;
-    padding-left: 4px;
+    padding-left: 18px;
     padding-right: 12px;
     margin-right: 15px;
 }
-#custom-ext_backlight {
+#custom-ext_backlight.connected {
     background: #fcd27d;
     border-radius: 0px 12px 12px 0px;
-    padding-left: 4px;
+    padding-left: 0px;
+    padding-right: 12px;
+    margin-right: 15px;
+}
+#custom-ext_backlight.disconnected {
+    background: #fcd27d;
+    border-radius: 0px 12px 12px 0px;
+    padding-left: 0px;
     padding-right: 12px;
     margin-right: 15px;
 }
@@ -265,20 +285,4 @@ tooltip {
     padding-left: 12px;
     padding-right: 12px;
     margin-right: 10px;
-}
-
-#custom-greentoyellow.connected {
-    margin: 3px 0px 3px 0px;
-    background: #a3be8c;
-    color: #fcd27d;
-    background: linear-gradient(90deg, #a3be8c 0%, #fcd27d 100%);
-    padding-left: 5px;
-    padding-right: 0px
-}
-#custom-greentoyellow.disconnected {
-    margin: 3px 0px 3px 0px;
-    background: #a3be8c;
-    border-radius: 0px 12px 12px 0px;
-    padding-right: 4px;
-    margin-right: 15px;
 }

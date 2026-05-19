@@ -10,27 +10,23 @@
 hl.window_rule({match = {class = ".*"}, idle_inhibit = "fullscreen"})
 
 -- Random apps that I want to float
-hl.window_rule({match = {class = "onedriver-launcher"}, float = true})
-hl.window_rule({match = {class = "org.kde.kdeconnect.handler"}, float = true})
-hl.window_rule({match = {class = "org.prismlauncher.PrismLauncher"}, float = true})
-hl.window_rule({match = {class = "xdg-desktop-portal-gtk"}, float = true})
+for _, app in ipairs({
+    "onedriver-launcher", "org.kde.kdeconnect.handler",
+    "org.prismlauncher.PrismLauncher", "xdg-desktop-portal-gtk",
+    "[Ww]aydroid.*"
+}) do
+    hl.window_rule({match = {class = app}, float = true})
+end
 hl.window_rule({match = {class = "thunar.*", title = "Avanzamento delle operazione sui file"}, float = true})
-hl.window_rule({match = {class = "", title = "Rinomina di .*"}, float = true})
-hl.window_rule({match = {class = "[Ww]aydroid.*"}, float = true})
+hl.window_rule({match = {class = "thunar.*", title = "Rinomina di .*"}, float = true})
 
 -- Privacy
 hl.window_rule({match = {class = "Bitwarden"}, no_screen_share = true})
 
 -- Games
-hl.window_rule({match = {class = "hollow_knight.x86_64"}, tile = true})
-hl.window_rule({match = {class = "hexceed"}, tile = true})
-hl.window_rule({match = {class = "steam_app_271590"}, tile = true}) -- GTA V
-hl.window_rule({match = {class = "steam_app_312520"}, tile = true}) -- Rain World
-hl.window_rule({match = {class = "steam_app_322170"}, tile = true}) -- Geometry Dash
-hl.window_rule({match = {class = "steam_app_387290"}, tile = true}) -- Ori And The Blind Forest: Definitive Edition
-hl.window_rule({match = {class = "steam_app_1172620"}, tile = true}) -- Sea of Thieves
-hl.window_rule({match = {class = "steam_app_1671210"}, tile = true}) -- Deltarune
-hl.window_rule({match = {class = "Minecraft.*"}, tile = true})
+for _, app in ipairs({"hollow_knight.x86_64", "hexceed", "steam_app_.*", "Minecraft.*"}) do
+hl.window_rule({match = {class = app}, tile = true})
+end
 
 -- Flameshot
 hl.window_rule({
@@ -56,7 +52,7 @@ hl.window_rule({match = {class = "flameshot", title = "Configuration"}, float = 
 hl.window_rule({match = {class = "flameshot", title = "Capture Launcher"}, float = true})
 hl.window_rule({match = {class = "flameshot", title = "Save screenshot"}, float = true})
 
--- KDE Connect laser pointer
+-- KDE Connect
 hl.window_rule({
     match = {
         class = "org.kdeconnect.daemon"
@@ -69,6 +65,7 @@ hl.window_rule({
     size = "100% 100%",
     suppress_event = "fullscreen"
 })
+hl.window_rule({match = {class = "org.kde.kdeconnect.daemon", title = "Ricezione file .*"}, float = true})
 
 -- Firefox stuff
 hl.window_rule({
@@ -103,21 +100,9 @@ hl.window_rule({match = {class = "jetbrains-idea-ce", title = "^win(.*)"}, no_in
 
 -- LAYERRULES --
 
--- Rofi
-hl.layer_rule({match = {namespace = "rofi"}, blur = true, ignore_alpha = 0, --[[dim_around = true]]})
-
--- Wlogout
-hl.layer_rule({match = {namespace = "logout_dialog"}, blur = true, ignore_alpha = 0})
-
--- Waybar
-hl.layer_rule({match = {namespace = "waybar"}, blur = true, ignore_alpha = 0.2, blur_popups = true})
-
--- Sway Notification Center
-hl.layer_rule({match = {namespace = "swaync.*"}, blur = true, ignore_alpha = 0.2})
-
--- Slurp
-hl.layer_rule({match = {namespace = "selection"}, blur = true, ignore_alpha = 0.2})
-
--- Hypr Network manager
-hl.layer_rule({match = {namespace = "hypr-network-manager"}, blur = true, ignore_alpha = 0.2})
-
+for _, app in ipairs({
+    "rofi", "layout_dialog", "(waybar)|(laptop)|(ultrawide)|(regular)",
+    "swaync.*", "selection", "hypr-network-manager"
+}) do
+    hl.layer_rule({match = {class = app}, blur = true, ignore_alpha = 0.2, blur_popups = true})
+end

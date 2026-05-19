@@ -16,20 +16,110 @@ end)
 --      https://github.com/hyprwm/hyprland-plugins/tree/main/hyprexpo
 --   - Hyprspace
 --      https://github.com/KZDKM/Hyprspace
---   - Hypr-DarkWindow
---      https://github.com/micha4w/Hypr-DarkWindow
 
--- Open Hyprexpo using a keybing
--- hl.bind("SUPER + W", hl.dsp.overview.toggle())
--- hl.bind("SUPER + I", hl.dsp.darkwindow.shadeactive("invert"))
+-- hl.bind("SUPER + W", hl.plugin.overview.toggle())
+
+local enabled = {
+    ["dynamic-cursors"] = false,
+    ["hymission"] = false,
+    ["Hypr-DarkWindow"] = false
+}
+
+for _, plugin in ipairs(hl.get_loaded_plugins()) do
+    if enabled[plugin.name] ~= nil then
+        enabled[plugin.name] = true
+    end
+end
+
+-- https://github.com/VirtCode/hypr-dynamic-cursors
+if enabled["dynamic-cursors"] then
+    hl.config({
+        plugin = {
+            dynamic_cursors = {
+                mode = "stretch", -- "none" to disable
+
+                shake = {
+                    threshold = 5.0,
+                    base = 3.0,
+                    speed = 2.0,
+                    timeout = 1000,
+                    effects = false,
+                    ipc = false
+                },
+
+                hyprcursor = {
+                    enabled = true,
+                    nearest = 0
+                },
+
+                stretch = {
+                    limit = 3000,
+                    activation = "linear",
+                    window = 100
+                }
+            }
+        }
+    })
+end
+
+-- https://github.com/gfhdhytghd/hymission
+if enabled["hymission"] then
+    hl.plugin.hymission.gesture({
+        fingers = 3,
+        direction = "vertical",
+        action = "toggle",
+        args = "forceall",
+    })
+    hl.plugin.hymission.gesture({
+        fingers = 3,
+        direction = "vertical",
+        action = "toggle",
+        recommand = true,
+    })
+
+    hl.config({
+        plugin = {
+            hymission = {
+                layout_engine = "apple",
+                niri_mode = 0,
+                switch_release_key = "Super_L",
+                workspace_strip_anchor = "left",
+                show_focus_indicator = 1,
+
+                workspace_strip_thickness = 300,
+                workspace_strip_gap = 12
+            },
+        },
+    })
+end
+
+-- https://github.com/micha4w/Hypr-DarkWindow
+if enabled["Hypr-DarkWindow"] then
+    hl.bind("SUPER + I", hl.plugin.darkwindow.dsp_shade({shader = "invert"}))
+
+    hl.window_rule({
+        match = {
+            class = "rquickshare"
+        },
+        ["darkwindow:shade"] = "invert"
+    })
+
+    hl.config({
+        plugin = {
+            darkwindow = {
+                load_shaders = "invert"
+            }
+        }
+    })
+end
 
 hl.config({
+    --[[
     plugin = {
-        --[[
         hyprexpo = {
             columns = 3,
             gap_size = 0,
-            bg_col = "rgb(1e1e2e)",
+            bg_col = C_BACKGROUND,
             workspace_method = "first 1",
 
             enable_gesture = true,
@@ -44,8 +134,8 @@ hl.config({
             panelBorderWidth = 0,
             workspaceBorderSize = 3,
             dragAlpha = 0.7,
-            panelBorderColor = "rgb(8957b0)",
-            workspaceActiveBorder = "rgb(8957b0)",
+            panelBorderColor = C_PRIMARY,
+            workspaceActiveBorder = C_PRIMARY,
             disableGestures = false,
 
             autoScroll = false,
@@ -63,6 +153,6 @@ hl.config({
             hideTopLayers = false,
             hideOverlayLayers = false,
         }
-        ]]
     }
+    ]]
 })

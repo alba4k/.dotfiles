@@ -1,1 +1,1 @@
-root=/dev/mapper/luks rootflags=subvol=@ quiet splash
+root=/dev/mapper/luks rootflags=rw,relatime,ssd,space_cache=v2,subvol=@ quiet splash systemd.gpt_auto=no tpm_tis.interrupts=0

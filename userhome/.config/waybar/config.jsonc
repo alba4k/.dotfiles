@@ -14,7 +14,7 @@
     },
     {
         "name": "regular",
-        "output": ["DP-5", "DP-7", "DP-9", "DP-6", "DP-8"],
+        "output": ["DP-5", "DP-7", "DP-9", "DP-6", "DP-8", "FLUXCAST"],
         "include": ["~/.config/waybar/regular.jsonc"]
     },
     {

@@ -1,0 +1,28 @@
+--  HYPRLAND - alba4k
+--
+-- Documentation: https://wiki.hyprland.org
+--
+-- ##############################################
+-- ###                 COLORS                 ###
+-- ##############################################
+
+-- Only used for accents (light purple)
+C_PRIMARY = "rgb(8957b0)"
+C_PRIMARY_DARK = "rgb(693bc4)"
+
+-- Inactive borders
+C_INACTIVE = "rgba(6e73b090)"
+
+-- Background objects
+C_BACKGROUND = "rgb(1e1e2e)"
+
+-- Text
+C_FOREGROUND = "rgb(cba6f7)"
+C_PALE_FOREGROUND = "rgb(5b6997)"
+
+-- Colors
+C_BLUE = "rgb(2299ff)"
+C_GREEN = "rgb(00ff99)"
+C_YELLOW = "rgb(ffee33)"
+C_ORANGE = "rgb(ff6633)"
+C_RED = "rgb(ff0066)"

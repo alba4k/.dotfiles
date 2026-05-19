@@ -24,10 +24,11 @@ hl.animation({leaf = "workspaces", enabled = true, speed = 5, bezier = "default"
 -- hl.animation({leaf = "workspaces", enabled = true, speed = 5, bezier = "default", style = "slidevert"})
 
 -- Windowrules
-hl.window_rule({match = {class = "lxpolkit"}, border_size = 10})
+hl.window_rule({match = {class = "lxpolkit"}, animation = "slide top"})
 hl.window_rule({match = {class = "flameshot", title = "flameshot"}, animation = "slide bottom"})
 
 -- Layerrules
 hl.layer_rule({match = {namespace = "rofi"}, animation = "popin"})
 hl.layer_rule({match = {namespace = "waybar"}, animation = "slide top"})
 hl.layer_rule({match = {namespace = "logout_dialog"}, animation = "slide top"})
+hl.layer_rule({match = {namespace = "hyprpicker"}, no_anim = true})

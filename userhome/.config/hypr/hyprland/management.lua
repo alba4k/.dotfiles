@@ -25,6 +25,7 @@ hl.config({
 
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + tab", hl.dsp.window.cycle_next())
+hl.bind("SUPER + SHIFT + tab", hl.dsp.focus({workspace = "m+1"}))
 
 hl.bind("SUPER + F", hl.dsp.window.fullscreen())
 hl.bind("SUPER + SHIFT + F", hl.dsp.window.float({action = "toggle"}))
@@ -34,7 +35,6 @@ hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Random
-hl.bind("SUPER + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/resize.sh"))
 hl.bind("SUPER + S", hl.dsp.window.toggle_swallow())
 
 -- Moving window focus

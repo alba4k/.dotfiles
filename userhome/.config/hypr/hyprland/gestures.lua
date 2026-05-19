@@ -14,7 +14,7 @@ hl.config({
         workspace_swipe_forever = true,
         workspace_swipe_direction_lock = false,
 
-        close_max_timeout = 100
+        close_max_timeout = 1000
     }
 })
 
@@ -31,8 +31,6 @@ hl.gesture({
     direction = "down",
     action = function() hl.exec_cmd("if pidof wlogout || pidof slurp; then pkill -f /usr/bin/slurp; else wlogout; fi") end
 })
-]]
---[[
 hl.gesture({
     fingers = 3,
     direction = "up",
@@ -42,7 +40,7 @@ hl.gesture({
 
 -- 3-finger swipes
 hl.gesture({
-  fingers = 3,
+  fingers = 4,
   direction = "swipe",
   action = "move",
 })
@@ -57,6 +55,13 @@ hl.gesture({
   fingers = 4,
   direction = "pinch",
   action = "float",
+})
+hl.gesture({
+    fingers = 2,
+    mods = "SUPER",
+    direction = "pinch",
+    action = "cursorZoom",
+    mode = "live"
 })
 
 -- Closing windows

@@ -32,7 +32,7 @@
     },
     
     "network": {
-        "interval": 200,
+        "interval": 10,
         "format-wifi": "  {essid}",
         "format-ethernet": "󱘖 Ethernet",
         "format-linked": "󱘖 {ifname} (No IP)",
@@ -71,7 +71,7 @@
             "1": " ",
             "2": " ",
             "3": " ",
-            "4": " ",
+            "4": " ",
             "5": " ",
             "6": " ",
             "7": " ",
@@ -87,6 +87,7 @@
         "format": " {title}",
         "icon": false,
         "separate-outputs": true,
+        "max-length": 50,
         // I now consider myself to be a regex god
         "rewrite": {
             " \\([0-9]*\\ (.*)": " $1", // Telegram Desktop
@@ -97,18 +98,16 @@
             " Prism Launcher.*": " Prism Launcher",
             "(.*) — Prism Launcher.*": "Prism Launcher ($1)",
             " Cemu.*FPS: ([0-9]+\\.[0-9]+).*TitleId.*\\] (.*) \\[.*": " Cemu - $2 ($1 FPS)",
-            "^(.{100}).{3}.*": "$1..",
-            " ": " Desktop"
+            " ": "Desktop"
         },
         "tooltip": false,
 
-        // "on-click-right": "hyprctl dispatch fullscreen",
-        "on-click-right": "sleep .3 && ~/.config/hypr/scripts/resize.sh",
-        "on-click-middle": "hyprctl dispatch killactive"
+        "on-click-right": "hyprctl dispatch 'hl.dsp.window.fullscreen()'; hyprctl dispatch fullscreen",
+        "on-click-middle": "hyprctl dispatch killactive; hyprctl dispatch 'hl.dsp.window.close()'"
     },
 
     "battery": {
-        "interval": 5,
+        "interval": 30,
 
         "format": "{icon} {capacity}%",
         //"format-icons": [" ", " ", " ", " ", " "],
@@ -132,19 +131,41 @@
         "on-click-middle": "pkexec ~/.local/bin/performance && notify-send -r 1234 -a Sistema -h string:synchronous:power -t 2000 -a Prestazioni -u low -i battery 'Modalità prestazioni attivata!'"
     },
 
+    "pulseaudio": {
+        "interval": 2,
+        "format": "{icon} {volume}%",
+        "format-muted": " ({volume}%)",
+        "on-click": "pidof pavucontrol && pkill pavucontrol || pavucontrol -t 3",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-middle": "spotify",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+        "tooltip-format": "{desc}",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            //"speaker": "󰓃",
+            "hifi": "󰓃",
+            "hdmi": "󰽟",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", " "]
+        }
+    },
+
     "custom/media-bw": {
-        "interval": 1,
         "format": "",
-        "exec": "~/.config/waybar/scripts/audio-back-skip.sh 2>/dev/null",
 
         "on-click": "playerctl previous",
         "on-click-right": "~/.config/rofi/music/music",
         "on-click-middle": "~/.config/rofi/music/music",
 
-        "return-type": "json"
+        "tooltip": false
     },
     "custom/media-pp": {
-        "interval": 1,
+        "interval": 2,
         "format": "{}",
         "exec": "~/.config/waybar/scripts/audio-play-pause.sh 2>/dev/null",
 
@@ -152,24 +173,22 @@
         "on-click-right": "~/.config/rofi/music/music",
         "on-click-middle": "~/.config/rofi/music/music",
 
-    
-        "return-type": "json"
+        "return-type": "json",
+        "tooltip": false
     },
     "custom/media-fw": {
-        "interval": 1,
         "format": "",
-        "exec": "~/.config/waybar/scripts/audio-back-skip.sh 2>/dev/null",
 
         "on-click": "playerctl next",
         "on-click-right": "~/.config/rofi/music/music",
         "on-click-middle": "~/.config/rofi/music/music",
 
-        "return-type": "json"
+        "tooltip": false
     },
     "mpris": {
-        "format": " {player_icon}  {title} — {artist}",
-        "format-paused": " {player_icon}  <i>{title} — {artist}</i>",
-        "tooltip-format": "{player} — {position}/{length}",
+        "format": "{player_icon}  {title}",
+        "format-paused": "{player_icon}  <i>{title}</i>",
+        "tooltip-format": "{title} — {artist} — {player} — {position}/{length}",
         "player-icons": {
             "default": "",
             "spotify": "",
@@ -181,10 +200,29 @@
 	    },
 	    "ignored-players": ["kdeconnect"]
     },
+    "group/media-controls": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/media-bw",
+            "custom/media-pp",
+            "custom/media-fw"
+        ]
+    },
+    "group/mpris-drawer": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "group/media-controls",
+            "mpris"
+        ]
+    },
     "cava": {
         "framerate": 20,
         "autosens": 1,
-        "sensitivity":1,
+        "sensitivity": 0.1,
         "bars": 6,
         "lower_cutoff_freq": 50,
         "higher_cutoff_freq": 10000,
@@ -205,38 +243,14 @@
                    }
     },
 
-    "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-muted": " ({volume}%)",
-        "on-click": "pavucontrol -t 3",
-        "interval": 1,
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
-        "tooltip-format": "{desc}",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            //"speaker": "󰓃",
-            "hifi": "󰓃",
-            "hdmi": "󰽟",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        }
-    },
-
     "backlight": {
-        "interval": 0.1,
+        "interval": 10,
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
         "scroll-step": -0.7,
         "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
 
-        "on-click": "~/.config/waybar/scripts/hyprsunset.sh",
+        "on-click": "hyprctl eval 'ToggleHyprsunset()'",
 
         "tooltip": false
     },
@@ -248,7 +262,7 @@
 
         "on-scroll-up": "ddcutil setvcp --bus 14 10 + 5 || ddcutil setvcp --bus 12 10 + 5 || ddcutil setvcp --bus 16 10 + 5 || ddcutil setvcp --bus 17 10 + 5 || ddcutil setvcp --bus 19 10 + 5 || ddcutil setvcp --bus 20 10 + 5",
         "on-scroll-down": "ddcutil setvcp --bus 14 10 - 5 || ddcutil setvcp --bus 12 10 - 5 || ddcutil setvcp --bus 16 10 - 5 || ddcutil setvcp --bus 17 10 - 5 || ddcutil setvcp --bus 19 10 - 5 || ddcutil setvcp --bus 20 10 - 5",
-        "on-click": "~/.config/waybar/scripts/hyprsunset.sh",
+        "on-click": "hyprctl eval 'ToggleHyprsunset()'",
         "on-click-right": "ddcui",
 
         "tooltip": false,
@@ -280,7 +294,7 @@
     },
 
     "tray": {
-        "icon-size": 15,
+        "icon-size": 16,
         "show-passive-items": true,
         "spacing": 5
     },
@@ -312,11 +326,11 @@
     },
 
     // backlight disappears when only using an external monitor
-    "custom/greentoyellow": {
-        "interval": 5,
+    "custom/bluetoyellow": {
+        "interval": "once",
         "return-type": "json",
         
-        "exec": "~/.config/waybar/scripts/greentoyellow.sh",
+        "exec": "~/.config/waybar/scripts/bluetoyellow.sh",
 
         "format": "{}"
     }

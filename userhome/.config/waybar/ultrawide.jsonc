@@ -22,13 +22,10 @@
     ],
     "modules-right": [
         "battery",
-        "custom/media-bw",
-        "custom/media-pp",
-        "custom/media-fw",
-        "mpris",
-        "cava",
         "pulseaudio",
-        "custom/greentoyellow",
+        "group/mpris-drawer",
+        // "cava",
+        "custom/bluetoyellow",
         "custom/ext_backlight",
         "idle_inhibitor",
         "clock",
@@ -36,9 +33,12 @@
     ],
 
     "include": ["~/.config/waybar/modules.jsonc"],
-
     "bluetooth": {
         "max-length": 40
+    },
+
+    "hyprland/window": {
+        "max-length": 80
     },
 
     "cava": {

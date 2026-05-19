@@ -5,7 +5,7 @@ Operation = Upgrade
 Target = intel-ucode
 
 [Action]
-Description = Minimizing intel-ucode.img ...
+Description = Minimizing intel-ucode.img...
 When = PostTransaction
 Depends = iucode-tool
 Exec = /usr/bin/iucode_tool -S /usr/lib/firmware/intel-ucode --overwrite --write-earlyfw=/boot/intel-ucode.img

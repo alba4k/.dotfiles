@@ -6,7 +6,7 @@
 -- ###                 COLORS                 ###
 -- ##############################################
 
--- require("include.colors")
+require("include.colors")
 
 -- ##############################################
 -- ###                 PLUGINS                ###
@@ -31,6 +31,12 @@ require("hyprland.autostart")
 -- ##############################################
 
 require("hyprland.environnment")
+
+-- ##############################################
+-- ###                MONITORS                ###
+-- ##############################################
+
+require("hyprland.monitors")
 
 -- ##############################################
 -- ###                  SETUP                 ###
@@ -75,18 +81,26 @@ require("hyprland.windowrules")
 require("hyprland.permissions")
 
 -- ##############################################
+-- ###                UTILITIES               ###
+-- ##############################################
+
+require("hyprland.utility")
+
+-- ##############################################
 -- ###                 PLUGINS                ###
 -- ##############################################
 
 require("hyprland.plugins")
 
--- ############################################3#
+-- ##############################################
 
 hl.config({
     debug = {
-        disable_logs = true,
-        error_limit = 5,
+        disable_logs = false,
+        error_limit = 10,
         error_position = 1,
+        suppress_errors = false,
         overlay = false
     }
 })
+

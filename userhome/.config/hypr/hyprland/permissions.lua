@@ -10,7 +10,8 @@ local allow_screencopy = {
     "/usr/bin/grim",
     "/usr/bin/hyprlock",
     "/usr/bin/hyprpicker",
-    "/usr/lib/xdg-desktop-portal-hyprland"
+    "/usr/lib/xdg-desktop-portal-hyprland",
+    "/usr/bin/wf-recorder"
 }
 local allow_keyboard = {
     -- Laptop
@@ -36,10 +37,11 @@ local allow_keyboard = {
     "galaxy-buds-pro.*",
     "buds4-pro.*",
     "s23-di-aaron.*",
-    "tab-s10+-di-aaron.*",
+    "tab-s10\\+-di-aaron.*",
     "ue-boom-2-di-aaron.*",
     -- Other
-    "wl_keyboard",
+    "dp-*",
+    "wl_keyboard"
 }
 
 for _, bin in ipairs(allow_screencopy) do
@@ -50,4 +52,6 @@ for _, dev in ipairs(allow_keyboard) do
 end
 
 hl.permission({binary = "/usr/bin/hyprpm", type = "plugin", mode = "allow"})
+hl.permission({binary = "/usr/bin/hyprctl", type = "plugin", mode = "allow"})
 hl.permission({binary = ".*", type = "keyboard", mode = "ask"})
+hl.permission({binary = ".*", type = "cursorpos", mode = "allow" })

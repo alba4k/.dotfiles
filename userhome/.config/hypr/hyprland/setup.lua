@@ -1,13 +1,10 @@
 --  HYPRLAND - alba4k
 --
--- Documentation: https://wiki.hyprland.org
+-- Documentation: https://wiki.hypr.land/Configuring/Basics/Variables
 --
 -- ##############################################
 -- ###                 SETUP                  ###
 -- ##############################################
-
--- Monitor configuration
-hl.monitor({output = "", mode = "preferred", position = "auto"})
 
 -- Hyprland settings
 hl.config({
@@ -16,8 +13,8 @@ hl.config({
         gaps_out = 8,
         border_size = 5,
         col = {
-            active_border = {colors = {"rgb(8957b0)", "rgb(693bc4)"}, angle = 45},
-            inactive_border =  "rgba(6e73b090)"
+            active_border = {colors = {C_PRIMARY, C_PRIMARY_DARK}, angle = 45},
+            inactive_border =  C_INACTIVE
         },
 
         resize_on_border = true,
@@ -82,9 +79,14 @@ hl.config({
     },
 
     render = {
+        cm_auto_hdr = 2,
         direct_scanout = 2,
         expand_undersized_textures = false,
         new_render_scheduling = true,
+    },
+
+    quirks = {
+        -- prefer_hdr = 1
     },
 
     ecosystem = {
