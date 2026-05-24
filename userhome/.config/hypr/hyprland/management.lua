@@ -5,7 +5,7 @@
 --                https://wiki.hypr.land/Configuring/Basics/Variables
 --
 -- ##############################################
--- ###     WINDOW AND WORKSPACE MANAGMENT     ###
+-- ###    WINDOW AND WORKSPACE MANAGEMENT     ###
 -- ##############################################
 
 hl.config({

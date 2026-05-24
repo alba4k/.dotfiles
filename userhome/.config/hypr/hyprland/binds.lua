@@ -6,23 +6,6 @@
 -- ###                KEYBINDS                ###
 -- ##############################################
 
--- Actions on lid switch (cause logind only sometimes works)
-hl.bind("switch:on:Lid Switch", function()
-        local mons = hl.get_monitors()
-        if #mons == 1 and mons[1].name == "eDP-1" then
-            hl.exec_cmd("systemctl suspend-then-hibernate")
-        else
-            hl.monitor({output = "eDP-1", disabled = true})
-        end
-end, {locked = true})
-hl.bind("switch:off:Lid Switch", function()
-        local layout = DetectScreenLayout()
-        if layout == nil or layout == "docked" then -- not a known layout where eDP-1 should stay off
-            hl.monitor({output = "eDP-1", mode = "preferred", position = "auto", disabled = false})
-            hl.exec_cmd("hyprctl reload")
-        end
-end, {locked = true})
-
 -- I have a custom macro for it on my laptop so why not use it :)
 -- https://wiki.archlinux.org/title/Dell_XPS_13_Plus_(9320)--Function_Keys
 hl.bind("SUPER + P", hl.dsp.exec_raw("systemctl suspend-then-hibernate"), {locked = true})
@@ -54,11 +37,11 @@ hl.bind("XF86AudioNext", hl.dsp.exec_raw("playerctl next"), {locked = true, igno
 hl.bind("XF86AudioPrev", hl.dsp.exec_raw("playerctl previous"), {locked = true, ignore_mods = true})
 
 -- Volume
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ +10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay --volume 65536 ~/.config/hypr/assets/click.ogg"),
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ +10% & pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay --volume 65536 /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"),
         {locked = true, ignore_mods = true, repeating = true})
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ -10% && pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay --volume 65536 ~/.config/hypr/assets/click.ogg"),
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ -10% & pactl set-sink-mute @DEFAULT_SINK@ 0 && paplay --volume 65536 /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"),
         {locked = true, ignore_mods = true, repeating = true})
-hl.bind("XF86AudioMute", hl.dsp.exec_raw("pactl set-sink-mute @DEFAULT_SINK@ toggle && paplay --volume 65536 ~/.config/hypr/assets/click.ogg"), {locked = true, ignore_mods = true})
+hl.bind("XF86AudioMute", hl.dsp.exec_raw("pactl set-sink-mute @DEFAULT_SINK@ toggle & paplay --volume 65536 /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"), {locked = true, ignore_mods = true})
 hl.bind("XF86AudioMicMute", hl.dsp.exec_raw("pactl set-source-mute @DEFAULT_SOURCE@ toggle"), {locked = true, ignore_mods = true})
 
 -- Rofi
@@ -85,8 +68,15 @@ hl.bind("SUPER + mouse_down", function() hl.config({cursor = {zoom_factor = hl.g
 -- Move active workspace to other monitor
 hl.bind("SUPER + X", hl.dsp.workspace.move({monitor = "+1"}))
 
+-- Caps Lock notification
+local caps_enabeld = false
+hl.bind("Caps_Lock", function()
+        caps_enabeld = not caps_enabeld
+        hl.exec_cmd("notify-send -t 1000 -a Sistema -i input-keyboard -u low -h boolean:transient:true -h string:synchronous:CAPS '󰘲  Caps Lock' " .. (caps_enabeld and "Inserito" or "Disinserito"))
+end)
+
 -- Global Keybinds
-hl.bind("SUPER + F10", hl.dsp.pass({window = "class:^(com\\.obsproject\\.Studio)$"}))
+hl.bind("SUPER + R", hl.dsp.pass({window = "class:^(com\\.obsproject\\.Studio)$"}))
 
 -- Random
 hl.bind("SUPER + SHIFT + P", hl.dsp.exec_raw("hyprpicker -rnaql"))

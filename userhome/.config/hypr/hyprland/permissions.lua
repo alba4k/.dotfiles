@@ -40,7 +40,7 @@ local allow_keyboard = {
     "tab-s10\\+-di-aaron.*",
     "ue-boom-2-di-aaron.*",
     -- Other
-    "dp-*",
+    "dp-[0-9]+",
     "wl_keyboard"
 }
 

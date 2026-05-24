@@ -33,10 +33,10 @@ _notify () {
         #color="$GOOD_COLOR"
     fi
     
-    if [ "$icon" == "" ]; then
-        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u normal -h boolean:transient:true -h "int:value:$value" -h "string:synchronous:progress" "$title" -h "string:hlcolor:$color" -- "${icon}  (${value}%)"
+    if [ "$icon" == " " ]; then
+        notify-send -t 1000 -a "$APPNAME" -i "$dunst_icon" -u normal -h boolean:transient:true -h int:value:$value -h string:synchronous:progress "$title" -h "string:hlcolor:$color" -- "${icon}  (${value}%)"
     else
-        notify-send -r 2593 -t 1000 -a "$APPNAME" -i $dunst_icon -u normal -h boolean:transient:true -h "int:value:$value" -h "string:synchronous:progress" "$title" -h "string:hlcolor:$color" -- "${icon}  ${value}%"
+        notify-send -t 1000 -a "$APPNAME" -i "$dunst_icon" -u normal -h boolean:transient:true -h int:value:$value -h string:synchronous:progress "$title" -h "string:hlcolor:$color" -- "${icon}  ${value}%"
     fi
 }
 

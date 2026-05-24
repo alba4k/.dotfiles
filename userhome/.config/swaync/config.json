@@ -49,7 +49,6 @@
   "notification-visibility": {
     "system": {
       "state": "transient",
-      "urgency": "Normal",
       "app-name": "Sistema"
     }
   },

@@ -17,12 +17,10 @@ hl.on("hyprland.start", function ()
         "hyprlock -c ~/.config/hypr/hyprlock/hyprlogin.conf -q || hyprctl dispatch exit", -- Login Manager
         "hyprpaper",
         "hyprsunset",
-        "i3-battery-popup -n -D -L 20 -m 'Battery is getting low!' -t 3m -s ~/.config/hypr/assets/click.ogg -v 50",
         "kdeconnect-indicator",
         "lxpolkit",
         "swaync",
         "waybar",
-        -- "shikane", -- replaced by monitors.lua
         -- Scripts
         "~/.config/hypr/scripts/ac_detect.sh",
         "~/.config/hypr/scripts/capslock.sh",

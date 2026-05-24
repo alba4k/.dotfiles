@@ -19,6 +19,7 @@ hl.env("XDG_DATA_HOME", "/home/alba4k/.local/share")
 
 -- Qt
 hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
+--hl.env("QT_QPA_PLATFORMTHEME", "hyprqt6engine")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 

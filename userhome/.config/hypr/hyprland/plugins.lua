@@ -68,7 +68,8 @@ if enabled["hymission"] then
         fingers = 3,
         direction = "vertical",
         action = "toggle",
-        args = "forceall",
+        --args = "forceall",
+        args = "onlycurrentworkspace",
     })
     hl.plugin.hymission.gesture({
         fingers = 3,

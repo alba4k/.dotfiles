@@ -4,6 +4,7 @@ hyprpicker -rz &
 PID=$!
 
 size=$(slurp)
+#size=$(/bin/slurp -b '#1e1e2eb0' -c '#8957b0ff')
 
 if (( $? == 0 )) && [ "$size" != "" ]; then
     sleep 0.33 # needed to allow the slurp slide-out animation to finish

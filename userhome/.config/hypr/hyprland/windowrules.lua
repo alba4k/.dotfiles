@@ -12,7 +12,7 @@ hl.window_rule({match = {class = ".*"}, idle_inhibit = "fullscreen"})
 -- Random apps that I want to float
 for _, app in ipairs({
     "onedriver-launcher", "org.kde.kdeconnect.handler",
-    "org.prismlauncher.PrismLauncher", "xdg-desktop-portal-gtk",
+    --[["org.prismlauncher.PrismLauncher",]] "xdg-desktop-portal-gtk",
     "[Ww]aydroid.*"
 }) do
     hl.window_rule({match = {class = app}, float = true})

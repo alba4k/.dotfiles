@@ -57,7 +57,7 @@ require("hyprland.input")
 require("hyprland.animations")
 
 -- ##############################################
--- ###     WINDOW AND WORKSPACE MANAGMENT     ###
+-- ###    WINDOW AND WORKSPACE MANAGEMENT     ###
 -- ##############################################
 
 require("hyprland.management")
@@ -100,6 +100,7 @@ hl.config({
         error_limit = 10,
         error_position = 1,
         suppress_errors = false,
+        vfr = true,
         overlay = false
     }
 })
