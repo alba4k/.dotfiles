@@ -9,7 +9,7 @@ export PATH="/home/alba4k/.local/bin:/usr/lib/ccache/bin:$PATH"
 
 if [[ "$(tty)" == "/dev/tty1" ]]; then
     # exec start-hyprland >/dev/null 2>&1
-    exec hyprland >/dev/null 2>&1
+    exec hyprland -c /home/alba4k/.config/hypr/hyprland.lua >/dev/null 2>&1
 fi
 
 fish

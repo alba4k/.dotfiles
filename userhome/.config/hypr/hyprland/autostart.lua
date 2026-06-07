@@ -9,10 +9,10 @@
 hl.on("hyprland.start", function ()
     for _, cmd in ipairs({
         -- Background
-        "bitwarden",
+        "bitwarden --autostart",
         "blueman-applet",
         "hypr-network-manager --daemon",
-        "hyprctl devices | grep logitech && solaar -w hide -b solaar",
+        "hyprctl devices | grep -q logitech && solaar -w hide -b solaar",
         "hypridle --quiet",
         "hyprlock -c ~/.config/hypr/hyprlock/hyprlogin.conf -q || hyprctl dispatch exit", -- Login Manager
         "hyprpaper",
@@ -21,14 +21,15 @@ hl.on("hyprland.start", function ()
         "lxpolkit",
         "swaync",
         "waybar",
+        "vicinae server",
         -- Scripts
         "~/.config/hypr/scripts/ac_detect.sh",
         "~/.config/hypr/scripts/capslock.sh",
-        "~/.config/hypr/scripts/volbright.sh --brightness --keyboard --volume",
+        "~/.config/hypr/scripts/volbright.sh --keyboard",
         -- Clipboard
-        "cliphist wipe",
+        --"cliphist wipe",
         "wl-clip-persist -c both",
-        "wl-paste --watch cliphist store"
+        --"wl-paste --watch cliphist store"
     }) do
         hl.exec_cmd(cmd)
     end

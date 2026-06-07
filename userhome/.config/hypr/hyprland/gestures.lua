@@ -29,12 +29,12 @@ hl.gesture({
 hl.gesture({
     fingers = 3,
     direction = "down",
-    action = function() hl.exec_cmd("if pidof wlogout || pidof slurp; then pkill -f /usr/bin/slurp; else wlogout; fi") end
+    action = function() hl.exec_cmd("if pidof -q wlogout || pidof -q slurp; then pkill -f /usr/bin/slurp; else wlogout; fi") end
 })
 hl.gesture({
     fingers = 3,
     direction = "up",
-    action = function() hl.exec_cmd("if pidof wlogout || pidof slurp; then pkill wlogout; else ~/.config/hypr/scripts/screenshot.sh; fi") end
+    action = function() hl.exec_cmd("if pidof -q wlogout || pidof -q slurp; then pkill wlogout; else ~/.config/hypr/scripts/screenshot.sh; fi") end
 })
 ]]
 

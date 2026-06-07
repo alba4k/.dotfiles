@@ -26,6 +26,7 @@
         "~/.config/rofimoji.rc",
         "~/.config/spotify-flags.conf",
         "~/.config/user-dirs.dirs",
+        "~/.gdbinit",
         "~/.gitconfig",
         "~/.local/bin/balanced",
         "~/.local/bin/buds",

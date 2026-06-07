@@ -64,6 +64,7 @@ hl.config({
         key_press_enables_dpms = false,
 
         initial_workspace_tracking = 0,
+        focus_on_activate = false,
 
         enable_swallow = true,
         swallow_regex = "(kitty|Alacritty)",

@@ -34,9 +34,9 @@ _notify () {
     fi
     
     if [ "$icon" == " " ]; then
-        notify-send -t 1000 -a "$APPNAME" -i "$dunst_icon" -u normal -h boolean:transient:true -h int:value:$value -h string:synchronous:progress "$title" -h "string:hlcolor:$color" -- "${icon}  (${value}%)"
+        notify-send -t 1000 -a "$APPNAME" -i "$dunst_icon" -u normal -h boolean:transient:true -h int:value:$value -h string:synchronous:kbvolbright "$title" -h "string:hlcolor:$color" -- "${icon}  (${value}%)"
     else
-        notify-send -t 1000 -a "$APPNAME" -i "$dunst_icon" -u normal -h boolean:transient:true -h int:value:$value -h string:synchronous:progress "$title" -h "string:hlcolor:$color" -- "${icon}  ${value}%"
+        notify-send -t 1000 -a "$APPNAME" -i "$dunst_icon" -u normal -h boolean:transient:true -h int:value:$value -h string:synchronous:kbvolbright "$title" -h "string:hlcolor:$color" -- "${icon}  ${value}%"
     fi
 }
 

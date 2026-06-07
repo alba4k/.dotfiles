@@ -108,7 +108,6 @@ Defaults pwfeedback
 ##
 root ALL=(ALL:ALL) ALL
 alba4k ALL=(ALL:ALL) ALL
-alba4k ALL=(ALL:ALL) NOPASSWD: /usr/bin/g413-led
 
 ## Uncomment to allow members of group wheel to execute any command
 # %wheel ALL=(ALL:ALL) ALL

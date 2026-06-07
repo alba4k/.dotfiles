@@ -78,7 +78,7 @@
             "default": " "
         },
 
-        "on-click": "activate",
+        "on-click": "activate"
     },
 
     "hyprland/window": {
@@ -134,10 +134,10 @@
         "format": "{icon} {volume}%",
         "format-muted": " ({volume}%)",
         "on-click": "pidof pavucontrol && pkill pavucontrol || pavucontrol -t 3",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle",
         "on-click-middle": "spotify",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 1%-; ~/.config/hypr/scripts/notify.sh volume",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 1%+; ~/.config/hypr/scripts/notify.sh volume",
         "tooltip-format": "{desc}",
         "format-icons": {
             "headphone": "",
@@ -253,13 +253,13 @@
         "tooltip": false
     },
     "custom/ext_backlight": {
-        "interval": 30,
+        "interval": 5,
         "exec": "~/.config/waybar/scripts/ddcutil.sh",
         "format": "{icon} {percentage}%",
         "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
 
-        "on-scroll-up": "ddcutil setvcp --bus 14 10 + 5 || ddcutil setvcp --bus 12 10 + 5 || ddcutil setvcp --bus 16 10 + 5 || ddcutil setvcp --bus 17 10 + 5 || ddcutil setvcp --bus 19 10 + 5 || ddcutil setvcp --bus 20 10 + 5",
-        "on-scroll-down": "ddcutil setvcp --bus 14 10 - 5 || ddcutil setvcp --bus 12 10 - 5 || ddcutil setvcp --bus 16 10 - 5 || ddcutil setvcp --bus 17 10 - 5 || ddcutil setvcp --bus 19 10 - 5 || ddcutil setvcp --bus 20 10 - 5",
+        "on-scroll-up": "for i in $(cat /tmp/ddcutil); do ddcutil setvcp --bus $i 10 + 5; done",
+        "on-scroll-down": "for i in $(cat /tmp/ddcutil); do ddcutil setvcp --bus $i 10 - 5; done",
         "on-click": "hyprctl eval 'ToggleHyprsunset()'",
         "on-click-right": "ddcui",
 
@@ -297,35 +297,9 @@
         "spacing": 5
     },
 
-    // decoration //
-
-    "custom/greentored": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/redtoyellow": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/greentoblue": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/bluetogreen": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    // backlight disappears when only using an external monitor
+    // disappear if monitor doesn't support DDC/CI
     "custom/bluetoyellow": {
-        "interval": "once",
+        "interval": 30,
         "return-type": "json",
         
         "exec": "~/.config/waybar/scripts/bluetoyellow.sh",

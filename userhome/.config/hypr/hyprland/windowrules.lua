@@ -25,8 +25,9 @@ hl.window_rule({match = {class = "Bitwarden"}, no_screen_share = true})
 
 -- Games
 for _, app in ipairs({"hollow_knight.x86_64", "hexceed", "steam_app_.*", "Minecraft.*"}) do
-hl.window_rule({match = {class = app}, tile = true})
+    hl.window_rule({match = {class = app}, tile = true})
 end
+hl.window_rule({match = {title = "Minecraft Dungeons"}, immediate = true}) -- Fixes mouse not working on part of the window
 
 -- Flameshot
 hl.window_rule({
@@ -82,7 +83,6 @@ hl.window_rule({
 hl.window_rule({match = {class = "lxpolkit"}, stay_focused = true, pin = true})
 hl.window_rule({match = {class = "lxpolkit", title = "Autenticazione"}, center = true, size = "548 314"})
 hl.window_rule({match = {class = "lxpolkit", title = "(Informazione)|(Errore)"}, center = true})
-
 
 -- Bugged telegram media viewer
 hl.window_rule({

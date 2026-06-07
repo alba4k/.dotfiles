@@ -22,17 +22,17 @@ local allow_keyboard = {
     "dell-wmi-hotkeys",
     "intel-hid-5-button-array",
     "at-translated-set-2-keyboard",
+    "dp-[0-9]+",
     -- ETH apartment
     "logitech-usb-receiver-keyboard",
     "logitech-g502-x-ls",
     "logitech-g515-ls-tkl",
-    "solaar-keyboard",
     -- Home
     "generic-usb-audio-consumer-control",
     "hp-hp-usb-c-dock-g5-system-control",
     "generic-usb-audio",
     "logitech-g502-hero-gaming-mouse-keyboard",
-    "logitech-g413-carbon-mechanical-gaming-keyboard.*",
+    "logitech-g413-carbon-mechanical-gaming-keyboard-?[0-9]*",
     -- Bluetooth
     "galaxy-buds-pro.*",
     "buds4-pro.*",
@@ -40,7 +40,8 @@ local allow_keyboard = {
     "tab-s10\\+-di-aaron.*",
     "ue-boom-2-di-aaron.*",
     -- Other
-    "dp-[0-9]+",
+    "solaar-keyboard-?[0-9]*",
+    "vicinae-snippet-virtual-keyboard",
     "wl_keyboard"
 }
 

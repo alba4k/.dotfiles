@@ -16,12 +16,14 @@ hl.config({
 
 -- Rotating border gradient
 hl.curve("linear", {type = "bezier", points = {{0, 0}, {0, 0}}})
+hl.curve("rubber", { type = "spring", mass = 1, stiffness = 300, dampening = 20})
 hl.animation({leaf = "borderangle", enabled = true, speed = 100, bezier = "linear"})
 
 -- Other animations
-hl.animation({leaf = "windows", enabled = true, speed = 3, bezier = "default", style = "popin"})
-hl.animation({leaf = "workspaces", enabled = true, speed = 5, bezier = "default", style = "slide"})
--- hl.animation({leaf = "workspaces", enabled = true, speed = 5, bezier = "default", style = "slidevert"})
+hl.animation({leaf = "windows", enabled = true, speed = 3, bezier = "default"})
+hl.animation({leaf = "workspaces", enabled = true, speed = 5, bezier = "default"})
+--hl.animation({leaf = "windows", enabled = true, speed = 1, spring = "rubber"})
+--hl.animation({leaf = "workspaces", enabled = true, speed = 5, spring = "rubber"})
 
 -- Windowrules
 hl.window_rule({match = {class = "lxpolkit"}, animation = "slide top"})

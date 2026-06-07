@@ -1,0 +1,8 @@
+
+[Desktop Entry]
+Type=Application
+Name=Minecraft Dungeons
+Icon=lutris_minecraft-dungeons
+Exec=env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/26
+Categories=Game
+TryExec=lutris

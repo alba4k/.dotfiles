@@ -2,7 +2,7 @@
 # alba4k - 2023
 
 playerctl=$(playerctl -a status 2>/dev/null)
-if echo "$playerctl" | grep Playing >/dev/null; then
+if echo "$playerctl" | grep -q Playing; then
     playerctl -p "spotify,*" metadata --format "󰎆  {{title}} - {{artist}}" 2>/dev/null | python -c "import html; print(html.escape(input()))" ||
         playerctl metadata --format "󰎆  {{title}} - {{artist}}" | python -c "import html; print(html.escape(input()))"
 else

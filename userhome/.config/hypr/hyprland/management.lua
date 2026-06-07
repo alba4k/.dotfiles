@@ -43,12 +43,6 @@ for _, dir in ipairs({"left", "right", "up", "down"}) do
     hl.bind("SUPER + SHIFT + " .. dir, hl.dsp.window.move({direction = dir}))
 end
 
--- Resizing windows
-hl.bind("SUPER + SHIFT + left", hl.dsp.window.resize({x = -50, y = 0}))
-hl.bind("SUPER + SHIFT + right", hl.dsp.window.resize({x = 50, y = 0}))
-hl.bind("SUPER + SHIFT + up", hl.dsp.window.resize({x = 0, y = 50}))
-hl.bind("SUPER + SHIFT + down", hl.dsp.window.resize({x = 0, y = -50}))
-
 -- Switching workspaces
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0

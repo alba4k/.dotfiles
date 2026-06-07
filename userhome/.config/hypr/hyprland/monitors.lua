@@ -23,8 +23,7 @@ local function detectLayout() -- global, also needed in binds.lua
                 break
             end
         -- Check for "zurich" setup (one DELL P3425WE)
-        elseif mon.description:find("DELL P3425WE") then
-            screens[1] = mon.name
+        elseif mon.description == "DELL P3425WE" then
             layout = "zurich"
             break
         -- Check if plugged into some other display
@@ -44,14 +43,12 @@ local function applyLayout()
     if layout == "home" then
         table.sort(screens) -- Ensure L/R order is consistent
         hl.monitor({output = "eDP-1", disabled = true})
-        hl.monitor({output = screens[1], mode = "1920x1080@72Hz", position = "0x0", scale = 1})
-        hl.monitor({output = screens[2], mode = "1920x1080@72Hz", position = "1920x0", scale = 1})
+        hl.monitor({output = screens[1], mode = "1920x1080@72Hz", position = "0x0"})
+        hl.monitor({output = screens[2], mode = "1920x1080@72Hz", position = "1920x0"})
     elseif layout == "zurich" then
         hl.monitor({output = "eDP-1", disabled = true})
-        hl.monitor({output = screens[1], mode = "3440x1440@100Hz", position = "0x0", scale = 1})
-    elseif layout == "docked" then
-        -- don't touch anything (lid switch decides)
-    else -- layout == nil or weird shit
+        hl.monitor({output = "desc:DELL P3425WE", mode = "3440x1440@100Hz", position = "0x0"})
+    elseif layout ~= "docked" then -- layout == nil, fallback or laptop
         hl.config({decoration = {screen_shader = "~/.config/hypr/assets/rounded_corners.frag"}})
         hl.monitor({output = "eDP-1", mode = "preferred", position = "auto", disabled = false})
     end
@@ -61,14 +58,11 @@ end
 
 -- Shikane-like behavior
 hl.on("monitor.added", applyLayout)
---hl.on("monitor.removed", applyLayout)
-hl.on("monitor.removed", function()
-    local layout = detectLayout()
+hl.on("monitor.removed", applyLayout)
 
-    if layout == nil then
-        hl.exec_cmd("hyprctl reload config-only")
-    end
-end)
+-- Used by waybar
+-- could be a lua func but that would block hyprland
+hl.on("monitor.layout_changed", function() hl.exec_cmd("~/.config/hypr/scripts/ddcutil.sh") end)
 
 -- Actions on lid switch (cause logind works inconsistently)
 hl.bind("switch:on:Lid Switch", function()
@@ -82,9 +76,9 @@ end, {locked = true})
 hl.bind("switch:off:Lid Switch", function()
         local layout = detectLayout()
         if layout == nil or layout == "docked" then -- not a known layout where eDP-1 should stay off
-            hl.exec_cmd("hyprctl reload config-only")
-            --hl.monitor({output = "eDP-1", mode = "preferred", position = "auto", disabled = false})
+            hl.monitor({output = "eDP-1", mode = "preferred", position = "auto", disabled = false})
         end
 end, {locked = true})
 
 applyLayout() -- run on every reload / hyprland start
+

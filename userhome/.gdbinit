@@ -1,0 +1,2 @@
+set debuginfod enabled on
+
