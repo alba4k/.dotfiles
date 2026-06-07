@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Freeze the screen
+hyprpicker -rz >/dev/null &
+PID=$!
+
+(
+    sleep 0.1;
+    hyprctl eval "hl.config({decoration={blur={size=3,passes=2}}})"
+) >/dev/null 2>&1 &
+
+sleep 0.05
+
+/usr/bin/slurp -b '#1e1e2eb0' -c '#8957b0ff' $@
+
+{
+    kill $PID
+    hyprctl eval "hl.config({decoration={blur={size=5,passes=3}}})"
+} >/dev/null 2>&1
+

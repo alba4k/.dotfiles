@@ -1,0 +1,8 @@
+#!/bin/bash
+
+hyprctl output create headless FLUXCAST
+
+python3 /opt/fluxcast/main.py --wfd-timeout 6 --wfd-monitor FLUXCAST $@
+
+hyprctl output remove FLUXCAST
+
