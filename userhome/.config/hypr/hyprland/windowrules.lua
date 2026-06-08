@@ -102,7 +102,7 @@ hl.window_rule({match = {class = "jetbrains-idea-ce", title = "^win(.*)"}, no_in
 
 for _, app in ipairs({
     "rofi", "layout_dialog", "(waybar)|(laptop)|(ultrawide)|(regular)",
-    "swaync.*", "selection", "hypr-network-manager"
+    "swaync.*", "selection", "hypr-network-manager", "vicinae"
 }) do
     hl.layer_rule({match = {class = app}, blur = true, ignore_alpha = 0.2, blur_popups = true})
 end

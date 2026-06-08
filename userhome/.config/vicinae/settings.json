@@ -30,11 +30,20 @@
    "launcher_window": {
       "opacity": 0.8,
       "client_side_decorations": {
-         "enabled": false
+          "enabled": true,
+          "rounding": 12,
+          "border_width": 5
       }
    },
    "favorites": [
       "applications:firefox",
+      "applications:FFPWA-01JWTRTGQ8PT9J3433TBBJNR0K",
+      "applications:spotify",
+      "applications:steam",
+      "applications:org.prismlauncher.PrismLauncher",
+      "applications:vesktop",
+      "applications:org.telegram",
+      "applications:FFPWA-01JWTNNGQ4ERPWHA1DGV96C6QY",
       "clipboard:history"
    ],
    "providers": {

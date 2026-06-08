@@ -1,0 +1,2 @@
+[DEBUG] Using shared storage path: /home/alba4k/.vscode-shared/sharedStorage/state.vscdb
+[DEBUG] Loaded VSCode state database from: /home/alba4k/.vscode-shared/sharedStorage/state.vscdb

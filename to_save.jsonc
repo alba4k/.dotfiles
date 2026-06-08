@@ -71,6 +71,7 @@
         "~/.config/waybar",
         "~/.config/wlogout",
         "~/.local/share/applications",
+        "~/.local/share/vicinae",
         "~/.mozilla/firefox/default-release/chrome",
         "~/Immagini/wallpapers"
     ],

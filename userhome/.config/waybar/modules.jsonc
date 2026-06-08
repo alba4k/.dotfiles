@@ -4,7 +4,7 @@
         "interval": "once",
 
         "on-click": "swaync-client --toggle-panel",
-        "on-click-right": "rofi -show drun",
+        "on-click-right": "vicinae toggle",
         "on-click-middle": "pidof wlogout || wlogout",
 
         "tooltip": false

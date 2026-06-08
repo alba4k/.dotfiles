@@ -1,0 +1,15 @@
+{
+  "revision": "1",
+  "keys": {
+    "recentArticles": {
+      "size": 16
+    }
+  },
+  "lru": [
+    {
+      "key": "recentArticles",
+      "lastUsedAt": 1780598266598
+    }
+  ],
+  "size": 16
+}

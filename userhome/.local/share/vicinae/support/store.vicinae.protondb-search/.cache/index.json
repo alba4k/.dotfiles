@@ -1,0 +1,15 @@
+{
+  "revision": "1",
+  "keys": {
+    "protondb-query-v1": {
+      "size": 28151
+    }
+  },
+  "lru": [
+    {
+      "key": "protondb-query-v1",
+      "lastUsedAt": 1780600746718
+    }
+  ],
+  "size": 28151
+}

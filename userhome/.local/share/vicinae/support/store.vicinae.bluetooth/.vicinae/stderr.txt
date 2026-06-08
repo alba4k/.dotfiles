@@ -1,0 +1,76 @@
+Failed to perform connect on Buds4 Pro di Aaron: r [BlueZError]: br-connection-timeout
+    at Z (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:29:3950)
+    at Ue (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:29:6594)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ji (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:30:365)
+    at async zi (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:36:650)
+    at async pl (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:36:3090)
+    at async /home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:36:4429 {
+  dbusError: undefined,
+  cause: vr [DBusError]: br-connection-timeout
+      at e.flags.hu._methodReturnHandlers.<computed> (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:18:1584)
+      at t (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:17:580)
+      at EventEmitter.<anonymous> (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:17:1210)
+      at EventEmitter.emit (node:events:524:28)
+      at /home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:29:2383
+      at Socket.<anonymous> (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:18:25265)
+      at Socket.emit (node:events:524:28)
+      at emitReadable_ (node:internal/streams/readable:834:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:81:21) {
+    type: 'org.bluez.Error.Failed',
+    text: 'br-connection-timeout',
+    reply: r {
+      type: 3,
+      _sent: false,
+      _serial: 1670,
+      path: undefined,
+      interface: undefined,
+      member: undefined,
+      errorName: 'org.bluez.Error.Failed',
+      replySerial: 59,
+      destination: ':1.4241',
+      sender: ':1.13',
+      signature: 's',
+      body: [Array],
+      flags: 1
+    }
+  }
+}
+Failed to perform connect on Buds4 Pro di Aaron: r [BlueZError]: br-connection-canceled
+    at Z (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:29:3950)
+    at Ue (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:29:6594)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ji (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:30:365)
+    at async zi (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:36:650)
+    at async pl (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:36:3090)
+    at async /home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:36:4429 {
+  dbusError: undefined,
+  cause: vr [DBusError]: br-connection-canceled
+      at e.flags.hu._methodReturnHandlers.<computed> (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:18:1584)
+      at t (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:17:580)
+      at EventEmitter.<anonymous> (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:17:1210)
+      at EventEmitter.emit (node:events:524:28)
+      at /home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:29:2383
+      at Socket.<anonymous> (/home/alba4k/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:18:25265)
+      at Socket.emit (node:events:524:28)
+      at emitReadable_ (node:internal/streams/readable:834:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:81:21) {
+    type: 'org.bluez.Error.Failed',
+    text: 'br-connection-canceled',
+    reply: r {
+      type: 3,
+      _sent: false,
+      _serial: 1742,
+      path: undefined,
+      interface: undefined,
+      member: undefined,
+      errorName: 'org.bluez.Error.Failed',
+      replySerial: 117,
+      destination: ':1.4241',
+      sender: ':1.13',
+      signature: 's',
+      body: [Array],
+      flags: 1
+    }
+  }
+}

@@ -43,14 +43,14 @@ local function applyLayout()
     if layout == "home" then
         table.sort(screens) -- Ensure L/R order is consistent
         hl.monitor({output = "eDP-1", disabled = true})
-        hl.monitor({output = screens[1], mode = "1920x1080@72Hz", position = "0x0"})
-        hl.monitor({output = screens[2], mode = "1920x1080@72Hz", position = "1920x0"})
+        hl.monitor({output = screens[1], mode = "1920x1080@72Hz", position = "0x0", scale = 1})
+        hl.monitor({output = screens[2], mode = "1920x1080@72Hz", position = "1920x0", scale = 1})
     elseif layout == "zurich" then
         hl.monitor({output = "eDP-1", disabled = true})
-        hl.monitor({output = "desc:DELL P3425WE", mode = "3440x1440@100Hz", position = "0x0"})
+        hl.monitor({output = "desc:DELL P3425WE", mode = "3440x1440@100Hz", position = "0x0", scale = 1})
     elseif layout ~= "docked" then -- layout == nil, fallback or laptop
         hl.config({decoration = {screen_shader = "~/.config/hypr/assets/rounded_corners.frag"}})
-        hl.monitor({output = "eDP-1", mode = "preferred", position = "auto", disabled = false})
+        hl.monitor({output = "eDP-1", mode = "preferred", position = "auto", scale = 1, disabled = false})
     end
 
     --print("Applied monitor configuration (" .. tostring(layout) .. ")")
@@ -76,7 +76,7 @@ end, {locked = true})
 hl.bind("switch:off:Lid Switch", function()
         local layout = detectLayout()
         if layout == nil or layout == "docked" then -- not a known layout where eDP-1 should stay off
-            hl.monitor({output = "eDP-1", mode = "preferred", position = "auto", disabled = false})
+            hl.monitor({output = "eDP-1", mode = "preferred", position = "auto", scale = 1, disabled = false})
         end
 end, {locked = true})
 
