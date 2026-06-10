@@ -1,5 +1,8 @@
 # alba4k's dotfiles
 
+> [!WARNING]  
+> This has been archived and replaced by https://github.com/alba4k/dotfiles
+
 ![Preview](assets/hyprland.png)
 
 <details>
